@@ -633,7 +633,7 @@ function handleMineAction(action) {
 }
 
 function openConsult() {
-  writeClipboard(WECHAT_ID, '微信号已复制，可添加咨询解卦');
+  writeClipboard(WECHAT_ID, '微信号已复制，可反馈建议');
 }
 
 function openConsultModal() {
@@ -644,11 +644,11 @@ function openConsultModal() {
   modal.id = 'consultModal';
   modal.innerHTML = `<div class="consult-modal-panel">
     <div class="consult-modal-head">
-      <h3>命盘详解咨询</h3>
+      <h3>意见反馈</h3>
       <button class="consult-modal-close" type="button">×</button>
     </div>
     <div class="consult-modal-body">
-      <p>可添加微信咨询解卦：${WECHAT_ID}</p>
+      <p>可添加微信反馈建议：${WECHAT_ID}</p>
       <p>传统民俗文化参考，不替代医疗、法律、投资等专业建议。</p>
       <button class="btn btn-primary" type="button" data-consult-copy>复制微信号</button>
     </div>
@@ -930,7 +930,7 @@ function displayResult(lines, paipanHtml, question) {
 }
 
 function getConsultHtml() {
-  return `<button class="btn btn-light consult-entry" type="button" data-consult-action="liuyao">专业人工解读</button>`;
+  return '';
 }
 
 function saveToHistory(question, lines, paipanHtml) {

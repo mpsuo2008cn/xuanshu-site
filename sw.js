@@ -1,4 +1,4 @@
-const CACHE_NAME = 'wanlianli-v66';
+const CACHE_NAME = 'wanlianli-v68';
 const ASSETS = [
   'index.html',
   'bg-main.png',
@@ -8,6 +8,13 @@ const ASSETS = [
   'icons/icon-192.png',
   'icons/icon-512.png',
   'assets/lunar.js',
+  'articles/index.html',
+  'articles/style.css',
+  'articles/wannianli-yiji.html',
+  'articles/jiehun-zeri.html',
+  'articles/liuyao-qigua.html',
+  'articles/bazi-sizhu.html',
+  'articles/huangli-shierjianchu.html',
   'liuyao/index.html',
   'liuyao/style.css',
   'liuyao/app.js',

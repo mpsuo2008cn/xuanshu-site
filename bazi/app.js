@@ -196,7 +196,6 @@ function renderResult(data) {
       <button class="btn btn-light shensha-open" type="button">查看神煞</button>
       <button class="btn btn-light favorite-open" type="button">收藏命盘</button>
     </div>
-    <button class="btn btn-light consult-entry" type="button" data-consult-action="bazi">专业人工解读</button>
     <div class="shensha-data" hidden>${renderShenshaDetail(data)}</div>
     <div class="result-section"><h4 class="result-section-title">大运流年</h4><div class="dayun-scroll"><div class="dayun-matrix">
       <div class="dayun-head">十神</div>${data.dayun.map(x => `<div class="dayun-cell ${x.ganZhi === data.currentDaYun ? 'current' : ''}">${x.shiShen}</div>`).join('')}
@@ -377,7 +376,7 @@ function handleMineAction(action) {
   if (action === 'share-app') return shareApp();
 }
 function openConsult() {
-  writeClipboard(WECHAT_ID, '微信号已复制，可添加咨询命盘');
+  writeClipboard(WECHAT_ID, '微信号已复制，可反馈建议');
 }
 function openConsultModal() {
   document.getElementById('consultModal')?.remove();
@@ -386,11 +385,11 @@ function openConsultModal() {
   modal.id = 'consultModal';
   modal.innerHTML = `<div class="consult-modal-panel">
     <div class="consult-modal-head">
-      <h3>命盘详解咨询</h3>
+      <h3>意见反馈</h3>
       <button class="consult-modal-close" type="button">×</button>
     </div>
     <div class="consult-modal-body">
-      <p>可添加微信咨询命盘详解：${WECHAT_ID}</p>
+      <p>可添加微信反馈建议：${WECHAT_ID}</p>
       <p>传统民俗文化参考，不替代医疗、法律、投资等专业建议。</p>
       <button class="btn btn-primary" type="button" data-consult-copy>复制微信号</button>
     </div>

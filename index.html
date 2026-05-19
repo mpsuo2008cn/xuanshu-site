@@ -2964,6 +2964,7 @@ function renderFavorites() {
   h += '<div class="mine-section"><div class="mine-section-title">常用</div><div class="mine-card">';
   h += '<button class="mine-row" data-mine-action="open-liuyao"><span>玄枢六爻</span><span class="mine-row-note">排盘工具</span></button>';
   h += '<button class="mine-row" data-mine-action="open-bazi"><span>玄枢八字</span><span class="mine-row-note">四柱排盘</span></button>';
+  h += '<button class="mine-row" data-mine-action="open-articles"><span>玄枢知识</span><span class="mine-row-note">历法民俗入门</span></button>';
   h += '<button class="mine-row" data-mine-action="feedback"><span>意见反馈</span><span class="mine-row-note">复制邮箱</span></button>';
   h += '<button class="mine-row" data-mine-action="email"><span>打开邮件</span><span class="mine-row-note">发送建议</span></button>';
   h += '<button class="mine-row" data-mine-action="share-app"><span>分享应用</span><span class="mine-row-note">推荐给朋友</span></button>';
@@ -2987,6 +2988,10 @@ function handleMineAction(action) {
   }
   if (action === 'open-bazi') {
     location.href = 'bazi/';
+    return;
+  }
+  if (action === 'open-articles') {
+    location.href = 'articles/';
     return;
   }
   if (action === 'email') {
