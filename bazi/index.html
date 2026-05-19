@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#f4efe4">
+<title>玄枢八字排盘</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="splash" id="splash">
+  <div class="splash-inner">
+    <div class="splash-dust"></div>
+    <img class="splash-logo" src="../logo.png" alt="玄枢">
+    <div class="splash-tagline">立四极　观八风</div>
+  </div>
+</div>
+
+<div id="app">
+  <header class="header">
+    <div class="header-content">
+      <div class="brand-row">
+        <h1 class="title">玄枢<span class="taiji-mark">☯</span><span class="seal">八字</span></h1>
+        <a class="back-link" href="../index.html">万年历</a>
+      </div>
+      <p class="subtitle">四柱十神 · 五行藏干 · 大运起运</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="tab-page active" id="pageChart">
+      <div class="card control-card">
+        <div class="form-group compact">
+          <label class="label">姓名备注</label>
+          <input type="text" id="nameInput" class="input" placeholder="可不填，用于历史记录">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group compact">
+            <label class="label">性别</label>
+            <div class="segmented" id="genderGroup">
+              <button class="seg active" data-gender="1" type="button">男</button>
+              <button class="seg" data-gender="0" type="button">女</button>
+            </div>
+          </div>
+          <div class="form-group compact">
+            <label class="label">历法</label>
+            <div class="segmented" id="calendarGroup">
+              <button class="seg active" data-calendar="solar" type="button">公历</button>
+              <button class="seg" data-calendar="lunar" type="button">农历</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group compact">
+          <label class="label">出生时间</label>
+          <div class="time-grid">
+            <select id="yearSelect" class="time-select"></select>
+            <select id="monthSelect" class="time-select"></select>
+            <select id="daySelect" class="time-select"></select>
+            <select id="hourSelect" class="time-select"></select>
+            <select id="minuteSelect" class="time-select"></select>
+          </div>
+        </div>
+
+        <button id="calcBtn" class="btn btn-primary">开始排盘</button>
+      </div>
+
+      <div class="card inline-result-card" id="inlineResultCard">
+        <div class="inline-result-header">
+          <h2>排盘结果</h2>
+        </div>
+        <div id="inlineResult"></div>
+      </div>
+    </section>
+
+    <section class="tab-page" id="pageHistory">
+      <div class="mine-section">
+        <div class="mine-section-title">历史排盘</div>
+        <div class="mine-card" id="historyList"></div>
+      </div>
+    </section>
+
+    <section class="tab-page" id="pageFavorites">
+      <div class="mine-section">
+        <div class="mine-section-title">我的收藏</div>
+        <div class="mine-card" id="favoriteList"></div>
+      </div>
+    </section>
+
+    <section class="tab-page mine-page" id="pageMine">
+      <div class="mine-section">
+        <div class="mine-section-title">常用</div>
+        <div class="mine-card">
+          <button class="mine-row" data-mine-action="open-calendar"><span>我的万年历</span><span class="mine-row-note">今日择日</span></button>
+          <button class="mine-row" data-mine-action="open-liuyao"><span>玄枢六爻</span><span class="mine-row-note">排盘工具</span></button>
+          <button class="mine-row" data-mine-action="consult"><span>命盘详解咨询</span><span class="mine-row-note">复制微信</span></button>
+          <button class="mine-row" data-mine-action="feedback"><span>意见反馈</span><span class="mine-row-note">复制邮箱</span></button>
+          <button class="mine-row" data-mine-action="email"><span>打开邮件</span><span class="mine-row-note">发送建议</span></button>
+          <button class="mine-row" data-mine-action="share-app"><span>推荐给朋友</span><span class="mine-row-note">分享玄枢八字</span></button>
+        </div>
+      </div>
+
+      <div class="mine-section">
+        <div class="mine-section-title">关于玄枢</div>
+        <div class="mine-card">
+          <div class="mine-about">玄枢八字，定四柱，观五行。<br>当前版本：v1.0.0<br>微信：mpsuo2008cn<br>排盘历史仅保存在本机。<br>内容为传统民俗文化参考，不作为专业建议。</div>
+          <button class="mine-row" data-mine-action="wechat"><span>复制微信号</span><span class="mine-row-note">mpsuo2008cn</span></button>
+        </div>
+      </div>
+
+      <div class="mine-version">玄枢八字 · v1.0.0<br>感谢每一条认真建议</div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="底部导航">
+    <button class="bottom-nav-item active" data-tab="chart" type="button"><span class="nav-icon">◇</span><span>排盘</span></button>
+    <button class="bottom-nav-item" data-tab="favorites" type="button"><span class="nav-icon">☆</span><span>收藏</span></button>
+    <button class="bottom-nav-item" data-tab="history" type="button"><span class="nav-icon">□</span><span>历史</span></button>
+    <button class="bottom-nav-item" data-tab="mine" type="button"><span class="nav-icon">○</span><span>我的</span></button>
+  </nav>
+  <div class="app-toast" id="appToast"></div>
+</div>
+
+<div id="resultModal" class="modal modal-fullscreen">
+  <div class="modal-content-fullscreen">
+    <div class="modal-header-fullscreen">
+      <h3 id="resultModalTitle">玄枢八字排盘</h3>
+      <button id="resultModalClose" class="modal-close-fullscreen">&times;</button>
+    </div>
+    <div class="modal-body-fullscreen" id="resultBody">
+      <div id="resultContent"></div>
+    </div>
+  </div>
+</div>
+
+<div id="shenshaModal" class="modal modal-fullscreen">
+  <div class="modal-content-fullscreen">
+    <div class="modal-header-fullscreen">
+      <h3>神煞详表</h3>
+      <button id="shenshaModalClose" class="modal-close-fullscreen">&times;</button>
+    </div>
+    <div class="modal-body-fullscreen">
+      <div id="shenshaContent"></div>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/lunar.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

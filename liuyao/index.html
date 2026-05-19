@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#f4efe4">
+<title>玄枢六爻排盘</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="splash" id="splash">
+  <div class="splash-inner">
+    <div class="splash-dust"></div>
+    <img class="splash-logo" src="../logo.png" alt="玄枢">
+    <div class="splash-tagline">心既静　卦自明</div>
+  </div>
+</div>
+
+<div id="app">
+  <header class="header">
+    <div class="header-content">
+      <div class="brand-row">
+        <h1 class="title">玄枢<span class="taiji-mark">☯</span><span class="seal">六爻</span></h1>
+        <a class="back-link" href="../index.html">万年历</a>
+      </div>
+      <p class="subtitle">纳甲六亲 · 世应伏神 · 专业排盘</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="tab-page active" id="pageDivination">
+    <aside class="left-panel">
+      <div class="card control-card">
+        <div class="form-group compact">
+          <label class="label">占问事宜</label>
+          <input type="text" id="question" class="input" placeholder="请输入您要占问的事情">
+        </div>
+
+        <div class="form-group compact">
+          <label class="label">起卦时间</label>
+          <div class="time-display-row">
+            <span id="timeDisplay" class="time-display">点击设置时间</span>
+            <button id="openTimeModal" class="btn btn-small btn-settings">选择</button>
+          </div>
+        </div>
+
+        <div class="form-group compact">
+          <label class="label">起卦方式</label>
+          <select id="divinationMethod" class="input">
+            <option value="">请选择起卦方式</option>
+            <option value="coin">铜钱起卦</option>
+            <option value="time">时间起卦</option>
+            <option value="random">随机起卦</option>
+            <option value="manual">手选起卦</option>
+          </select>
+        </div>
+
+        <div class="button-group">
+          <button id="clearResult" class="btn btn-light">清空</button>
+          <button id="showHistory" class="btn btn-history">历史</button>
+        </div>
+      </div>
+    </aside>
+    </section>
+
+    <section class="tab-page mine-page" id="pageMine">
+      <div class="mine-section">
+        <div class="mine-section-title">常用</div>
+        <div class="mine-card">
+          <button class="mine-row" data-mine-action="open-calendar"><span>我的万年历</span><span class="mine-row-note">今日择日</span></button>
+          <button class="mine-row" data-mine-action="open-bazi"><span>玄枢八字</span><span class="mine-row-note">四柱排盘</span></button>
+          <button class="mine-row" data-mine-action="consult"><span>人工解卦咨询</span><span class="mine-row-note">复制微信</span></button>
+          <button class="mine-row" data-mine-action="feedback"><span>意见反馈</span><span class="mine-row-note">复制邮箱</span></button>
+          <button class="mine-row" data-mine-action="email"><span>打开邮件</span><span class="mine-row-note">发送建议</span></button>
+          <button class="mine-row" data-mine-action="share-app"><span>推荐给朋友</span><span class="mine-row-note">分享玄枢六爻</span></button>
+        </div>
+      </div>
+
+      <div class="mine-section">
+        <div class="mine-section-title">关于玄枢</div>
+        <div class="mine-card">
+          <div class="mine-about">玄枢六爻，心既静，卦自明。<br>当前版本：v1.0.0<br>微信：mpsuo2008cn<br>排盘历史仅保存在本机。<br>内容为传统民俗文化参考，不作为专业建议。</div>
+          <button class="mine-row" data-mine-action="wechat"><span>复制微信号</span><span class="mine-row-note">mpsuo2008cn</span></button>
+        </div>
+      </div>
+
+      <div class="mine-version">玄枢六爻 · v1.0.0<br>感谢每一条认真建议</div>
+    </section>
+
+    <section class="right-panel">
+      <div class="card result-card">
+        <div class="result-header">
+          <h2 class="section-title">排盘结果</h2>
+          <div class="divider divider-flex"></div>
+        </div>
+        <div id="result" class="result-content">
+          <div class="welcome">
+            <div class="welcome-text">
+              <div class="welcome-title">玄枢<span class="taiji-inline">☯</span>六爻排盘</div>
+              <div class="welcome-sub">请选择起卦方式，开始排盘。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="底部导航">
+    <button class="bottom-nav-item active" data-tab="divination" type="button"><span class="nav-icon">◇</span><span>起卦</span></button>
+    <button class="bottom-nav-item" data-tab="history" type="button"><span class="nav-icon">□</span><span>历史</span></button>
+    <button class="bottom-nav-item" data-tab="mine" type="button"><span class="nav-icon">○</span><span>我的</span></button>
+  </nav>
+  <div class="app-toast" id="appToast"></div>
+</div>
+
+<div id="timeModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>设置起卦时间</h3>
+      <button class="modal-close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="time-selector-modal">
+        <div class="time-row"><select id="yearSelect" class="time-select"></select><span>年</span></div>
+        <div class="time-row"><select id="monthSelect" class="time-select"></select><span>月</span></div>
+        <div class="time-row"><select id="daySelect" class="time-select"></select><span>日</span></div>
+        <div class="time-row"><select id="hourSelect" class="time-select"></select><span>时</span></div>
+        <div class="time-row"><select id="minuteSelect" class="time-select"></select><span>分</span></div>
+      </div>
+      <button id="setCurrentTime" class="btn btn-secondary">使用当前时间</button>
+      <div class="modal-actions">
+        <button id="confirmTime" class="btn btn-primary">确认</button>
+        <button class="btn btn-light modal-close-btn">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="coinModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>铜钱起卦</h3>
+      <button class="modal-close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="divination-info"></div>
+      <div class="instruction">请选择每爻的摇卦结果，从下往上依次为初爻到上爻。</div>
+      <div id="coinYaoList" class="yao-list"></div>
+      <div class="modal-actions">
+        <button id="confirmCoin" class="btn btn-primary">确认起卦</button>
+        <button class="btn btn-light modal-close-btn">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="manualModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>手选起卦</h3>
+      <button class="modal-close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="instruction">请选择要起的卦象，然后选择动爻。</div>
+      <div id="hexGrid" class="palace-selector"></div>
+      <div class="manual-moving">
+        <h4>选择动爻</h4>
+        <div id="yaoCheckboxes" class="yao-selection"></div>
+      </div>
+      <div class="modal-actions">
+        <button id="confirmManual" class="btn btn-primary">确认起卦</button>
+        <button class="btn btn-light modal-close-btn">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="historyModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>历史排盘记录</h3>
+      <button class="modal-close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div id="historyList" class="history-list"></div>
+      <div class="modal-actions">
+        <button id="clearHistory" class="btn btn-danger">清空历史</button>
+        <button class="btn btn-light modal-close-btn">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="detailModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="detailTitle">历史记录详情</h3>
+      <button class="modal-close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div id="detailContent" class="detail-content"></div>
+      <div class="modal-actions">
+        <button class="btn btn-light modal-close-btn">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="resultModal" class="modal modal-fullscreen">
+  <div class="modal-content-fullscreen">
+    <div class="modal-header-fullscreen">
+      <h3 id="resultModalTitle">玄枢六爻排盘</h3>
+      <button id="resultModalClose" class="modal-close-fullscreen">&times;</button>
+    </div>
+    <div class="modal-body-fullscreen" id="resultBody">
+      <div id="resultContent"></div>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/lunar.js"></script>
+<script src="lunar.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
