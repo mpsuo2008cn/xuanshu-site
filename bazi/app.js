@@ -1,5 +1,5 @@
 const APP_VERSION = 'v1.0.0';
-const FEEDBACK_EMAIL = 'feedback@example.com';
+const FEEDBACK_EMAIL = '112238304@qq.com';
 const WECHAT_ID = 'mpsuo2008cn';
 const HISTORY_KEY = 'baziHistory';
 const FAVORITE_KEY = 'baziFavorites';

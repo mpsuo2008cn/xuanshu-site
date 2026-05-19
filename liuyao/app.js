@@ -62,7 +62,7 @@ const LIUCHONG_GUA = new Set([
 ]);
 
 const APP_VERSION = 'v1.0.0';
-const FEEDBACK_EMAIL = 'feedback@example.com';
+const FEEDBACK_EMAIL = '112238304@qq.com';
 const WECHAT_ID = 'mpsuo2008cn';
 let toastTimer = null;
 const LIUHE_GUA = new Set([
