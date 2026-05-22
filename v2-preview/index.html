@@ -1003,6 +1003,47 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 .nav-ico .deep-fill { fill: currentColor; stroke: none; opacity: .24; }
 .nav-ico .sun-fill { fill: currentColor; stroke: none; opacity: .78; }
 .home-indicator { position:fixed; z-index:12; left:50%; bottom:6px; transform:translateX(-50%); width:140px; height:5px; border-radius:4px; background:#111; }
+@media (max-width: 480px) {
+  .phone { padding: 0 10px 88px; }
+  .hero.with-bottom-art { min-height: 104px; padding: 14px 14px 8px; }
+  .brand-title { font-size: 33px; }
+  .slogan { margin-top: 8px; font-size: 15px; letter-spacing: 4px; }
+  .calendar-card { padding: 14px 10px 13px; }
+  .month-head { padding-bottom: 12px; }
+  .month-title { font-size: 30px; }
+  .week { padding-bottom: 10px; font-size: 17px; }
+  .day { min-height: 55px; padding-top: 9px; }
+  .solar { font-size: 24px; }
+  .lunar { margin-top: 5px; font-size: 13px; }
+  .summary-card { margin-top: 12px; min-height: 150px; padding: 17px 16px 16px 22px; }
+  .summary-date { font-size: 32px; margin-bottom: 11px; }
+  .fortune-card { margin-top: 12px; padding: 15px 16px 14px; }
+  .wanxiang-hero { min-height: 72px; padding: 15px 16px 8px; }
+  .wanxiang-hero h1 { font-size: 27px; margin-bottom: 6px; }
+  .wanxiang-hero p { font-size: 14px; }
+  .section-label { margin: 12px 4px 7px; }
+  .tools-hero { min-height: 116px; padding: 34px 16px 14px; }
+  .tools-hero h1 { font-size: 36px; margin-bottom: 10px; }
+  .tools-hero p { font-size: 16px; }
+  .tool-card { min-height: 104px; padding: 15px 12px; }
+  .tool-card h3 { font-size: 22px; }
+  .tool-card p { font-size: 14px; line-height: 1.55; }
+  .topline { min-height: 50px; }
+  .back-btn { top: 10px; font-size: 34px; }
+  .share-btn { top: 12px; }
+  .detail-hero { padding: 10px 0 20px; }
+  .detail-date { margin-bottom: 22px; }
+  .big-lunar { font-size: 48px; }
+  .mine-hero { padding-top: 2px; }
+  .mine-profile-card { min-height: 98px; padding: 12px 14px; gap: 12px; border-radius: 18px; }
+  .avatar { width: 112px; height: 86px; flex-basis: 112px; background-size: 184px auto; }
+  .mine-name h1 { font-size: 26px; margin-bottom: 5px; }
+  .mine-name p { font-size: 16px; }
+  .mine-section-card { margin-top: 12px; padding: 15px; }
+  #page-solar { padding-top: 0; }
+  .solar-hero { min-height: 310px; padding-top: 0; }
+  .solar-hero h1 { margin-top: 6px; font-size: 52px; }
+}
 </style>
 </head>
 <body>
@@ -1894,6 +1935,8 @@ const termFallbackTexts = {
 };
 const defaultTitle = document.title;
 const defaultDescription = document.querySelector('meta[name="description"]')?.content || '';
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.addEventListener('pageshow', () => window.scrollTo(0, 0));
 function setSeo(title, description) {
   document.title = title || defaultTitle;
   const meta = document.querySelector('meta[name="description"]');
@@ -2071,7 +2114,7 @@ function showPage(id) {
   if (id === 'zeri') addFootprint('zeri');
   if (id === 'mine') renderMinePage();
   tabs.forEach(b => b.classList.toggle('active', b.dataset.tab === id || (id === 'solar' && b.dataset.tab === 'tools') || (id === 'zeri' && b.dataset.tab === 'tools') || (id === 'dream' && b.dataset.tab === 'tools') || (id === 'scrolls' && b.dataset.tab === 'tools') || (id === 'scroll-detail' && b.dataset.tab === 'tools') || (id === 'detail' && b.dataset.tab === 'detail')));
-  scrollTo({ top: 0, behavior: 'smooth' });
+  scrollTo({ top: 0, behavior: 'auto' });
 }
 document.addEventListener('click', e => {
   const hrefBtn = e.target.closest('[data-href]');
