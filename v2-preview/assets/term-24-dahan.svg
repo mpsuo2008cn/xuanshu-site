@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1600" viewBox="0 0 900 1600">
+  <defs>
+    <linearGradient id="t23-paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf1"/>
+      <stop offset=".56" stop-color="#f8efe1"/>
+      <stop offset="1" stop-color="#fff8ef"/>
+    </linearGradient>
+    <filter id="t23-blur"><feGaussianBlur stdDeviation="6"/></filter>
+    <style>
+      .wash{fill:#cfd8db;opacity:.23;filter:url(#t23-blur)}
+      .ink{fill:none;stroke:#657069;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.28}
+      .accent{fill:#6f806b;opacity:.48}
+      .line{stroke:#6f806b;stroke-width:3;stroke-linecap:round;fill:none;opacity:.48}
+      .thin{stroke:#657069;stroke-width:1.7;stroke-linecap:round;fill:none;opacity:.3}
+    </style>
+  </defs>
+  <rect width="900" height="1600" fill="url(#t23-paper)"/>
+  <circle cx="720" cy="150" r="78" fill="#6f806b" opacity=".12"/>
+  <path class="wash" d="M0 560 C90 480 156 538 238 442 C318 350 370 520 468 422 C592 300 718 468 860 378 L860 860 L0 860 Z"/>
+  <path class="ink" d="M20 552 C88 492 154 536 230 450 C310 360 368 518 462 428 C584 310 704 470 838 386"/>
+  <path class="thin" d="M182 610 C282 542 350 596 452 534 C546 476 648 546 806 500"/>
+  <g transform="translate(530 190)"><path class="line" d="M130 330 C116 210 124 116 150 0"/><path d="M150 48 C70 76 70 110 146 84 C222 58 224 96 150 84" fill="#6f806b" opacity=".22"/><path d="M142 93 C64 116 78 148 142 128 C230 96 218 134 146 128" fill="#6f806b" opacity=".22"/><path d="M134 138 C58 156 86 186 138 172 C238 134 212 172 142 172" fill="#6f806b" opacity=".22"/><path d="M126 183 C52 196 94 224 134 216 C246 172 206 210 138 216" fill="#6f806b" opacity=".22"/><path d="M118 228 C46 236 102 262 130 260 C254 210 200 248 134 260" fill="#6f806b" opacity=".22"/></g>
+  <path class="thin" d="M88 720 C188 668 270 712 360 654"/>
+  <path class="thin" d="M580 1000 C672 960 742 1010 832 952"/>
+  <text x="80" y="210" font-family="serif" font-size="96" fill="#222b2b" opacity=".92">大寒</text>
+  <rect x="84" y="246" width="178" height="52" rx="26" fill="#fff7ea" stroke="#6f806b" stroke-width="2" opacity=".76"/>
+  <text x="112" y="282" font-family="serif" font-size="28" fill="#6f806b" opacity=".9">二十四节气</text>
+</svg>

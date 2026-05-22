@@ -1,0 +1,71 @@
+﻿{
+  "style_base": "Chinese guofeng ink-wash calendar app background, warm ivory xuan paper texture, low saturation, elegant Song-style composition, soft mountains, mist, subtle brush details, no modern objects, no text, no watermark, mobile UI friendly, large blank area for Chinese typography",
+  "hero": [
+    { "file": "hero-01-spring.webp", "prompt": "鏄ュ北椋為工锛屾贰姘村ⅷ杩滃北锛屽彸渚т竴鍙櫧楣ゆ帬杩囦簯闆撅紝杩滃绾㈡棩鏋佹贰锛屽乏渚уぇ闈㈢Н鐣欑櫧锛岀敤浜庝竾骞村巻棣栭〉椤堕儴鑳屾櫙銆? },
+    { "file": "hero-02-lotus.webp", "prompt": "澶忔棩鑽峰涓庤繙灞憋紝鍙充笅瑙掕嵎鍙惰嵎鑺憋紝杩滃浜彴鑻ラ殣鑻ョ幇锛岀背鑹插绾稿簳锛屽乏渚х暀鐧斤紝鐢ㄤ簬涓囧勾鍘嗛椤甸《閮ㄨ儗鏅€? },
+    { "file": "hero-03-reeds.webp", "prompt": "绉嬫棩鑺﹁媷涓庢睙闈紝鍙充晶鑺﹁姳杞绘憞锛岃繙澶勭兢灞变笌灏忚垷锛屾殩绫崇櫧鑳屾櫙锛屽乏渚х暀鐧斤紝鐢ㄤ簬涓囧勾鍘嗛椤甸《閮ㄨ儗鏅€? },
+    { "file": "hero-04-plum-snow.webp", "prompt": "鍐棩闆箔涓庢鏋濓紝鍙充晶涓€鏋濈孩姊咃紝杩滃北娣￠洩锛岀敾闈㈡竻鍐蜂絾娓╂鼎锛屽乏渚х暀鐧斤紝鐢ㄤ簬涓囧勾鍘嗛椤甸《閮ㄨ儗鏅€? },
+    { "file": "hero-05-bamboo-pavilion.webp", "prompt": "绔瑰奖浜彴锛屽彸渚х鏋濆瀭钀斤紝杩滃灏忎涵鍜屾贰灞憋紝澧ㄨ壊寰堣交锛屽乏渚х暀鐧斤紝鐢ㄤ簬涓囧勾鍘嗛椤甸《閮ㄨ儗鏅€? },
+    { "file": "hero-06-pine-cloud.webp", "prompt": "鏉鹃浜戞捣锛屽彸渚ф澗鏋濅笌浜戦浘锛岃繙澶勫眰宄︼紝娴呯背鑹插绾歌川鎰燂紝宸︿晶鐣欑櫧锛岀敤浜庝竾骞村巻棣栭〉椤堕儴鑳屾櫙銆? },
+    { "file": "hero-07-osmanthus-moon.webp", "prompt": "妗傛湀灞卞眳锛屽彸涓婃贰鏈堬紝妗傛灊缁嗙锛岃繙澶勫北灞呬笌浜戦浘锛岀敾闈㈤泤闈欙紝宸︿晶鐣欑櫧锛岀敤浜庝竾骞村巻棣栭〉椤堕儴鑳屾櫙銆? },
+    { "file": "hero-08-orchid-stream.webp", "prompt": "鍏拌崏娓呮邯锛屽彸涓嬪叞鑽変笌婧煶锛岃繙澶勪綆灞憋紝娣″ⅷ姘存苯锛屽乏渚х暀鐧斤紝鐢ㄤ簬涓囧勾鍘嗛椤甸《閮ㄨ儗鏅€? },
+    { "file": "hero-09-morning-mist.webp", "prompt": "鏅ㄩ浘缇ゅ北锛屾棩鍏夊緢娣★紝缇ゅ北灞傚彔锛岄楦熸瀬灏忥紝鍙充晶鏅墿鏇翠赴瀵岋紝宸︿晶鐣欑櫧锛岀敤浜庝竾骞村巻棣栭〉椤堕儴鑳屾櫙銆? },
+    { "file": "hero-10-red-sun.webp", "prompt": "杩滃北绾㈡棩锛屽彸涓婄孩鏃ワ紝缇ゅ北娣″ⅷ锛屾煶鏋濊交鍨傦紝绫崇櫧瀹ｇ焊搴曪紝宸︿晶鐣欑櫧锛岀敤浜庝竾骞村巻棣栭〉椤堕儴鑳屾櫙銆? }
+  ],
+  "almanac_cards": [
+    { "file": "card-01-bamboo.webp", "prompt": "绔规灄浜彴锛屽彸渚х鏋濆拰浜瓙锛屽簳閮ㄦ祬姘村ⅷ灞辩煶锛屽乏渚уぇ闈㈢Н鐣欑櫧锛岄€傚悎瀹滃繉鍗＄墖鑳屾櫙銆? },
+    { "file": "card-02-lotus.webp", "prompt": "鑽疯姳姘存Ν锛屽彸涓嬭鑽疯姳鑾插彾锛岃繙澶勬按姒拰灞卞奖锛屽乏渚х暀鐧斤紝閫傚悎瀹滃繉鍗＄墖鑳屾櫙銆? },
+    { "file": "card-03-tea.webp", "prompt": "鑼剁倝灞辨按锛屽彸渚ч潚鐡疯尪澹朵笌鑼剁洀锛岃繙灞变簯闆撅紝宸︿晶鐣欑櫧锛岄€傚悎瀹滃繉鍗＄墖鑳屾櫙銆? },
+    { "file": "card-04-plum-bridge.webp", "prompt": "姊呮灊灏忔ˉ锛屽彸渚у皬妗ヤ笌绾㈡锛屽簳閮ㄦ按澧ㄦ邯娴侊紝宸︿晶鐣欑櫧锛岄€傚悎瀹滃繉鍗＄墖鑳屾櫙銆? },
+    { "file": "card-05-reed-boat.webp", "prompt": "鑺﹁媷瀛よ垷锛屽彸渚ц姦鑻囧拰涓€鍙跺皬鑸燂紝杩滃姹熼潰娣″北锛屽乏渚х暀鐧斤紝閫傚悎瀹滃繉鍗＄墖鑳屾櫙銆? },
+    { "file": "card-06-pine-rock.webp", "prompt": "鏉剧煶杩滃搏锛屽彸渚ф澗鏋濆博鐭筹紝杩滃灞卞矚锛屽乏渚х暀鐧斤紝閫傚悎瀹滃繉鍗＄墖鑳屾櫙銆? },
+    { "file": "card-07-orchid-stone.webp", "prompt": "鍏拌崏婧煶锛屽彸涓嬪叞鑽変笌婧煶锛屾按澧ㄦ贰闆咃紝宸︿晶鐣欑櫧锛岄€傚悎瀹滃繉鍗＄墖鑳屾櫙銆? },
+    { "file": "card-08-moon-osmanthus.webp", "prompt": "妗傛爲鏈堝奖锛屽彸渚ф鏋濆拰娣℃湀锛岃繙澶勫皬灞憋紝宸︿晶鐣欑櫧锛岄€傚悎瀹滃繉鍗＄墖鑳屾櫙銆? },
+    { "file": "card-09-willow-birds.webp", "prompt": "鏌冲哺椋為笩锛屽彸涓婃煶鏋濆瀭涓嬶紝鍙充笅姘村哺灞辩煶锛屽嚑鍙楦熸瀬娣★紝宸︿晶鐣欑櫧锛岄€傚悎瀹滃繉鍗＄墖鑳屾櫙銆? },
+    { "file": "card-10-river-pavilion.webp", "prompt": "姹熶涵鐑熼洦锛屽彸渚ф睙杈逛涵鍙帮紝娣℃贰闆ㄩ浘鍜岃繙灞憋紝宸︿晶鐣欑櫧锛岄€傚悎瀹滃繉鍗＄墖鑳屾櫙銆? }
+  ],
+  "solar_terms": [
+    { "file": "term-01-lichun.webp", "prompt": "绔嬫槬锛屾煶鑺芥槬灞憋紝娣＄豢鏂版剰锛屽彸渚у鏌筹紝杩滃鏄ュ北锛屾墜鏈虹珫鍥撅紝椤堕儴鐣欐爣棰樺尯銆? },
+    { "file": "term-02-yushui.webp", "prompt": "闆ㄦ按锛岀粏闆ㄩ潚鐡︼紝灞嬫獝婊存按锛岃繙灞辩儫闆紝鎵嬫満绔栧浘锛岄《閮ㄧ暀鏍囬鍖恒€? },
+    { "file": "term-03-jingzhe.webp", "prompt": "鎯婅洶锛屾槬闆峰绔癸紝浜戝眰寰寒锛岀绗嬬牬鍦燂紝鎵嬫満绔栧浘锛岄《閮ㄧ暀鏍囬鍖恒€? },
+    { "file": "term-04-chunfen.webp", "prompt": "鏄ュ垎锛屾鑺辩嚂瀛愶紝绮夎壊妗冩灊锛岃繙灞卞钩鍜岋紝鎵嬫満绔栧浘锛岄《閮ㄧ暀鏍囬鍖恒€? },
+    { "file": "term-05-qingming.webp", "prompt": "娓呮槑锛岀粏闆ㄦ睙鍗楋紝闈掑洟銆侀洦宸枫€佹贰灞憋紝鎵嬫満绔栧浘锛岄《閮ㄧ暀鏍囬鍖恒€? },
+    { "file": "term-06-guyu.webp", "prompt": "璋烽洦锛岃尪鍥惤鑺憋紝鏂拌尪瀚╁彾锛岄洦鍚庡北姘旓紝鎵嬫満绔栧浘锛岄《閮ㄧ暀鏍囬鍖恒€? },
+    { "file": "term-07-lixia.webp", "prompt": "绔嬪锛岃嵎鑺辫幉鍙讹紝娓呮祬姘撮潰锛岃繙灞变涵鍙帮紝鎵嬫満绔栧浘锛岄《閮ㄧ暀鏍囬鍖恒€? },
+    { "file": "term-08-xiaoman.webp", "prompt": "灏忔弧锛岄害绌楁祬姘达紝鍒濆鐢伴噹锛屼簯姘旀俯鏌旓紝鎵嬫満绔栧浘锛岄《閮ㄧ暀鏍囬鍖恒€? },
+    { "file": "term-09-mangzhong.webp", "prompt": "鑺掔锛岀ɑ鐢板啘鍏凤紝鐢板焸涓庤繙灞憋紝鎵嬫満绔栧浘锛岄《閮ㄧ暀鏍囬鍖恒€? },
+    { "file": "term-10-xiazhi.webp", "prompt": "澶忚嚦锛岃幉姹犻暱鏃ワ紝闃冲厜鏌斿拰锛岃嵎鍙堕摵灞曪紝鎵嬫満绔栧浘锛岄《閮ㄧ暀鏍囬鍖恒€? },
+    { "file": "term-11-xiaoshu.webp", "prompt": "灏忔殤锛岃挷鎵囩闃达紝绔规灄娓呴锛岃尪鐩忥紝鎵嬫満绔栧浘锛岄《閮ㄧ暀鏍囬鍖恒€? },
+    { "file": "term-12-dashu.webp", "prompt": "澶ф殤锛屾祿鑽嵎濉橈紝铦夊０鎰忚薄锛岃嵎鑺辩洓寮€锛屾墜鏈虹珫鍥撅紝椤堕儴鐣欐爣棰樺尯銆? },
+    { "file": "term-13-liqiu.webp", "prompt": "绔嬬锛屾ⅶ妗愬彾鍒濋粍锛岃繙灞辨竻鏈楋紝鎵嬫満绔栧浘锛岄《閮ㄧ暀鏍囬鍖恒€? },
+    { "file": "term-14-chushu.webp", "prompt": "澶勬殤锛屼簯娣＄ɑ绌楋紝绉嬫剰鍒濇垚锛屾墜鏈虹珫鍥撅紝椤堕儴鐣欐爣棰樺尯銆? },
+    { "file": "term-15-bailu.webp", "prompt": "鐧介湶锛岃姦鑻囬湶鐝狅紝娓呮櫒姘村哺锛屾墜鏈虹珫鍥撅紝椤堕儴鐣欐爣棰樺尯銆? },
+    { "file": "term-16-qiufen.webp", "prompt": "绉嬪垎锛屾鑺卞渾鏈堬紝骞冲垎绉嬭壊锛屾墜鏈虹珫鍥撅紝椤堕儴鐣欐爣棰樺尯銆? },
+    { "file": "term-17-hanlu.webp", "prompt": "瀵掗湶锛岃強鑺卞喎鏈堬紝绉嬪寰瘨锛屾墜鏈虹珫鍥撅紝椤堕儴鐣欐爣棰樺尯銆? },
+    { "file": "term-18-shuangjiang.webp", "prompt": "闇滈檷锛岀孩鍙堕湝鑽夛紝灞辨灄娣辩锛屾墜鏈虹珫鍥撅紝椤堕儴鐣欐爣棰樺尯銆? },
+    { "file": "term-19-lidong.webp", "prompt": "绔嬪啲锛岀倝鐏澗鏋濓紝瀹ゅ唴鏆栨剰涓庣獥澶栬繙灞憋紝鎵嬫満绔栧浘锛岄《閮ㄧ暀鏍囬鍖恒€? },
+    { "file": "term-20-xiaoxue.webp", "prompt": "灏忛洩锛屽垵闆北瀵猴紝妾愯绉洩锛屾墜鏈虹珫鍥撅紝椤堕儴鐣欐爣棰樺尯銆? },
+    { "file": "term-21-daxue.webp", "prompt": "澶ч洩锛岄洩宀鑺憋紝杩滃北澶ч洩锛岀孩姊呯偣鏅紝鎵嬫満绔栧浘锛岄《閮ㄧ暀鏍囬鍖恒€? },
+    { "file": "term-22-dongzhi.webp", "prompt": "鍐嚦锛屾堡鍦嗘殩鐏紝绐楀闆櫙锛屽鍐呮俯鏆栵紝鎵嬫満绔栧浘锛岄《閮ㄧ暀鏍囬鍖恒€? },
+    { "file": "term-23-xiaohan.webp", "prompt": "灏忓瘨锛屽瘨姊呭啺婧紝鍐锋贰姘村ⅷ锛屾墜鏈虹珫鍥撅紝椤堕儴鐣欐爣棰樺尯銆? },
+    { "file": "term-24-dahan.webp", "prompt": "澶у瘨锛岄洩鏉捐繙灞憋紝澶╁湴娓呭瘨锛屾墜鏈虹珫鍥撅紝椤堕儴鐣欐爣棰樺尯銆? }
+  ],
+  "discover": [
+    { "file": "discover-oracle-bg.webp", "prompt": "浠婃棩鐏电鑳屾櫙锛屼簯娴峰北姘达紝绛剧瓛鍜屾湪绛炬剰璞★紝鍙充晶鏅墿锛屽乏渚ф枃瀛楃暀鐧斤紝鍥介姘村ⅷ銆? },
+    { "file": "discover-astro-bg.webp", "prompt": "浠婃棩澶╄薄鑳屾櫙锛屽浗椋庡绌烘槦杞紝娣℃湀銆佷簯绾广€佽繙灞憋紝涓嶈兘鍍忚タ寮忔槦搴ф捣鎶ャ€? },
+    { "file": "discover-quote-bg.webp", "prompt": "浠婃棩涓€鍙ヨ儗鏅紝瀹ｇ焊銆佹澗鏋濄€佽尪鐑熴€佺暀鐧藉緢澶э紝閫傚悎鎴睆鍒嗕韩銆? },
+    { "file": "discover-test-bg.webp", "prompt": "杩愬娍灏忔祴鑳屾櫙锛岄摐閽便€佷簯绾广€佺綏鐩樻贰褰憋紝鍥介姘村ⅷ锛屼綆瀵规瘮锛屾枃瀛楀尯鐣欑櫧銆? }
+  ],
+  "tools": [
+    { "file": "tool-liuyao.webp", "prompt": "鍏埢璧峰崷鍥炬爣鎻掔敾锛屼笁鏋氶摐閽变笌鍗︾埢锛屽浗椋庢墎骞虫按澧紝灏忓昂瀵告竻鏅帮紝鏃犳枃瀛椼€? },
+    { "file": "tool-bazi.webp", "prompt": "鍏瓧鎺掔洏鍥炬爣鎻掔敾锛屽懡鐩樸€佸ぉ骞插湴鏀€佸嵎杞达紝鍥介鎵佸钩姘村ⅷ锛屽皬灏哄娓呮櫚锛屾棤鏂囧瓧銆? },
+    { "file": "tool-zeri.webp", "prompt": "鎷╁悏鏃ュ浘鏍囨彃鐢伙紝鏃ュ巻銆佹湵鍗般€佸悏瀛楁剰璞′絾涓嶈鏂囧瓧锛屽浗椋庢墎骞虫按澧紝灏忓昂瀵告竻鏅般€? },
+    { "file": "tool-jieqi.webp", "prompt": "鑺傛皵鍥炬爣鎻掔敾锛岃姳鑽夈€佸お闃炽€佷簯绾癸紝鍥介鎵佸钩姘村ⅷ锛屽皬灏哄娓呮櫚锛屾棤鏂囧瓧銆? },
+    { "file": "tool-luopan.webp", "prompt": "缃楃洏鍥炬爣鎻掔敾锛屼紶缁熺綏鐩橈紝閲戞鑹诧紝鍥介鎵佸钩姘村ⅷ锛屽皬灏哄娓呮櫚锛屾棤鏂囧瓧銆? }
+  ],
+  "mine": [
+    { "file": "mine-header-bg.webp", "prompt": "鎴戠殑椤甸《閮ㄨ儗鏅紝灞辨按浜彴锛屽彸渚ф櫙鐗╋紝宸︿晶鍙斁澶村儚鍜屽悕瀛楋紝娴呯背瀹ｇ焊搴曪紝鍥介姘村ⅷ銆? },
+    { "file": "mine-footer-lotus.webp", "prompt": "鎴戠殑椤靛簳閮ㄨ楗帮紝鑽疯姳姘村哺銆佸皬鑸熴€佽繙灞憋紝閫忔槑鎰熷己锛屾祬鑹蹭綆瀵规瘮銆? }
+  ]
+}
+

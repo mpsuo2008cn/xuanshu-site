@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+  
+  <defs>
+    <linearGradient id="c9-paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf1"/>
+      <stop offset=".62" stop-color="#f8efe1"/>
+      <stop offset="1" stop-color="#fff9ef"/>
+    </linearGradient>
+    <linearGradient id="c9-mist" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fffaf1" stop-opacity=".08"/>
+      <stop offset=".38" stop-color="#fffaf1" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#fffaf1" stop-opacity=".02"/>
+    </linearGradient>
+    <filter id="c9-soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <radialGradient id="c9-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#96714b" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#96714b" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .ink-c9{fill:none;stroke:#68716a;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.28}
+      .wash-c9{fill:#cbd2cf;opacity:.24}
+      .accent-c9{fill:#96714b;opacity:.45}
+      .soft-c9{filter:url(#c9-soft)}
+    </style>
+  </defs>
+  <rect width="900" height="360" fill="url(#c9-paper)"/>
+  <rect width="900" height="360" fill="url(#c9-mist)"/>
+  
+  <path class="wash-c9 soft-c9" d="M0 286 C72 245.5 122 266.5 184 224.5 C244 184.75 292 254.5 348 217 C422 168.25 512 259 620 217 L620 381 L0 381 Z"/>
+  <path class="ink-c9" d="M20 283 C88 238 126 268 176 232 C236 190 286 260.5 340 223 C410 176.5 486 257.5 585 221.5"/>
+  <path class="ink-c9" opacity=".18" d="M146 293.5 C208 257.5 260 289.75 322 254.5 C390 214 462 272.5 574 251.5"/>
+  <path class="ink-c9" opacity=".16" d="M482 250 C546 228 604 240 670 212 C728 188 780 210 850 172"/>
+  <path d="M514 266 C618 286 708 254 858 274" stroke="#8a765e" stroke-width="3" opacity=".18" fill="none"/>
+  <g transform="translate(480 35)"><circle cx="70" cy="70" r="44" fill="#96714b" opacity=".18"/></g>
+  
+</svg>

@@ -28,7 +28,7 @@ body {
   font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
   background:
     linear-gradient(rgba(246, 241, 232, 0.78), rgba(246, 241, 232, 0.92)),
-    url("../bg-main.png") center bottom / cover fixed;
+    url("../bg-main.webp") center bottom / cover fixed;
 }
 
 .splash {
@@ -41,7 +41,7 @@ body {
   padding-top: 22vh;
   background:
     linear-gradient(180deg, rgba(246, 241, 232, 0.18), rgba(246, 241, 232, 0.92)),
-    url("../bg-splash.png") center center / cover no-repeat;
+    url("../bg-splash.webp") center center / cover no-repeat;
   transition: opacity 1.05s ease, visibility 1.05s ease;
 }
 
@@ -677,6 +677,20 @@ button {
   padding-top: 12px;
 }
 
+.result-actions {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0 4px;
+}
+
+.favorite-save {
+  min-width: 132px;
+}
+
+.favorite-save.saved {
+  background: #9a8a73;
+}
+
 .info-row {
   display: flex;
   flex-wrap: wrap;
@@ -798,7 +812,7 @@ button {
   width: min(520px, 100%);
   background:
     linear-gradient(rgba(250, 247, 239, 0.96), rgba(250, 247, 239, 0.96)),
-    url("../bg-detail.png") center bottom / cover;
+    url("../bg-detail.webp") center bottom / cover;
 }
 
 #timeModal .modal-header {

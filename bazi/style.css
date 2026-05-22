@@ -23,7 +23,7 @@ body {
   font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
   background:
     linear-gradient(rgba(246, 241, 232, 0.78), rgba(246, 241, 232, 0.92)),
-    url("../bg-main.png") center bottom / cover fixed;
+    url("../bg-main.webp") center bottom / cover fixed;
 }
 
 button, input, select { font: inherit; }
@@ -39,7 +39,7 @@ button { cursor: pointer; }
   padding-top: 22vh;
   background:
     linear-gradient(180deg, rgba(246, 241, 232, 0.18), rgba(246, 241, 232, 0.92)),
-    url("../bg-splash.png") center center / cover no-repeat;
+    url("../bg-splash.webp") center center / cover no-repeat;
   transition: opacity 1.05s ease, visibility 1.05s ease;
 }
 

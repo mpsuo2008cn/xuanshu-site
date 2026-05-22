@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1600" viewBox="0 0 900 1600">
+  <defs>
+    <linearGradient id="t6-paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf1"/>
+      <stop offset=".56" stop-color="#f8efe1"/>
+      <stop offset="1" stop-color="#fff8ef"/>
+    </linearGradient>
+    <filter id="t6-blur"><feGaussianBlur stdDeviation="6"/></filter>
+    <style>
+      .wash{fill:#bfd4bd;opacity:.23;filter:url(#t6-blur)}
+      .ink{fill:none;stroke:#657069;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.28}
+      .accent{fill:#d98a9a;opacity:.48}
+      .line{stroke:#d98a9a;stroke-width:3;stroke-linecap:round;fill:none;opacity:.48}
+      .thin{stroke:#657069;stroke-width:1.7;stroke-linecap:round;fill:none;opacity:.3}
+    </style>
+  </defs>
+  <rect width="900" height="1600" fill="url(#t6-paper)"/>
+  <circle cx="720" cy="150" r="78" fill="#d98a9a" opacity=".12"/>
+  <path class="wash" d="M0 560 C90 480 156 538 238 442 C318 350 370 520 468 422 C592 300 718 468 860 378 L860 860 L0 860 Z"/>
+  <path class="ink" d="M20 552 C88 492 154 536 230 450 C310 360 368 518 462 428 C584 310 704 470 838 386"/>
+  <path class="thin" d="M182 610 C282 542 350 596 452 534 C546 476 648 546 806 500"/>
+  <g transform="translate(480 430)"><path d="M40 70 C85 52 98 62 58 92" fill="#d98a9a" opacity=".25" transform="rotate(-12 40 70)"/><path d="M118 86 C163 68 176 78 136 108" fill="#d98a9a" opacity=".25" transform="rotate(8 118 86)"/><path class="line" d="M112 92 C132 18 150 -24 176 -88"/><path class="line" d="M190 94 C206 38 224 4 254 -42"/><path d="M176 -92 C146 -128 168 -158 178 -120 C190 -166 218 -118 176 -92" class="accent"/><path d="M254 -48 C232 -80 254 -104 262 -72 C276 -110 296 -70 254 -48" class="accent" opacity=".35"/></g>
+  <path class="thin" d="M88 720 C188 668 270 712 360 654"/>
+  <path class="thin" d="M580 1000 C672 960 742 1010 832 952"/>
+  <text x="80" y="210" font-family="serif" font-size="96" fill="#222b2b" opacity=".92">立夏</text>
+  <rect x="84" y="246" width="178" height="52" rx="26" fill="#fff7ea" stroke="#d98a9a" stroke-width="2" opacity=".76"/>
+  <text x="112" y="282" font-family="serif" font-size="28" fill="#d98a9a" opacity=".9">二十四节气</text>
+</svg>

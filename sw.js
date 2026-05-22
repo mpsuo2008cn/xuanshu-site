@@ -1,13 +1,20 @@
-const CACHE_NAME = 'wanlianli-v66';
-const ASSETS = [
+const CACHE_NAME = 'wanlianli-v113';
+
+const CORE_ASSETS = [
   'index.html',
-  'bg-main.png',
-  'bg-detail.png',
-  'bg-splash.png',
-  'logo.png',
+  'manifest.json',
+  'v2-preview/index.html',
+  'v2-preview/dreamData.js',
+  'assets/lunar.js',
   'icons/icon-192.png',
   'icons/icon-512.png',
-  'assets/lunar.js',
+  'articles/index.html',
+  'articles/style.css',
+  'articles/wannianli-yiji.html',
+  'articles/jiehun-zeri.html',
+  'articles/liuyao-qigua.html',
+  'articles/bazi-sizhu.html',
+  'articles/huangli-shierjianchu.html',
   'liuyao/index.html',
   'liuyao/style.css',
   'liuyao/app.js',
@@ -17,20 +24,31 @@ const ASSETS = [
   'bazi/app.js'
 ];
 
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS))
   );
 });
 
-self.addEventListener('fetch', e => {
-  e.respondWith(
-    caches.match(e.request).then(cached => {
-      // 优先返回缓存，同时后台更新
-      const fetchPromise = fetch(e.request).then(response => {
+self.addEventListener('fetch', event => {
+  const request = event.request;
+
+  if (request.method !== 'GET') return;
+
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+
+  if (request.destination === 'image') {
+    event.respondWith(fetch(request).catch(() => caches.match(request)));
+    return;
+  }
+
+  event.respondWith(
+    caches.match(request).then(cached => {
+      const fetchPromise = fetch(request).then(response => {
         if (response && response.status === 200) {
           const clone = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+          caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
         }
         return response;
       }).catch(() => cached);
@@ -39,10 +57,10 @@ self.addEventListener('fetch', e => {
   );
 });
 
-self.addEventListener('activate', e => {
-  e.waitUntil(
+self.addEventListener('activate', event => {
+  event.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+      Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))
     )
   );
 });

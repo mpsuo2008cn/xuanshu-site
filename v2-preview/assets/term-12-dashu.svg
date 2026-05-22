@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1600" viewBox="0 0 900 1600">
+  <defs>
+    <linearGradient id="t11-paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf1"/>
+      <stop offset=".56" stop-color="#f8efe1"/>
+      <stop offset="1" stop-color="#fff8ef"/>
+    </linearGradient>
+    <filter id="t11-blur"><feGaussianBlur stdDeviation="6"/></filter>
+    <style>
+      .wash{fill:#bfd1af;opacity:.23;filter:url(#t11-blur)}
+      .ink{fill:none;stroke:#657069;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.28}
+      .accent{fill:#d07868;opacity:.48}
+      .line{stroke:#d07868;stroke-width:3;stroke-linecap:round;fill:none;opacity:.48}
+      .thin{stroke:#657069;stroke-width:1.7;stroke-linecap:round;fill:none;opacity:.3}
+    </style>
+  </defs>
+  <rect width="900" height="1600" fill="url(#t11-paper)"/>
+  <circle cx="720" cy="150" r="78" fill="#d07868" opacity=".12"/>
+  <path class="wash" d="M0 560 C90 480 156 538 238 442 C318 350 370 520 468 422 C592 300 718 468 860 378 L860 860 L0 860 Z"/>
+  <path class="ink" d="M20 552 C88 492 154 536 230 450 C310 360 368 518 462 428 C584 310 704 470 838 386"/>
+  <path class="thin" d="M182 610 C282 542 350 596 452 534 C546 476 648 546 806 500"/>
+  <g transform="translate(500 156)"><path d="M50 100 C95 82 108 92 68 122" fill="#d07868" opacity=".25" transform="rotate(-8 50 100)"/><path d="M150 84 C195 66 208 76 168 106" fill="#d07868" opacity=".25" transform="rotate(10 150 84)"/><path d="M84 178 C129 160 142 170 102 200" fill="#d07868" opacity=".25" transform="rotate(12 84 178)"/><circle cx="230" cy="28" r="34" fill="#d07868" opacity=".18"/></g>
+  <path class="thin" d="M88 720 C188 668 270 712 360 654"/>
+  <path class="thin" d="M580 1000 C672 960 742 1010 832 952"/>
+  <text x="80" y="210" font-family="serif" font-size="96" fill="#222b2b" opacity=".92">大暑</text>
+  <rect x="84" y="246" width="178" height="52" rx="26" fill="#fff7ea" stroke="#d07868" stroke-width="2" opacity=".76"/>
+  <text x="112" y="282" font-family="serif" font-size="28" fill="#d07868" opacity=".9">二十四节气</text>
+</svg>

@@ -62,7 +62,7 @@ const LIUCHONG_GUA = new Set([
 ]);
 
 const APP_VERSION = 'v1.0.0';
-const FEEDBACK_EMAIL = 'feedback@example.com';
+const FEEDBACK_EMAIL = '112238304@qq.com';
 const WECHAT_ID = 'mpsuo2008cn';
 let toastTimer = null;
 const LIUHE_GUA = new Set([
@@ -604,11 +604,15 @@ function handleTab(tab) {
 
 function handleMineAction(action) {
   if (action === 'open-calendar') {
-    location.href = '../index.html';
+    location.href = '../v2-preview/';
     return;
   }
   if (action === 'open-bazi') {
     location.href = '../bazi/';
+    return;
+  }
+  if (action === 'show-favorites') {
+    showFavorites();
     return;
   }
   if (action === 'consult') {
@@ -633,7 +637,7 @@ function handleMineAction(action) {
 }
 
 function openConsult() {
-  writeClipboard(WECHAT_ID, '微信号已复制，可添加咨询解卦');
+  writeClipboard(WECHAT_ID, '微信号已复制，可反馈建议');
 }
 
 function openConsultModal() {
@@ -644,11 +648,11 @@ function openConsultModal() {
   modal.id = 'consultModal';
   modal.innerHTML = `<div class="consult-modal-panel">
     <div class="consult-modal-head">
-      <h3>命盘详解咨询</h3>
+      <h3>意见反馈</h3>
       <button class="consult-modal-close" type="button">×</button>
     </div>
     <div class="consult-modal-body">
-      <p>可添加微信咨询解卦：${WECHAT_ID}</p>
+      <p>可添加微信反馈建议：${WECHAT_ID}</p>
       <p>传统民俗文化参考，不替代医疗、法律、投资等专业建议。</p>
       <button class="btn btn-primary" type="button" data-consult-copy>复制微信号</button>
     </div>
@@ -908,12 +912,13 @@ function processManualDivination() {
 
 function displayResult(lines, paipanHtml, question) {
   const consultHtml = getConsultHtml();
+  const favoriteHtml = getFavoriteActionHtml();
   // 同时写入右侧面板（PC 端备用）
   const resultDiv = document.getElementById('result');
   if (resultDiv) {
     resultDiv.innerHTML = `<div class="time-info">${
       lines.map(l => `<div class="info-row"><span class="info-value">${l}</span></div>`).join('')
-    }</div><div class="gua-result">${paipanHtml}</div>${consultHtml}`;
+    }</div><div class="gua-result">${paipanHtml}</div>${favoriteHtml}${consultHtml}`;
   }
 
   // 写入全屏弹窗
@@ -922,15 +927,28 @@ function displayResult(lines, paipanHtml, question) {
   if (modal && content) {
     content.innerHTML = `<div class="time-info">${
       lines.map(l => `<div class="info-row"><span class="info-value">${l}</span></div>`).join('')
-    }</div><div class="gua-result">${paipanHtml}</div>${consultHtml}`;
+    }</div><div class="gua-result">${paipanHtml}</div>${favoriteHtml}${consultHtml}`;
     modal.classList.add('active');
   }
 
+  bindFavoriteButtons({ question, lines, paipanHtml });
   saveToHistory(question, lines, paipanHtml);
 }
 
 function getConsultHtml() {
-  return `<button class="btn btn-light consult-entry" type="button" data-consult-action="liuyao">专业人工解读</button>`;
+  return '';
+}
+
+function getFavoriteActionHtml() {
+  return `<div class="result-actions">
+    <button class="btn btn-primary favorite-save" type="button">收藏卦盘</button>
+  </div>`;
+}
+
+function bindFavoriteButtons(item) {
+  document.querySelectorAll('.favorite-save').forEach(btn => {
+    btn.addEventListener('click', () => saveFavorite(item, btn));
+  });
 }
 
 function saveToHistory(question, lines, paipanHtml) {
@@ -950,10 +968,45 @@ function saveToHistory(question, lines, paipanHtml) {
   }
 }
 
+function saveFavorite(item, button) {
+  try {
+    const favorites = JSON.parse(localStorage.getItem('liuyaoFavorites') || '[]');
+    const fingerprint = `${item.question || ''}|${item.lines.join('|')}|${item.paipanHtml}`;
+    const exists = favorites.some(fav => fav.fingerprint === fingerprint);
+    if (exists) {
+      showToast('这个卦盘已经收藏过了');
+      if (button) button.textContent = '已收藏';
+      return;
+    }
+    favorites.unshift({
+      id: Date.now(),
+      date: new Date().toLocaleString(),
+      question: item.question,
+      lines: item.lines,
+      paipanHtml: item.paipanHtml,
+      fingerprint
+    });
+    if (favorites.length > 100) favorites.length = 100;
+    localStorage.setItem('liuyaoFavorites', JSON.stringify(favorites));
+    document.querySelectorAll('.favorite-save').forEach(btn => {
+      btn.textContent = '已收藏';
+      btn.classList.add('saved');
+    });
+    showToast('卦盘已收藏');
+  } catch (e) {
+    console.error('保存收藏失败:', e);
+    showToast('收藏失败，请稍后再试');
+  }
+}
+
 function showHistory() {
   const modal = document.getElementById('historyModal');
   const list = document.getElementById('historyList');
   if (!modal || !list) return;
+  const title = document.querySelector('#historyModal .modal-header h3');
+  const clearBtn = document.getElementById('clearHistory');
+  if (title) title.textContent = '历史排盘记录';
+  if (clearBtn) clearBtn.style.display = '';
 
   let history = [];
   try { history = JSON.parse(localStorage.getItem('liuyaoHistory') || '[]'); } catch (e) {}
@@ -974,6 +1027,34 @@ function showHistory() {
   modal.classList.add('active');
 }
 
+function showFavorites() {
+  const modal = document.getElementById('historyModal');
+  const list = document.getElementById('historyList');
+  if (!modal || !list) return;
+  const title = document.querySelector('#historyModal .modal-header h3');
+  const clearBtn = document.getElementById('clearHistory');
+  if (title) title.textContent = '我的收藏';
+  if (clearBtn) clearBtn.style.display = 'none';
+
+  let favorites = [];
+  try { favorites = JSON.parse(localStorage.getItem('liuyaoFavorites') || '[]'); } catch (e) {}
+
+  list.innerHTML = favorites.length === 0
+    ? '<div class="history-empty">暂无收藏卦盘</div>'
+    : favorites.map(item =>
+        `<div class="history-item">
+          <div class="history-item-time">${item.date}</div>
+          <div class="history-item-question">${item.question || '未指定'}</div>
+        </div>`
+      ).join('');
+
+  list.querySelectorAll('.history-item').forEach((el, idx) => {
+    el.addEventListener('click', () => showFavoriteDetail(favorites[idx]));
+  });
+
+  modal.classList.add('active');
+}
+
 function showHistoryDetail(item) {
   const modal = document.getElementById('detailModal');
   const title = document.getElementById('detailTitle');
@@ -981,6 +1062,19 @@ function showHistoryDetail(item) {
   if (!modal || !title || !content) return;
 
   title.textContent = '历史记录 - ' + item.date;
+  content.innerHTML = `<div class="time-info">${
+    item.lines.map(l => `<div class="info-row"><span class="info-value">${l}</span></div>`).join('')
+  }</div><div class="gua-result">${item.paipanHtml}</div>${getConsultHtml()}`;
+  modal.classList.add('active');
+}
+
+function showFavoriteDetail(item) {
+  const modal = document.getElementById('detailModal');
+  const title = document.getElementById('detailTitle');
+  const content = document.getElementById('detailContent');
+  if (!modal || !title || !content) return;
+
+  title.textContent = '收藏卦盘 - ' + item.date;
   content.innerHTML = `<div class="time-info">${
     item.lines.map(l => `<div class="info-row"><span class="info-value">${l}</span></div>`).join('')
   }</div><div class="gua-result">${item.paipanHtml}</div>${getConsultHtml()}`;
