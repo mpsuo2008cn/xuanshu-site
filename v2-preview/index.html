@@ -1004,20 +1004,28 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 .nav-ico .sun-fill { fill: currentColor; stroke: none; opacity: .78; }
 .home-indicator { position:fixed; z-index:12; left:50%; bottom:6px; transform:translateX(-50%); width:140px; height:5px; border-radius:4px; background:#111; }
 @media (max-width: 480px) {
-  .phone { padding: 0 10px 88px; }
-  .hero.with-bottom-art { min-height: 104px; padding: 14px 14px 8px; }
-  .brand-title { font-size: 33px; }
-  .slogan { margin-top: 8px; font-size: 15px; letter-spacing: 4px; }
-  .calendar-card { padding: 14px 10px 13px; }
-  .month-head { padding-bottom: 12px; }
-  .month-title { font-size: 30px; }
-  .week { padding-bottom: 10px; font-size: 17px; }
-  .day { min-height: 55px; padding-top: 9px; }
-  .solar { font-size: 24px; }
-  .lunar { margin-top: 5px; font-size: 13px; }
-  .summary-card { margin-top: 12px; min-height: 150px; padding: 17px 16px 16px 22px; }
-  .summary-date { font-size: 32px; margin-bottom: 11px; }
-  .fortune-card { margin-top: 12px; padding: 15px 16px 14px; }
+  .phone { padding: 0 10px 82px; }
+  .hero.with-bottom-art { min-height: 86px; padding: 12px 14px 6px; border-radius: 0 0 18px 18px; }
+  .brand-title { font-size: 31px; }
+  .brand-seal { font-size: 12px; padding: 4px 3px; border-radius: 6px; }
+  .slogan { margin-top: 7px; font-size: 14px; letter-spacing: 4px; }
+  .calendar-card { padding: 12px 9px 11px; border-radius: 16px; }
+  .month-head { padding: 0 4px 9px; }
+  .month-title { font-size: 28px; }
+  .today-pill { width: 38px; height: 38px; font-size: 20px; }
+  .week { padding-bottom: 8px; font-size: 16px; }
+  .day { min-height: 46px; padding-top: 7px; }
+  .solar { font-size: 22px; }
+  .lunar { margin-top: 4px; font-size: 12px; }
+  .day.festival .lunar { font-size: 11px; }
+  .day.selected::before { top: 3px; width: 44px; height: 44px; }
+  .summary-card { margin-top: 10px; min-height: 124px; padding: 14px 14px 13px 18px; border-radius: 16px; }
+  .tag-vertical { width: 29px; height: 54px; font-size: 15px; }
+  .summary-date { font-size: 28px; margin-bottom: 9px; }
+  .ganzhi { font-size: 14px; letter-spacing: 2px; margin-bottom: 12px; }
+  .yi-ji { gap: 8px; font-size: 15px; line-height: 1.35; }
+  .badge { width: 24px; height: 24px; font-size: 14px; }
+  .fortune-card { margin-top: 10px; padding: 14px 16px 13px; }
   .wanxiang-hero { min-height: 72px; padding: 15px 16px 8px; }
   .wanxiang-hero h1 { font-size: 27px; margin-bottom: 6px; }
   .wanxiang-hero p { font-size: 14px; }
@@ -1043,6 +1051,92 @@ button { font: inherit; color: inherit; border: 0; background: none; }
   #page-solar { padding-top: 0; }
   .solar-hero { min-height: 310px; padding-top: 0; }
   .solar-hero h1 { margin-top: 6px; font-size: 52px; }
+  .oracle-card { min-height: 112px; padding: 13px 14px; }
+  .oracle-poem { margin-top: 8px; font-size: 18px; line-height: 1.45; }
+  .oracle-note { margin-top: 7px; }
+  .dream-card { padding: 14px; gap: 9px; }
+  .dream-input { padding: 10px 12px; }
+  .sky-card { min-height: 96px; padding: 12px 13px; }
+  .quote-card { min-height: 104px; padding: 17px 16px; }
+  .quote-main { font-size: 19px; line-height: 1.6; }
+  .fortune-detail-card { padding: 15px 14px; margin-bottom: 10px; }
+  .fortune-detail-title { font-size: 19px; margin-bottom: 7px; }
+  .fortune-detail-text { font-size: 15px; line-height: 1.72; }
+  .fortune-score-row { gap: 6px; margin-top: 10px; }
+  .score-pill { padding: 8px 3px; font-size: 12px; }
+  .score-pill b { font-size: 15px; }
+  .detail-card { padding: 15px 14px; margin-bottom: 10px; }
+  .wide-yiji { gap: 15px; font-size: 16px; line-height: 1.72; }
+  .god-row { min-height: 52px; grid-template-columns: 82px 1fr; }
+  .god-title { font-size: 17px; }
+  .god-text { font-size: 16px; line-height: 1.55; }
+  .info-cell { min-height: 70px; font-size: 15px; line-height: 1.5; }
+  .cell-title { font-size: 17px; }
+  .hour-cell { padding: 14px 8px; }
+  .hour-grid { grid-template-columns: 46px repeat(12, 1fr); font-size: 13px; gap: 3px 0; }
+  .hour-label { font-size: 16px; }
+  .zeri-panel { padding: 14px; margin-bottom: 10px; }
+  .zeri-tabs { margin: 6px 0 10px; }
+  .zeri-tab { padding: 8px 6px; }
+  .zeri-form { gap: 8px; }
+  .zeri-form select,
+  .zeri-form input { padding: 9px 10px; }
+  .zeri-btn { padding: 10px 16px; font-size: 16px; }
+  .scroll-hero { padding: 18px 15px 12px; margin-bottom: 10px; }
+  .scroll-hero h1 { font-size: 31px; }
+  .scroll-hero p { font-size: 15px; }
+  .scroll-card { padding: 13px 14px; gap: 6px; }
+  .scroll-card h3 { font-size: 20px; }
+  .scroll-card p { font-size: 14px; line-height: 1.55; }
+  .advice-list { margin-top: 8px; }
+  .advice-row { min-height: 62px; padding: 10px 14px; grid-template-columns: 44px 1fr 18px; gap: 10px; }
+  .advice-icon { width: 36px; height: 36px; font-size: 19px; }
+  .advice-row h3 { font-size: 18px; }
+  .advice-row p { font-size: 14px; line-height: 1.4; }
+  .health-card { margin-top: 4px; padding: 12px 14px; grid-template-columns: 1fr 92px; }
+  .health-card h2 { font-size: 20px; }
+  .health-card p { font-size: 14px; line-height: 1.5; }
+}
+@media (max-width: 480px) and (max-height: 760px) {
+  .phone { padding-left: 8px; padding-right: 8px; }
+  .hero.with-bottom-art { min-height: 72px; padding: 8px 12px 5px; }
+  .brand-title { font-size: 27px; }
+  .slogan { margin-top: 5px; font-size: 13px; }
+  .calendar-card { padding: 10px 8px 9px; }
+  .month-title { font-size: 25px; }
+  .today-pill { width: 34px; height: 34px; font-size: 18px; }
+  .week { font-size: 15px; padding-bottom: 6px; }
+  .day { min-height: 41px; padding-top: 5px; }
+  .solar { font-size: 20px; }
+  .lunar { font-size: 11px; margin-top: 3px; }
+  .day.festival .lunar { font-size: 10px; }
+  .day.selected::before { width: 39px; height: 39px; }
+  .summary-card { min-height: 112px; padding: 12px 12px 11px 16px; }
+  .summary-date { font-size: 25px; }
+  .ganzhi { font-size: 13px; margin-bottom: 10px; }
+  .yi-ji { font-size: 14px; }
+  .wanxiang-hero,
+  .tools-hero { min-height: 64px; padding-top: 12px; }
+  .section-label { margin: 9px 4px 5px; }
+  .oracle-card { min-height: 98px; }
+  .tool-card { min-height: 92px; padding: 12px 10px; }
+  .tool-icon { width: 42px; height: 42px; font-size: 23px; margin-bottom: 7px; }
+  .tool-card h3 { font-size: 20px; margin-bottom: 5px; }
+  .tool-card p { font-size: 13px; line-height: 1.45; }
+  .mine-profile-card { min-height: 84px; }
+  .avatar { width: 96px; height: 72px; flex-basis: 96px; background-size: 160px auto; }
+  .mine-mark-grid { gap: 7px; }
+  .mine-mark-item { padding: 9px 8px; }
+  .mine-mark-item b { font-size: 20px; }
+  .mine-mark-item span { font-size: 13px; }
+  .mine-mark-item small { font-size: 10px; }
+  .topline { min-height: 44px; }
+  .section-title { font-size: 21px; }
+  .detail-hero { padding: 6px 0 14px; }
+  .big-lunar { font-size: 42px; }
+  .detail-gz { margin-top: 14px; font-size: 15px; }
+  .solar-hero { min-height: 286px; }
+  .solar-hero h1 { font-size: 46px; }
 }
 </style>
 </head>
@@ -1077,15 +1171,6 @@ button { font: inherit; color: inherit; border: 0; background: none; }
         <div class="yi-ji"><div><span class="badge yi">宜</span><span>祭祀　祈福　求嗣　出行　解除　订盟　纳采</span></div><div><span class="badge ji">忌</span><span>入宅　安葬　作灶　伐木</span></div></div>
       </div>
       <div class="bamboo-art"></div>
-    </button>
-    <button class="card fortune-card" data-open="fortune">
-      <div class="fortune-head">
-        <div class="fortune-title">今日运势</div>
-        <div class="fortune-stars">★★★★☆</div>
-      </div>
-      <div class="fortune-line"><b>宜</b><span>顺势推进签约、出行、沟通之事</span></div>
-      <div class="fortune-line"><b>忌</b><span>因急躁而做重大决定</span></div>
-      <div class="fortune-meta"><span>财神：东南</span><span>幸运色：朱砂红</span></div>
     </button>
   </section>
 
