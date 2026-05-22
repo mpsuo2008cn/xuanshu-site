@@ -168,6 +168,15 @@ button { cursor: pointer; }
   font-size: 20px;
   font-weight: 500;
 }
+
+.title-site {
+  color: var(--muted);
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
 .form-group { margin-bottom: 17px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .label { display: block; margin-bottom: 8px; color: #4a4742; font-size: 14px; }
@@ -290,7 +299,7 @@ button { cursor: pointer; }
   padding: 16px 18px;
 }
 
-.modal-header-fullscreen h3 { margin: 0; color: var(--teal); font-size: 20px; font-weight: 500; }
+.modal-header-fullscreen h3 { margin: 0; color: var(--teal); font-size: 20px; font-weight: 500; line-height: 1.35; }
 .modal-close-fullscreen { border: 0; color: var(--muted); background: transparent; font-size: 24px; line-height: 1; }
 .modal-body-fullscreen { flex: 1 1 auto; max-height: calc(100vh - 92px); overflow: auto; padding: 18px; }
 

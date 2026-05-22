@@ -351,6 +351,15 @@ button {
   font-weight: 500;
 }
 
+.title-site {
+  color: var(--muted);
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
 .divider,
 .divider-flex {
   height: 1px;
@@ -751,6 +760,7 @@ button {
   color: var(--teal);
   font-size: 20px;
   font-weight: 500;
+  line-height: 1.35;
 }
 
 .modal-close,
