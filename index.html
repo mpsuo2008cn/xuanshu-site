@@ -2188,11 +2188,18 @@ function closeDesktopGuide() {
 }
 addOpenDay();
 const tabs = document.querySelectorAll('.nav-btn');
+function setElementClass(el, name, enabled) {
+  if (!el) return;
+  const classes = String(el.getAttribute('class') || '').split(/\s+/).filter(Boolean);
+  const next = classes.filter(item => item !== name);
+  if (enabled) next.push(name);
+  el.setAttribute('class', Array.from(new Set(next)).join(' '));
+}
 function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.page').forEach(p => setElementClass(p, 'active', false));
   const page = document.getElementById('page-' + id);
   if (!page) return;
-  page.classList.add('active');
+  setElementClass(page, 'active', true);
   if (id !== 'scroll-detail') setSeo(defaultTitle, defaultDescription);
   if (id === 'detail') renderDetail();
   if (id === 'discover') { renderStarInfo(); renderDailyQuote(); }
@@ -2203,7 +2210,7 @@ function showPage(id) {
   if (id === 'dream') addFootprint('dream');
   if (id === 'zeri') addFootprint('zeri');
   if (id === 'mine') renderMinePage();
-  tabs.forEach(b => b.classList.toggle('active', b.dataset.tab === id || (id === 'solar' && b.dataset.tab === 'tools') || (id === 'zeri' && b.dataset.tab === 'tools') || (id === 'dream' && b.dataset.tab === 'tools') || (id === 'scrolls' && b.dataset.tab === 'tools') || (id === 'scroll-detail' && b.dataset.tab === 'tools') || (id === 'detail' && b.dataset.tab === 'detail')));
+  tabs.forEach(b => setElementClass(b, 'active', b.dataset.tab === id || (id === 'solar' && b.dataset.tab === 'tools') || (id === 'zeri' && b.dataset.tab === 'tools') || (id === 'dream' && b.dataset.tab === 'tools') || (id === 'scrolls' && b.dataset.tab === 'tools') || (id === 'scroll-detail' && b.dataset.tab === 'tools') || (id === 'detail' && b.dataset.tab === 'detail')));
   scrollTo({ top: 0, behavior: 'auto' });
 }
 document.addEventListener('click', e => {
@@ -2782,6 +2789,34 @@ renderSchedules();
 renderMinePage();
 const initialPage = new URLSearchParams(location.search).get('page');
 if (initialPage && document.getElementById('page-' + initialPage)) showPage(initialPage);
+</script>
+<script>
+(function () {
+  function setClass(el, name, enabled) {
+    if (!el) return;
+    var current = (el.getAttribute('class') || '').split(/\s+/).filter(Boolean).filter(function (item) { return item !== name; });
+    if (enabled) current.push(name);
+    el.setAttribute('class', Array.from(new Set(current)).join(' '));
+  }
+  function activateFromQuery() {
+    var requested = new URLSearchParams(location.search).get('page');
+    if (!requested) return;
+    var page = document.getElementById('page-' + requested);
+    if (!page) return;
+    document.documentElement.setAttribute('data-initial-page', requested);
+    document.querySelectorAll('.page').forEach(function (item) { setClass(item, 'active', false); });
+    setClass(page, 'active', true);
+    document.querySelectorAll('.nav-btn').forEach(function (btn) {
+      var tab = btn.getAttribute('data-tab');
+      var isToolsChild = ['zeri', 'solar', 'dream', 'scrolls', 'scroll-detail'].indexOf(requested) !== -1 && tab === 'tools';
+      setClass(btn, 'active', tab === requested || isToolsChild);
+    });
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+  activateFromQuery();
+  requestAnimationFrame(activateFromQuery);
+  setTimeout(activateFromQuery, 160);
+})();
 </script>
 </body>
 </html>

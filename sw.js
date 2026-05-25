@@ -1,4 +1,4 @@
-const CACHE_NAME = 'wanlianli-v138';
+const CACHE_NAME = 'wanlianli-v139';
 
 const CORE_ASSETS = [
   'index.html',
@@ -27,6 +27,7 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS))
   );
+  self.skipWaiting();
 });
 
 self.addEventListener('fetch', event => {
@@ -36,6 +37,11 @@ self.addEventListener('fetch', event => {
 
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+
+  if (request.mode === 'navigate' || request.destination === 'document') {
+    event.respondWith(fetch(request).catch(() => caches.match(request)));
+    return;
+  }
 
   if (request.destination === 'image') {
     event.respondWith(fetch(request).catch(() => caches.match(request)));
@@ -62,4 +68,5 @@ self.addEventListener('activate', event => {
       Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))
     )
   );
+  self.clients.claim();
 });
