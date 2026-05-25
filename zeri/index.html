@@ -2223,6 +2223,15 @@ function showPage(id) {
   tabs.forEach(b => setElementClass(b, 'active', b.dataset.tab === id || (id === 'solar' && b.dataset.tab === 'tools') || (id === 'zeri' && b.dataset.tab === 'tools') || (id === 'dream' && b.dataset.tab === 'tools') || (id === 'scrolls' && b.dataset.tab === 'tools') || (id === 'scroll-detail' && b.dataset.tab === 'tools') || (id === 'detail' && b.dataset.tab === 'detail')));
   scrollTo({ top: 0, behavior: 'auto' });
 }
+window.__xuanshuHydratePage = function (id) {
+  if (id === 'detail') renderDetail();
+  if (id === 'discover') { renderStarInfo(); renderDailyQuote(); }
+  if (id === 'zeri') renderZeriPage();
+  if (id === 'solar') syncCurrentSolarTerm();
+  if (id === 'scrolls') renderScrollList();
+  if (id === 'star-note') renderStarInfo();
+  if (id === 'mine') renderMinePage();
+};
 document.addEventListener('click', e => {
   const hrefBtn = e.target.closest('[data-href]');
   if (hrefBtn) {
@@ -2846,6 +2855,7 @@ if (initialPage && document.getElementById('page-' + initialPage)) showPage(init
       var isToolsChild = ['zeri', 'solar', 'dream', 'scrolls', 'scroll-detail'].indexOf(requested) !== -1 && tab === 'tools';
       setClass(btn, 'active', tab === requested || isToolsChild);
     });
+    if (typeof window.__xuanshuHydratePage === 'function') window.__xuanshuHydratePage(requested);
     window.scrollTo({ top: 0, behavior: 'auto' });
   }
   activateFromQuery();
