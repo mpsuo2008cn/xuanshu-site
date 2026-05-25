@@ -112,7 +112,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 .wifi { width: 15px; height: 12px; border: 3px solid #111; border-left-color: transparent; border-right-color: transparent; border-bottom: 0; border-radius: 12px 12px 0 0; }
 .battery { width: 24px; height: 12px; border: 2px solid #111; border-radius: 3px; position: relative; }
 .battery::after { content:""; position:absolute; right:-5px; top:3px; width:3px; height:5px; background:#111; border-radius:0 2px 2px 0; }
-.page { position: relative; z-index: 1; display: none; animation: fade .22s ease; }
+.page { position: relative; z-index: 1; display: none; }
 .page.active { display: block; }
 #page-detail {
   min-height: calc(100vh - 8px);
@@ -1939,13 +1939,23 @@ const detailDays = [
   }
 ];
 let detailIndex = 1;
+function shouldShowSplash() {
+  const isHomePath = location.pathname === '/' || location.pathname === '/index.html';
+  const hasPageTarget = new URLSearchParams(location.search).has('page');
+  return isHomePath && !hasPageTarget;
+}
+const splashDelay = shouldShowSplash() ? 3000 : 0;
 setTimeout(() => {
   const splash = document.getElementById('splash');
   if (splash) {
-    splash.classList.add('hide');
-    setTimeout(() => splash.remove(), 1100);
+    if (splashDelay) {
+      splash.classList.add('hide');
+      setTimeout(() => splash.remove(), 1100);
+    } else {
+      splash.remove();
+    }
   }
-}, 3000);
+}, splashDelay);
 function buildCalendarDays(year, month) {
   const first = new Date(year, month - 1, 1);
   const start = new Date(year, month - 1, 1 - first.getDay());
