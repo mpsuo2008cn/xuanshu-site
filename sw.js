@@ -1,9 +1,8 @@
-const CACHE_NAME = 'wanlianli-v113';
+const CACHE_NAME = 'wanlianli-v138';
 
 const CORE_ASSETS = [
   'index.html',
   'manifest.json',
-  'v2-preview/index.html',
   'v2-preview/dreamData.js',
   'assets/lunar.js',
   'icons/icon-192.png',

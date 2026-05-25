@@ -2,7 +2,7 @@
   "name": "玄枢万年历",
   "short_name": "玄枢",
   "description": "玄枢万年历，观天时，知四序。",
-  "start_url": "/v2-preview/",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#f4efe4",
