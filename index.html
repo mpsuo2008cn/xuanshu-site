@@ -2787,7 +2787,22 @@ renderOracleCount();
 renderDetail();
 renderSchedules();
 renderMinePage();
-const initialPage = new URLSearchParams(location.search).get('page');
+function getInitialPageFromLocation() {
+  const queryPage = new URLSearchParams(location.search).get('page');
+  if (queryPage) return queryPage;
+  const pathPageMap = {
+    '/zeri/': 'zeri',
+    '/zeri/index.html': 'zeri',
+    '/jieqi/': 'solar',
+    '/jieqi/index.html': 'solar',
+    '/dream/': 'dream',
+    '/dream/index.html': 'dream',
+    '/scrolls/': 'scrolls',
+    '/scrolls/index.html': 'scrolls'
+  };
+  return pathPageMap[location.pathname] || '';
+}
+const initialPage = getInitialPageFromLocation();
 if (initialPage && document.getElementById('page-' + initialPage)) showPage(initialPage);
 </script>
 <script>
@@ -2799,7 +2814,17 @@ if (initialPage && document.getElementById('page-' + initialPage)) showPage(init
     el.setAttribute('class', Array.from(new Set(current)).join(' '));
   }
   function activateFromQuery() {
-    var requested = new URLSearchParams(location.search).get('page');
+    var pathPageMap = {
+      '/zeri/': 'zeri',
+      '/zeri/index.html': 'zeri',
+      '/jieqi/': 'solar',
+      '/jieqi/index.html': 'solar',
+      '/dream/': 'dream',
+      '/dream/index.html': 'dream',
+      '/scrolls/': 'scrolls',
+      '/scrolls/index.html': 'scrolls'
+    };
+    var requested = new URLSearchParams(location.search).get('page') || pathPageMap[location.pathname] || '';
     if (!requested) return;
     var page = document.getElementById('page-' + requested);
     if (!page) return;
