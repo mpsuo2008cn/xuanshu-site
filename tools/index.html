@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>玄枢工具大全 - 六爻起卦 八字排盘 黄历择吉</title>
+  <meta name="description" content="玄枢工具大全提供六爻起卦、八字排盘、黄历择日、节气养生、周公解梦等传统文化工具。">
+  <meta name="keywords" content="六爻,八字排盘,黄历,周公解梦,择吉,节气,万年历">
+  <meta name="msvalidate.01" content="7262D07C78F5CB782C803882F5195FD4">
+  <link rel="canonical" href="https://ixuanshu.cn/tools/">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#fbf4e9">
+  <style>
+    :root {
+      --paper: #fbf4e9;
+      --ink: #222927;
+      --muted: #736c61;
+      --line: rgba(138, 104, 68, .17);
+      --red: #b8322b;
+      --gold: #9a652f;
+      --tool-card-1: url("/v2-preview/assets/card-01-bamboo-ai.webp");
+      --tool-card-2: url("/v2-preview/assets/card-02-lotus-ai.webp");
+      --tool-card-3: url("/v2-preview/assets/card-03-tea-ai.webp");
+      --tool-card-4: url("/v2-preview/assets/card-04-plum-bridge-ai.webp");
+      --tool-card-5: url("/v2-preview/assets/card-05-reed-boat-ai.webp");
+      --tool-card-6: url("/v2-preview/assets/card-06-pine-rock-ai.webp");
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(210, 171, 118, .22), transparent 30%),
+        linear-gradient(180deg, #fffaf3 0%, #f8efe4 55%, #f6eadc 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    .phone {
+      width: min(100vw, 430px);
+      min-height: 100vh;
+      padding: 0 12px 92px;
+      position: relative;
+      overflow: hidden;
+    }
+    .tools-hero {
+      min-height: 104px;
+      margin: 0 -12px 12px;
+      padding: 22px 24px 12px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 0 20px 20px;
+    }
+    .tools-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(90deg, rgba(255,251,244,.28) 0%, rgba(255,251,244,.12) 34%, rgba(255,251,244,.02) 70%, rgba(255,251,244,0) 100%),
+        linear-gradient(180deg, rgba(255,251,244,.05), rgba(255,251,244,0) 58%),
+        url("/v2-preview/assets/hero-reeds.webp");
+      background-size: cover;
+      background-position: center;
+    }
+    .tools-hero h1,
+    .tools-hero p {
+      position: relative;
+      z-index: 1;
+    }
+    .tools-hero h1 {
+      margin: 0 0 10px;
+      font-size: 36px;
+      line-height: 1;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+    .tools-hero p {
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: 4px;
+      color: #303536;
+    }
+    .brand-seal {
+      display: inline-block;
+      writing-mode: vertical-rl;
+      margin-left: 8px;
+      padding: 4px 3px;
+      color: #fff;
+      background: var(--red);
+      border-radius: 6px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      vertical-align: middle;
+    }
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 4px 16px rgba(86, 59, 33, .08);
+    }
+    .tool-card {
+      min-height: 92px;
+      padding: 12px 10px;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background: rgba(255,250,243,.66);
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+    .tool-card:active {
+      transform: scale(.985);
+      box-shadow: 0 2px 10px rgba(86, 59, 33, .08);
+    }
+    .tool-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: var(--tool-bg) center / cover no-repeat;
+    }
+    .tool-card:nth-child(1) { --tool-bg: var(--tool-card-1); }
+    .tool-card:nth-child(2) { --tool-bg: var(--tool-card-2); }
+    .tool-card:nth-child(3) { --tool-bg: var(--tool-card-3); }
+    .tool-card:nth-child(4) { --tool-bg: var(--tool-card-4); }
+    .tool-card:nth-child(5) { --tool-bg: var(--tool-card-5); }
+    .tool-card:nth-child(6) { --tool-bg: var(--tool-card-6); }
+    .tool-icon, .tool-card h2, .tool-card p {
+      position: relative;
+      z-index: 2;
+    }
+    .tool-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(242,223,199,.82);
+      border: 1px solid rgba(137,87,43,.18);
+      color: #8c5d2f;
+      font-size: 23px;
+      margin-bottom: 7px;
+      backdrop-filter: blur(5px);
+    }
+    .tool-card h2 {
+      margin: 0 0 5px;
+      font-size: 20px;
+      line-height: 1.18;
+      text-shadow: 0 1px 0 rgba(255,255,255,.7);
+    }
+    .tool-card p {
+      margin: 0;
+      color: #5f574b;
+      font-size: 13px;
+      line-height: 1.45;
+      text-shadow: 0 1px 0 rgba(255,255,255,.68);
+    }
+    .seo-section {
+      margin-top: 14px;
+      padding: 16px 16px 15px;
+      background: rgba(255,250,243,.68);
+    }
+    .seo-section h2 {
+      margin: 0 0 10px;
+      color: #8c4d22;
+      font-size: 21px;
+      letter-spacing: 1px;
+    }
+    .seo-section p {
+      margin: 0 0 9px;
+      color: #5f574b;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .site-footer {
+      margin: 14px 0 0;
+      padding: 10px 10px 14px;
+      text-align: center;
+      color: #7c756b;
+      font-size: 11px;
+      line-height: 1.65;
+    }
+    .site-footer a {
+      color: #7c756b;
+    }
+    .beian-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+    .beian-link img {
+      width: 15px;
+      height: 15px;
+    }
+    .bottom-nav {
+      position: fixed;
+      z-index: 10;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: min(100vw, 430px);
+      height: 82px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: rgba(255,250,243,.9);
+      border-top: 1px solid rgba(120,93,58,.16);
+      backdrop-filter: blur(12px);
+      padding-bottom: 10px;
+    }
+    .nav-link {
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: 4px;
+      color: #9b7b58;
+      font-size: 14px;
+      opacity: .58;
+    }
+    .nav-link.active {
+      color: var(--red);
+      font-weight: 700;
+      opacity: 1;
+    }
+    .nav-mark {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      font-size: 23px;
+      line-height: 1;
+    }
+    @media (max-height: 760px) {
+      .tools-hero { min-height: 58px; padding-top: 8px; }
+      .tool-grid { gap: 10px; }
+      .seo-section { padding: 14px 14px 13px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <section class="tools-hero" aria-labelledby="toolsTitle">
+      <h1 id="toolsTitle">万年历<span class="brand-seal">玄枢</span></h1>
+      <p>观天时　知四序</p>
+    </section>
+
+    <section class="tool-grid" aria-label="玄枢工具入口">
+      <a class="card tool-card" href="/liuyao/">
+        <div class="tool-icon" aria-hidden="true">☷</div>
+        <h2>六爻起卦</h2>
+        <p>铜钱起卦<br>排卦解象</p>
+      </a>
+      <a class="card tool-card" href="/bazi/">
+        <div class="tool-icon" aria-hidden="true">八</div>
+        <h2>八字排盘</h2>
+        <p>四柱命盘<br>大运流年</p>
+      </a>
+      <a class="card tool-card" href="/zeri/">
+        <div class="tool-icon" aria-hidden="true">择</div>
+        <h2>良辰吉日</h2>
+        <p>挑选良辰<br>趋吉避凶</p>
+      </a>
+      <a class="card tool-card" href="/jieqi/">
+        <div class="tool-icon" aria-hidden="true">养</div>
+        <h2>节气养生</h2>
+        <p>二十四节气<br>养生提醒</p>
+      </a>
+      <a class="card tool-card" href="/dream/">
+        <div class="tool-icon" aria-hidden="true">梦</div>
+        <h2>周公解梦</h2>
+        <p>梦中有象<br>醒后可解</p>
+      </a>
+      <a class="card tool-card" href="/scrolls/">
+        <div class="tool-icon" aria-hidden="true">卷</div>
+        <h2>玄枢小卷</h2>
+        <p>天时小卷<br>万象可观</p>
+      </a>
+    </section>
+
+    <section class="card seo-section" aria-labelledby="seoTitle">
+      <h2 id="seoTitle">玄枢工具大全</h2>
+      <p>玄枢工具页提供六爻起卦、八字排盘、良辰吉日、节气养生、周公解梦、玄枢小卷等传统文化工具，适合日常查询黄历、择日、节气、命理排盘参考。</p>
+      <p>六爻起卦支持铜钱起卦与卦象解读；八字排盘支持四柱命盘分析；良辰吉日可用于择日参考；节气养生提供二十四节气知识。</p>
+    </section>
+
+    <footer class="site-footer">
+      <div><a href="https://beian.miit.gov.cn/" rel="noreferrer" target="_blank">陇ICP备2026004046号</a></div>
+      <div>
+        <a class="beian-link" href="https://beian.mps.gov.cn/#/query/webSearch?code=62010302001821" rel="noreferrer" target="_blank">
+          <img src="/v2-preview/assets/beian-icon.png" alt="" width="15" height="15" loading="lazy">
+          <span>甘公网安备62010302001821号</span>
+        </a>
+      </div>
+      <div>本站内容仅供娱乐与民俗文化参考，请理性看待。</div>
+    </footer>
+  </main>
+
+  <nav class="bottom-nav" aria-label="底部导航">
+    <a class="nav-link" href="/"><span class="nav-mark" aria-hidden="true">□</span><span>日历</span></a>
+    <a class="nav-link" href="/?page=discover"><span class="nav-mark" aria-hidden="true">◌</span><span>观万象</span></a>
+    <a class="nav-link active" href="/tools/"><span class="nav-mark" aria-hidden="true">▣</span><span>工具</span></a>
+    <a class="nav-link" href="/?page=mine"><span class="nav-mark" aria-hidden="true">♙</span><span>我的</span></a>
+  </nav>
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?638065057f904d8f3ed86eaa15c87734";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</body>
+</html>
