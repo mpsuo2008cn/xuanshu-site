@@ -1,4 +1,4 @@
-* { box-sizing: border-box; }
+﻿* { box-sizing: border-box; }
 
 :root {
   --paper: #f6f1e8;
@@ -20,12 +20,12 @@ html { min-height: 100%; background: var(--paper); }
 body {
   min-height: 100vh;
   margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
   padding-bottom: 82px;
   color: var(--ink);
   font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
-  background:
-    linear-gradient(rgba(246, 241, 232, 0.78), rgba(246, 241, 232, 0.92)),
-    url("/bg-main.webp") center bottom / cover fixed;
+  background: url("page-bg.webp") center bottom / cover no-repeat fixed;
 }
 
 button, input, select { font: inherit; }
@@ -35,26 +35,48 @@ button { cursor: pointer; }
 #app { display: none; }
 #app.show { display: block; }
 .header {
+  position: relative;
+  z-index: 2;
   background: transparent;
   padding: 22px 18px 18px;
   text-align: center;
 }
+.header::before {
+  content: "";
+  position: absolute;
+  inset: -12px 0 -18px;
+  background: linear-gradient(
+    to bottom,
+    rgba(120, 20, 10, 0.55),
+    rgba(120, 20, 10, 0.18),
+    rgba(120, 20, 10, 0)
+  );
+  border-radius: 0 0 28px 28px;
+  z-index: -1;
+}
+.header,
+.header * {
+  position: relative;
+  z-index: 3;
+}
 .header-content { max-width: 540px; margin: 0 auto; }
 .brand-row { display: flex; align-items: center; justify-content: center; gap: 16px; }
-.title { font-size: 34px; font-weight: normal; margin: 0; color: var(--ink); letter-spacing: 2px; }
+.title { font-size: 34px; font-weight: normal; margin: 0; color: #FFE8B8; letter-spacing: 2px; text-shadow: 0 2px 4px rgba(80, 20, 10, 0.65), 0 0 10px rgba(255, 220, 160, 0.35); display: flex; align-items: baseline; justify-content: center; }
 .taiji-mark { font-size: 28px; margin: 0 6px; }
-.seal { font-size: 22px; color: var(--red); font-weight: bold; margin-left: 4px; vertical-align: middle; }
+.seal { font-size: 28px; color: #FFE8B8; font-weight: bold; margin-left: 4px; text-shadow: 0 2px 4px rgba(80, 20, 10, 0.65), 0 0 10px rgba(255, 220, 160, 0.35); }
 .back-link {
   font-size: 15px;
-  color: var(--muted);
+  color: #FFE8B8;
   text-decoration: none;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 232, 184, 0.75);
+  background: rgba(120, 30, 20, 0.28);
+  backdrop-filter: blur(4px);
   border-radius: 18px;
   padding: 3px 14px;
   transition: all 0.2s;
 }
-.back-link:hover { color: var(--red); border-color: var(--red); }
-.subtitle { font-size: 15px; color: var(--muted); margin: 8px 0 0; letter-spacing: 4px; }
+.back-link:hover { color: #fff; border-color: #FFE8B8; }
+.subtitle { font-size: 15px; color: #FFE7C2; font-weight: 600; margin: 8px 0 0; letter-spacing: 2px; text-shadow: 0 1px 4px rgba(80, 20, 10, 0.8), 0 2px 4px rgba(80, 20, 10, 0.65), 0 0 10px rgba(255, 220, 160, 0.35); }
 
 /* ====== Main Content ====== */
 .main-content { max-width: 560px; margin: 0 auto; padding: 0 16px; }
@@ -78,9 +100,17 @@ button { cursor: pointer; }
 }
 
 /* ====== Form ====== */
-.form-group.compact { margin-bottom: 10px; }
+.male-card .form-group.compact,
+.female-card .form-group.compact {
+  margin-bottom: 10px;
+  padding-left: 12px;
+}
 .label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
 .input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: #fffef8; font-size: 15px; }
+.male-card .input,
+.female-card .input {
+  max-width: 260px;
+}
 .input:focus { outline: none; border-color: var(--gold); }
 
 .time-grid {
@@ -112,9 +142,12 @@ button { cursor: pointer; }
   transition: all 0.3s;
 }
 .btn-primary {
-  background: linear-gradient(135deg, var(--red), #c0392b);
+  background: linear-gradient(180deg, #d94b3f, #b32a1f);
   color: #fff;
-  box-shadow: 0 6px 20px rgba(155, 56, 47, 0.3);
+  box-shadow: 0 10px 30px rgba(180, 40, 20, 0.28);
+  transform: translateY(-1px);
+  font-size: 22px;
+  font-weight: 700;
   margin: 18px 0;
 }
 .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(155, 56, 47, 0.4); }
@@ -125,17 +158,17 @@ button { cursor: pointer; }
 .result-show { display: block; animation: fadeIn .3s ease; }
 @keyframes fadeIn { from { opacity:0;transform:translateY(8px) } to { opacity:1;transform:none } }
 
-/* Segmented 历法选择 */
+/* Segmented 鍘嗘硶閫夋嫨 */
 .segmented { display:inline-flex; border-radius:8px; overflow:hidden; border:1px solid var(--line); }
 .segmented .seg { padding:7px 18px; font-size:14px; color:var(--muted); background:transparent; border:none; cursor:pointer; transition:all .2s; }
 .segmented .seg.active { background:var(--red); color:#fff; }
 .segmented .seg:first-child { border-right:1px solid var(--line); }
 
-/* 日期信息提示 */
+/* 鏃ユ湡淇℃伅鎻愮ず */
 .date-info { font-size:.82em; color:var(--muted); margin-top:8px; text-align:center; line-height:1.5; display:none; }
 .date-info.show { display:block; }
 
-/* ====== Layer 1: 九星结论 ====== */
+/* ====== Layer 1: 涔濇槦缁撹 ====== */
 .layer1-card {
   text-align: center;
   padding: 28px 18px;
@@ -171,7 +204,7 @@ button { cursor: pointer; }
 .layer1-icon-bg-xiong .star-desc { color: #bbb; }
 .layer1-icon-bg-xiong .koujue-box { background: rgba(255,255,255,0.08); color: #bbb; }
 
-/* ====== Layer 2: 八字分析 ====== */
+/* ====== Layer 2: 鍏瓧鍒嗘瀽 ====== */
 .detail-card { padding: 22px 18px; }
 .detail-card h3 {
   font-size: 1.1em;
@@ -182,7 +215,7 @@ button { cursor: pointer; }
 }
 .detail-card h3:first-child { margin-top: 0; }
 
-/* 排盘表 */
+/* 鎺掔洏琛?*/
 .bazi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
 .bazi-table { width: 100%; border-collapse: collapse; font-size: 0.88em; }
 .bazi-table th { background: var(--red); color: #fff; padding: 5px; font-size: 0.78em; text-align: center; font-weight: normal; }
@@ -191,7 +224,7 @@ button { cursor: pointer; }
 .bazi-table .ss { font-size: 0.78em; color: var(--muted); }
 .bazi-table .ny { font-size: 0.72em; color: #aaa; }
 
-/* 出生信息 */
+/* 鍑虹敓淇℃伅 */
 .birth-info-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px; }
 .birth-info-box { background:#fdfaf5; border-radius:10px; padding:12px; border:1px solid var(--line); }
 .birth-info-box .birth-label { display:block; font-size:.8em; color:var(--red); font-weight:bold; margin-bottom:4px; }
@@ -217,7 +250,7 @@ button { cursor: pointer; }
 .shensha-list { margin: 6px 0; }
 .shensha-list .tag { margin: 2px 4px; }
 
-/* ====== Layer 3: 综合评定 ====== */
+/* ====== Layer 3: 缁煎悎璇勫畾 ====== */
 .final-card { padding: 22px 18px; border: 2px solid var(--red); background: linear-gradient(180deg, var(--card-bg), rgba(246, 241, 232, 0.7)); }
 .final-card h3 { font-size: 1.15em; color: var(--red); text-align: center; margin: 0 0 16px; }
 .grade-display { text-align: center; padding: 12px; }
@@ -264,7 +297,7 @@ button { cursor: pointer; }
   .title { font-size: 28px; }
 }
 
-.site-footer { text-align:center; padding:20px 0 100px; color:var(--muted); font-size:.78em; }
+.site-footer { text-align:center; padding:0 0 100px; color:rgba(255,230,210,.85); font-size:13px; text-shadow: 0 1px 3px rgba(80,20,10,.5); }
 
 /* Bottom Nav */
 .bottom-nav {
@@ -309,3 +342,107 @@ button { cursor: pointer; }
 .nav-ico .soft-fill { fill: currentColor; stroke: none; opacity: .12; }
 .nav-ico .deep-fill { fill: currentColor; stroke: none; opacity: .24; }
 .nav-ico .sun-fill { fill: currentColor; stroke: none; opacity: .78; }
+
+/* 鐢锋柟鍗＄墖鑳屾櫙 */
+#maleCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  padding: 36px 32px 48px;
+  min-height: 680px;
+  background-image: url("card-bg-male.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#maleCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 250, 245, 0.65);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+  border-radius: 32px;
+}
+#maleCard > * { position: relative; z-index: 2; }
+
+/* 濂虫柟鍗＄墖鑳屾櫙 */
+#femaleCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  padding: 36px 32px 48px;
+  min-height: 680px;
+  background-image: url("card-bg-female.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#femaleCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 250, 245, 0.65);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+  border-radius: 32px;
+}
+#femaleCard > * { position: relative; z-index: 2; }
+
+/* 男方卡片背景 */
+.male-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  padding: 16px 18px 22px;
+}
+.male-card .male-card-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 1;
+  background-image: url('card-bg-male.webp');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 32px;
+}
+.male-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* 女方卡片背景 */
+.female-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  padding: 16px 18px 22px;
+}
+.female-card .female-card-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 1;
+  background-image: url('card-bg-female.webp');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 32px;
+}
+.female-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* 按钮下方统计文案 */
+.calc-subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255, 230, 210, 0.78);
+  margin: -8px 0 14px;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(80, 20, 10, 0.5);
+}

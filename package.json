@@ -1,0 +1,9 @@
+{
+  "name": "xuanshu-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "玄枢万年历 — ixuanshu.cn",
+  "scripts": {
+    "build:scrolls": "node scripts/build-scrolls.js"
+  }
+}

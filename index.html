@@ -206,7 +206,10 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 .round-paint { position:absolute; right: 8px; top: 10px; width: 62px; height: 62px; border-radius:50%; border: 4px solid rgba(181,136,83,.28); background: rgba(255,255,255,.55) url("../bg-main.webp") center / 190px auto no-repeat; }
 .card { background: rgba(255, 251, 244, .86); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); backdrop-filter: blur(8px); }
 .calendar-card { padding: 18px 12px 16px; }
-.month-head { display:flex; justify-content: space-between; align-items:center; padding: 0 6px 16px; }
+.month-head { display:flex; justify-content: space-between; align-items:center; padding: 0 6px 16px; gap: 6px; }
+.month-nav { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 26px; line-height: 1; color: #5a4e3e; background: rgba(163, 109, 53, 0.08); transition: background .15s; cursor: pointer; border: none; font-family: "Noto Serif SC", "Songti SC", serif; }
+.month-nav:hover { background: rgba(163, 109, 53, 0.18); color: #3a2f22; }
+.month-nav:active { background: rgba(163, 109, 53, 0.28); }
 .month-title { font-size: 34px; line-height:1; cursor: pointer; }
 .month-picker {
   position: fixed;
@@ -241,7 +244,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 .picker-actions { display:flex; justify-content:flex-end; gap: 10px; margin-top: 18px; }
 .picker-actions button { padding: 8px 16px; border-radius: 999px; background: #f0dfc8; color:#8b5429; }
 .picker-actions .primary { background: var(--red); color: #fff; }
-.today-pill { width: 44px; height:44px; border-radius: 50%; border: 2px solid rgba(163,109,53,.32); color: #8b5429; background: rgba(249,238,224,.75); font-size: 22px; }
+.today-pill { width: 44px; height:44px; border-radius: 50%; border: 2px solid rgba(163,109,53,.32); color: #8b5429; background: rgba(249,238,224,.75); font-size: 22px; cursor: pointer; }
 .week, .grid { display:grid; grid-template-columns: repeat(7, 1fr); text-align:center; }
 .week { border-bottom: 1px solid var(--line); padding-bottom: 12px; color:#1e2728; font-size: 19px; }
 .week span:first-child, .week span:last-child { color: var(--red); }
@@ -597,6 +600,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 .tool-icon, .tool-card h3, .tool-card p { position:relative; z-index:2; }
 .tool-icon { width:50px; height:50px; border-radius:50%; display:grid; place-items:center; background:rgba(242,223,199,.82); border:1px solid rgba(137,87,43,.18); color:#8c5d2f; font-size:28px; margin-bottom:10px; backdrop-filter:blur(5px); }
 .tool-card h3 { margin:0 0 8px; font-size:25px; text-shadow:0 1px 0 rgba(255,255,255,.7); }
+.hot-badge { display: inline-block; font-size: 10px; color: #fff; background: linear-gradient(135deg,#c42f2d,#e8503a); border-radius: 3px; padding: 1px 5px; margin-left: 3px; vertical-align: middle; letter-spacing: 1px; }
 .tool-card p { margin:0; color:#5f574b; font-size:16px; line-height:1.7; text-shadow:0 1px 0 rgba(255,255,255,.68); }
 .zeri-panel { padding:18px; margin-bottom:12px; }
 .zeri-tabs { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin: 8px 0 14px; }
@@ -1015,6 +1019,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
   .slogan { margin-top: 7px; font-size: 14px; letter-spacing: 4px; }
   .calendar-card { padding: 12px 9px 11px; border-radius: 16px; }
   .month-head { padding: 0 4px 9px; }
+  .month-nav { width: 32px; height: 32px; font-size: 22px; }
   .month-title { font-size: 28px; }
   .today-pill { width: 38px; height: 38px; font-size: 20px; }
   .week { padding-bottom: 8px; font-size: 16px; }
@@ -1116,6 +1121,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
   .brand-title { font-size: 27px; }
   .slogan { margin-top: 5px; font-size: 13px; }
   .calendar-card { padding: 10px 8px 9px; }
+  .month-nav { width: 28px; height: 28px; font-size: 20px; }
   .month-title { font-size: 25px; }
   .today-pill { width: 34px; height: 34px; font-size: 18px; }
   .week { font-size: 15px; padding-bottom: 6px; }
@@ -1175,7 +1181,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
       <div class="hero-art home-hero-art"><div class="mountains"></div><div class="sun"></div><div class="crane">⌁</div><div class="round-paint"></div></div>
     </div>
     <div class="card calendar-card">
-      <div class="month-head"><button class="month-title" id="monthTitle">2024年5月</button><button class="today-pill">今</button></div>
+      <div class="month-head"><button class="month-nav" id="monthPrev" aria-label="上个月">‹</button><button class="month-title" id="monthTitle">2024年5月</button><button class="month-nav" id="monthNext" aria-label="下个月">›</button><button class="today-pill">今</button></div>
       <div class="week"><span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span></div>
       <div class="grid" id="calendarGrid"></div>
     </div>
@@ -1357,14 +1363,14 @@ button { font: inherit; color: inherit; border: 0; background: none; }
   <section class="page" id="page-tools">
     <div class="tools-hero"><h1>万年历<span class="brand-seal">玄枢</span></h1><p>观天时　知四序</p><div class="hero-art tools-hero-art" style="right:0;top:22px"><div class="mountains"></div><div class="sun"></div></div></div>
     <div class="tool-grid">
-      <button class="card tool-card" data-href="../hehun/"><div class="tool-icon">囍</div><h3>八字合婚</h3><p>情侣配对<br>姻缘解析</p></button>
+      <button class="card tool-card" data-href="../hehun/"><div class="tool-icon">囍</div><h3>八字合婚 🔥</h3><p>情侣配对<br>姻缘解析</p></button>
       <button class="card tool-card" data-open="zeri"><div class="tool-icon">择</div><h3>良辰吉日</h3><p>结婚搬家<br>提车开业</p></button>
       <button class="card tool-card" data-href="../bazi/"><div class="tool-icon">八</div><h3>八字排盘</h3><p>四柱命盘<br>大运流年</p></button>
-      <button class="card tool-card" data-href="../liuyao/"><div class="tool-icon">☷</div><h3>六爻起卦</h3><p>感情事业<br>起卦解惑</p></button>
+      <button class="card tool-card" data-href="../liuyao/"><div class="tool-icon">☷</div><h3>六爻起卦<span class="hot-badge">热门</span></h3><p>感情事业<br>起卦解惑</p></button>
       <button class="card tool-card" data-tab="solar"><div class="tool-icon">养</div><h3>节气养生</h3><p>二十四节气<br>养生提醒</p></button>
       <button class="card tool-card" data-open="dream"><div class="tool-icon">梦</div><h3>周公解梦</h3><p>梦中有象<br>醒后可解</p></button>
       <button class="card tool-card" data-open="scrolls"><div class="tool-icon">卷</div><h3>玄枢小卷</h3><p>玄学知识<br>每日更新</p></button>
-      <button class="card tool-card" data-href="../ai-love/"><div class="tool-icon">📅</div><h3>今日黄历</h3><p>宜忌吉时<br>财神方位</p></button>
+      <button class="card tool-card" data-href="../huangli/"><div class="tool-icon">历</div><h3>今日黄历</h3><p>宜忌吉时<br>财神方位</p></button>
     </div>
   </section>
 
@@ -1515,6 +1521,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
       <label style="margin-top:12px">备注</label>
       <textarea id="scheduleNote" placeholder="写下需要提醒的事项"></textarea>
       <button class="action-btn" id="addScheduleBtn" style="margin-top:14px">添加日程</button>
+      <div id="scheduleCount" style="font-size:15px;color:var(--muted);margin:12px 0 4px">0个日程待提醒</div>
       <div class="schedule-list" id="scheduleList"></div>
     </div>
   </section>
@@ -2385,6 +2392,30 @@ const yearSelect = document.getElementById('yearSelect');
 const monthSelect = document.getElementById('monthSelect');
 yearSelect.innerHTML = Array.from({ length: 21 }, (_, i) => 2020 + i).map(y => `<option value="${y}">${y}年</option>`).join('');
 monthSelect.innerHTML = Array.from({ length: 12 }, (_, i) => i + 1).map(m => `<option value="${m}">${m}月</option>`).join('');
+document.getElementById('monthPrev').addEventListener('click', () => {
+  currentMonth--;
+  if (currentMonth < 1) { currentMonth = 12; currentYear--; }
+  renderCalendar();
+  syncCurrentSolarTerm();
+});
+document.getElementById('monthNext').addEventListener('click', () => {
+  currentMonth++;
+  if (currentMonth > 12) { currentMonth = 1; currentYear++; }
+  renderCalendar();
+  syncCurrentSolarTerm();
+});
+document.querySelector('.today-pill').addEventListener('click', () => {
+  const today = new Date();
+  currentYear = today.getFullYear();
+  currentMonth = today.getMonth() + 1;
+  selectedDate = new Date(currentYear, currentMonth - 1, today.getDate());
+  renderCalendar();
+  syncCurrentSolarTerm();
+  setSelectedDate(selectedDate);
+  renderStarInfo();
+  renderDailyQuote();
+  updateHomeSummary(getInfo(currentYear, currentMonth, today.getDate()));
+});
 document.getElementById('monthTitle').addEventListener('click', () => {
   yearSelect.value = currentYear;
   monthSelect.value = currentMonth;

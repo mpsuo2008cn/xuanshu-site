@@ -9,7 +9,7 @@ var XUANSHU_TOOLS = [
     href: "/hehun/",
     sub1: "情侣配对",
     sub2: "姻缘解析",
-    badge: "ai"
+    badge: "hot"
   },
   {
     name: "良辰吉日",
@@ -25,7 +25,7 @@ var XUANSHU_TOOLS = [
     href: "/bazi/",
     sub1: "四柱命盘",
     sub2: "大运流年",
-    badge: ""
+    badge: "hot"
   },
   {
     name: "六爻起卦",
@@ -33,7 +33,7 @@ var XUANSHU_TOOLS = [
     href: "/liuyao/",
     sub1: "感情事业",
     sub2: "起卦解惑",
-    badge: ""
+    badge: "hot"
   },
   {
     name: "节气养生",
@@ -61,7 +61,7 @@ var XUANSHU_TOOLS = [
   },
   {
     name: "今日黄历",
-    icon: "📅",
+    icon: "历",
     href: "/huangli/",
     sub1: "宜忌吉时",
     sub2: "财神方位",

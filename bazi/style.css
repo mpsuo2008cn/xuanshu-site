@@ -19,6 +19,8 @@ body {
   min-height: 100vh;
   margin: 0;
   padding-bottom: 82px;
+  max-width: 100%;
+  overflow-x: hidden;
   color: var(--ink);
   font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
   background:
