@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta name="msvalidate.01" content="7262D07C78F5CB782C803882F5195FD4" />
@@ -7,10 +7,10 @@
 <meta name="theme-color" content="#f4efe4">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="����">
+<meta name="apple-mobile-web-app-title" content="玄枢">
 <link rel="manifest" href="../manifest.json">
-<meta name="description" content="����������������ʱ��֪����">
-<title>����������</title>
+<meta name="description" content="玄枢万年历，观天时，知四序。">
+<title>玄枢万年历</title>
 <style>
 * { box-sizing: border-box; }
 :root {
@@ -1165,10 +1165,10 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 <script src="/data/version.js"></script>
 </head>
 <body>
-<div class="splash" id="splash">
+<div class="splash hide" id="splash">
   <div class="splash-inner">
-    <img class="splash-logo" src="../logo.webp" alt="����" width="132" height="132">
-    <div class="splash-tagline"><span>��</span><span>��</span><span class="tagline-gap">ʱ</span><span>֪</span><span>��</span><span>��</span></div>
+    <img class="splash-logo" src="../logo.webp" alt="玄枢" width="132" height="132">
+    <div class="splash-tagline"><span>观</span><span>天</span><span class="tagline-gap">时</span><span>知</span><span>四</span><span>序</span></div>
   </div>
 </div>
 
@@ -1176,185 +1176,185 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 
   <section class="page active" id="page-calendar">
     <div class="hero with-bottom-art">
-      <div class="brand-title">������<span class="brand-seal">����</span></div>
-      <div class="slogan">����ʱ��֪����</div>
-      <div class="hero-art home-hero-art"><div class="mountains"></div><div class="sun"></div><div class="crane">?</div><div class="round-paint"></div></div>
+      <div class="brand-title">万年历<span class="brand-seal">玄枢</span></div>
+      <div class="slogan">观天时　知四序</div>
+      <div class="hero-art home-hero-art"><div class="mountains"></div><div class="sun"></div><div class="crane">⌁</div><div class="round-paint"></div></div>
     </div>
     <div class="card calendar-card">
-      <div class="month-head"><button class="month-nav" id="monthPrev" aria-label="�ϸ���">?</button><button class="month-title" id="monthTitle">2024��5��</button><button class="month-nav" id="monthNext" aria-label="�¸���">?</button><button class="today-pill">��</button></div>
-      <div class="week"><span>��</span><span>һ</span><span>��</span><span>��</span><span>��</span><span>��</span><span>��</span></div>
+      <div class="month-head"><button class="month-nav" id="monthPrev" aria-label="上个月">‹</button><button class="month-title" id="monthTitle">2024年5月</button><button class="month-nav" id="monthNext" aria-label="下个月">›</button><button class="today-pill">今</button></div>
+      <div class="week"><span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span></div>
       <div class="grid" id="calendarGrid"></div>
     </div>
     <button class="card summary-card" data-open="detail">
-      <div class="tag-vertical">ũ��</div>
+      <div class="tag-vertical">农历</div>
       <div class="summary-head">
-        <div class="summary-date">���³�һ</div>
-        <div class="ganzhi">�׳��ꡡ�����¡������ա�����</div>
+        <div class="summary-date">四月初一</div>
+        <div class="ganzhi">甲辰年　己巳月　甲子日　周三</div>
       </div>
       <div class="summary-main">
-        <div class="yi-ji"><div><span class="badge yi">��</span><span>���롡���������á����С���������ˡ��ɲ�</span></div><div><span class="badge ji">��</span><span>��լ�����ᡡ�����ľ</span></div></div>
+        <div class="yi-ji"><div><span class="badge yi">宜</span><span>祭祀　祈福　求嗣　出行　解除　订盟　纳采</span></div><div><span class="badge ji">忌</span><span>入宅　安葬　作灶　伐木</span></div></div>
       </div>
       <div class="bamboo-art"></div>
     </button>
   </section>
 
   <section class="page" id="page-fortune">
-    <div class="topline"><button class="back-btn" data-open="calendar">?</button><div class="section-title">��������</div></div>
+    <div class="topline"><button class="back-btn" data-open="calendar">‹</button><div class="section-title">今日运势</div></div>
     <div class="card fortune-detail-card">
-      <div class="fortune-detail-title">�������� ������</div>
-      <div class="fortune-detail-text">���ջ����˼��롢���������á����С���������ˡ��ɲɣ�����ƫ���ȶ��ġ����ж������ʺϰ��Ѿ�������������ƽ�һ�����������ڹ�ͨ��Լ�������к������ƻ���</div>
+      <div class="fortune-detail-title">今日总评 ★★★★☆</div>
+      <div class="fortune-detail-text">今日黄历宜祭祀、祈福、求嗣、出行、解除、订盟、纳采，气象偏向“先定心、再行动”。适合把已经想清楚的事情推进一步，尤其利于沟通、约定、出行和整理计划。</div>
       <div class="fortune-score-row">
-        <div class="score-pill">����<b>82</b></div>
-        <div class="score-pill">��ҵ<b>86</b></div>
-        <div class="score-pill">����<b>76</b></div>
-        <div class="score-pill">����<b>88</b></div>
-        <div class="score-pill">����<b>78</b></div>
+        <div class="score-pill">财运<b>82</b></div>
+        <div class="score-pill">事业<b>86</b></div>
+        <div class="score-pill">感情<b>76</b></div>
+        <div class="score-pill">出行<b>88</b></div>
+        <div class="score-pill">健康<b>78</b></div>
       </div>
     </div>
     <div class="card fortune-detail-card">
-      <div class="fortune-detail-title">�����ʺ�</div>
+      <div class="fortune-detail-title">今日适合</div>
       <ul class="fortune-list">
-        <li>ǩԼ��Ǣ̸���ύ���롢ȷ���г̡�</li>
-        <li>�ݷó�����������Ը�������Ӽ��빤���ƻ���</li>
-        <li>�����ӵ�������һ����ȷ��β��</li>
+        <li>签约、洽谈、提交申请、确定行程。</li>
+        <li>拜访长辈、祈福许愿、整理居家与工作计划。</li>
+        <li>把拖延的事情做一个明确收尾。</li>
       </ul>
     </div>
     <div class="card fortune-detail-card">
-      <div class="fortune-detail-title">���ղ���</div>
+      <div class="fortune-detail-title">今日不宜</div>
       <ul class="fortune-list">
-        <li>�嶯���ߡ���������ͨ����ʱ�ı��ƻ���</li>
-        <li>���������ᡢ�����ľ�����������ˡ�</li>
+        <li>冲动决策、情绪化沟通、临时改变大计划。</li>
+        <li>动土、安葬、作灶、伐木、上梁等事宜。</li>
       </ul>
     </div>
     <div class="card fortune-detail-card">
-      <div class="fortune-detail-title">��������</div>
-      <div class="fortune-detail-text">�����ȶ��ģ����¡�����������Ϊ�ȣ�˳�ƶ��С�</div>
+      <div class="fortune-detail-title">今日提醒</div>
+      <div class="fortune-detail-text">凡事先定心，后定事。今日宜以稳为先，顺势而行。</div>
     </div>
   </section>
 
   <section class="page discover-page" id="page-discover">
     <div class="wanxiang-hero">
-      <h1>���� ������</h1>
-      <p>�������������ʱ</p>
+      <h1>玄枢 观万象</h1>
+      <p>天地有序，万物有时</p>
     </div>
 
-    <div class="section-label">������ǩ</div>
+    <div class="section-label">今日灵签</div>
     <div class="card oracle-card" id="oracleCard">
       <div>
         <div class="oracle-top">
-          <div class="oracle-title">������ǩ</div>
-          <div class="oracle-sign" id="oracleSign">����ʮ��ǩ �� �ϼ�</div>
+          <div class="oracle-title">吕祖灵签</div>
+          <div class="oracle-sign" id="oracleSign">第三十二签 · 上吉</div>
         </div>
-        <div class="oracle-poem" id="oraclePoem">�ƿ��³�������<br>���������ǰ��</div>
+        <div class="oracle-poem" id="oraclePoem">云开月出正分明<br>不须进退问前程</div>
       </div>
       <div>
         <div class="oracle-actions">
-          <span class="oracle-count" id="oracleCount">��������3278�˳�ǩ</span>
-          <button class="oracle-btn" id="oracleBtn">ҡһǩ</button>
+          <span class="oracle-count" id="oracleCount">今日已有3278人抽签</span>
+          <button class="oracle-btn" id="oracleBtn">摇一签</button>
         </div>
         <div class="oracle-result">
-          <div>��ҵ<b id="oracleCareer">��ת��</b></div>
-          <div>����<b id="oracleLove">��һ����˳</b></div>
-          <div>����<b id="oracleMoney">���˼�</b></div>
+          <div>事业<b id="oracleCareer">有转机</b></div>
+          <div>感情<b id="oracleLove">慢一步更顺</b></div>
+          <div>财运<b id="oracleMoney">不宜急</b></div>
         </div>
-        <div class="oracle-note">���������봫ͳ�Ļ��ο��������Կ���</div>
+        <div class="oracle-note">仅供娱乐与传统文化参考，请理性看待</div>
       </div>
     </div>
 
-    <div class="section-label">��ҹ�ξ�</div>
+    <div class="section-label">昨夜梦境</div>
     <div class="card dream-card">
       <div>
-        <h3>��ҹ�ξ�</h3>
-        <p>��ҹ��������ɽ�����Σ�</p>
+        <h3>昨夜梦境</h3>
+        <p>昨夜，可曾见山海入梦？</p>
       </div>
       <div class="dream-form">
-        <input class="dream-input" id="dreamQuickInput" placeholder="�������ξ����磺�μ��ߡ��μ�ǰ�Ρ��μ�����">
-        <button class="oracle-btn" id="dreamQuickBtn" type="button">��������</button>
+        <input class="dream-input" id="dreamQuickInput" placeholder="请输入梦境，如：梦见蛇、梦见前任、梦见掉牙">
+        <button class="oracle-btn" id="dreamQuickBtn" type="button">立即解梦</button>
       </div>
       <div class="dream-hot-tags" id="dreamQuickTags"></div>
       <div class="dream-result-card" id="dreamQuickResult"></div>
     </div>
 
-    <div class="section-label">��������</div>
+    <div class="section-label">今日星座</div>
     <div class="card sky-card">
-      <h3>��������</h3>
+      <h3>今日星座</h3>
       <div class="sky-grid">
-        <div>���ࣺ<span id="skyMoon">ӯ͹��</span></div><div>̫����<span id="skySign">˫����</span></div>
-        <div>������<span id="skyTerm">С��</span></div><div>��֧��<span id="skyGanzhi">������</span></div>
+        <div>月相：<span id="skyMoon">盈凸月</span></div><div>太阳：<span id="skySign">双子座</span></div>
+        <div>节气：<span id="skyTerm">小满</span></div><div>干支：<span id="skyGanzhi">甲午日</span></div>
       </div>
-      <div class="sky-rating"><span id="skyLove">���� �����</span><span id="skyCareer">��ҵ ����</span><span id="skyWealth">���� ������</span></div>
-      <button class="more-btn" data-open="star-note">�鿴�ǳ�С��</button>
+      <div class="sky-rating"><span id="skyLove">爱情 ★★★★</span><span id="skyCareer">事业 ★★★</span><span id="skyWealth">财运 ★★★★★</span></div>
+      <button class="more-btn" data-open="star-note">查看星辰小笺</button>
     </div>
 
-    <div class="section-label">ÿ��һ��</div>
+    <div class="section-label">每日一句</div>
     <div class="card quote-card">
-      <div class="quote-main" id="dailyQuoteText">ɽ�к���<br>�ɻ���ƣ���ˮ���</div>
-      <div class="quote-source" id="dailyQuoteSource">���˼��ľ��</div>
+      <div class="quote-main" id="dailyQuoteText">山中何事<br>松花酿酒，春水煎茶</div>
+      <div class="quote-source" id="dailyQuoteSource">《人间草木》</div>
     </div>
 
 
-    <div class="card collect-card">�ѹ���ʱ��<b>��28��</b><br>��ʮ�Ľ�����<b>���ռ�8/24</b><br>�� ?���� ?</div>
+    <div class="card collect-card">已观天时：<b>第28日</b><br>二十四节气：<b>已收集8/24</b><br>春 ✓　夏 ✓</div>
   </section>
 
   <section class="page" id="page-star-note">
-    <div class="topline"><button class="back-btn" data-open="discover">?</button><div class="section-title">�ǳ�С��</div></div>
+    <div class="topline"><button class="back-btn" data-open="discover">‹</button><div class="section-title">星辰小笺</div></div>
     <div class="star-note-hero">
-      <h1 id="starName">˫����</h1>
-      <p id="starAdvice">�����ʺϹ�ͨ�����˼��ꡣ�����Ȼ�һ�֣������˳���֡�</p>
+      <h1 id="starName">双子座</h1>
+      <p id="starAdvice">今日适合沟通，不宜急躁。言语先缓一分，事情便顺三分。</p>
       <div class="star-grid">
-        <div class="score-pill">��������<b id="starNumber">5</b></div>
-        <div class="score-pill">����ɫ<b id="starColor">��ɰ��</b></div>
+        <div class="score-pill">幸运数字<b id="starNumber">5</b></div>
+        <div class="score-pill">幸运色<b id="starColor">朱砂红</b></div>
       </div>
     </div>
     <div class="card fortune-detail-card">
-      <div class="fortune-detail-title">����</div>
-      <div class="fortune-detail-text" id="starTodayText">����Ϊӯ͹�£��������������ǿ���ʺ�̸������д�ƻ���������Ϣ��������ʱ����Ҳ������δȷ��ϸ��ǰ��Ӧ��Ҫ���</div>
+      <div class="fortune-detail-title">今日</div>
+      <div class="fortune-detail-text" id="starTodayText">月相为盈凸月，情绪与表达欲较强。适合谈合作、写计划、整理信息；不宜临时发火，也不宜在未确认细节前答应重要事项。</div>
     </div>
     <div class="card fortune-detail-card">
-      <div class="fortune-detail-title">����</div>
+      <div class="fortune-detail-title">本周</div>
       <div class="fortune-score-row">
-        <div class="score-pill">����<b id="starWeekLove">�����</b></div>
-        <div class="score-pill">��ҵ<b id="starWeekCareer">����</b></div>
-        <div class="score-pill">����<b id="starWeekWealth">������</b></div>
+        <div class="score-pill">爱情<b id="starWeekLove">★★★★</b></div>
+        <div class="score-pill">事业<b id="starWeekCareer">★★★</b></div>
+        <div class="score-pill">财运<b id="starWeekWealth">★★★★★</b></div>
       </div>
     </div>
     <div class="card fortune-detail-card">
-      <div class="fortune-detail-title">��������</div>
+      <div class="fortune-detail-title">月运趋势</div>
       <div class="trend-bars" id="starTrend"><span style="height:38%"></span><span style="height:52%"></span><span style="height:66%"></span><span style="height:78%"></span><span style="height:62%"></span><span style="height:72%"></span><span style="height:84%"></span></div>
-      <div class="fortune-detail-text" id="starMonthText">���������Ȼ�����ʺϰѸ��������С��һ��һ���ƽ���</div>
+      <div class="fortune-detail-text" id="starMonthText">本月运势先缓后扬，适合把复杂问题拆小，一步一步推进。</div>
     </div>
   </section>
 
   <section class="page" id="page-detail">
-    <div class="topline"><button class="back-btn" data-open="calendar">?</button><div class="section-title">��������</div><button class="share-btn">?</button></div>
+    <div class="topline"><button class="back-btn" data-open="calendar">‹</button><div class="section-title">日历详情</div><button class="share-btn">⇧</button></div>
     <div class="detail-hero">
-      <div class="detail-date" id="detailDate">2024��5��8��</div>
+      <div class="detail-date" id="detailDate">2024年5月8日</div>
       <div class="lunar-nav">
-        <button class="side-arrow left" data-detail-nav="-1" onclick="changeDetailDay(-1)">?</button>
-        <div class="big-lunar" id="detailLunar">���³�һ</div>
-        <button class="side-arrow right" data-detail-nav="1" onclick="changeDetailDay(1)">?</button>
+        <button class="side-arrow left" data-detail-nav="-1" onclick="changeDetailDay(-1)">‹</button>
+        <div class="big-lunar" id="detailLunar">四月初一</div>
+        <button class="side-arrow right" data-detail-nav="1" onclick="changeDetailDay(1)">›</button>
       </div>
-      <div class="detail-gz" id="detailGanzhi">�׳��ꡡ�����¡������ա����� <span class="today-mark">����</span></div>
+      <div class="detail-gz" id="detailGanzhi">甲辰年　己巳月　甲子日　周三 <span class="today-mark">今天</span></div>
     </div>
     <div class="card detail-card">
       <div class="wide-yiji">
-        <div class="yiji-line"><span class="badge yi">��</span><span id="detailYi">���롡���������á����С���������ˡ��ɲɡ���ѧ�����С����ס���ȯ</span></div>
-        <div class="yiji-line"><span class="badge ji">��</span><span id="detailJi">��լ�����ᡡ�����ľ������</span></div>
+        <div class="yiji-line"><span class="badge yi">宜</span><span id="detailYi">祭祀　祈福　求嗣　出行　解除　订盟　纳采　入学　开市　交易　立券</span></div>
+        <div class="yiji-line"><span class="badge ji">忌</span><span id="detailJi">入宅　安葬　作灶　伐木　上梁</span></div>
       </div>
     </div>
     <div class="card detail-card god-card">
-      <div class="god-row"><div class="god-title">��������</div><div class="god-text" id="detailGoodGods">��ºϡ��µºϡ���������ࡡʱ��������</div></div>
-      <div class="god-row"><div class="god-title">�����˼�</div><div class="god-text" id="detailBadGods">�׻������̡����顡�������˷硡��ɷ</div></div>
+      <div class="god-row"><div class="god-title">吉神宜趋</div><div class="god-text" id="detailGoodGods">天德合　月德合　天恩　四相　时阳　生气</div></div>
+      <div class="god-row"><div class="god-title">凶神宜忌</div><div class="god-text" id="detailBadGods">白虎　天刑　五虚　土符　八风　劫煞</div></div>
     </div>
     <div class="card detail-card" style="padding:0"><div class="info-table">
-      <div class="info-cell"><div><div class="cell-title">����</div><span id="detailWuxing">���н�</span></div></div><div class="info-cell"><div><div class="cell-title">��ɷ</div><span id="detailChongsha">���� ɷ��</span></div></div><div class="info-cell"><div><div class="cell-title">ֵ��</div><span id="detailZhishen">˾��</span></div></div>
-      <div class="info-cell" style="grid-column:span 1"><div><div class="cell-title">̥��ռ��</div><span id="detailTaishen">ռ���Է��ڱ�</span></div></div><div class="info-cell" style="grid-column:span 2"><div><div class="cell-title">����ټ�</div><span id="detailPengzu">�ײ����֡��������<br>�Ӳ��ʲ������ǻ���</span></div></div>
+      <div class="info-cell"><div><div class="cell-title">五行</div><span id="detailWuxing">海中金</span></div></div><div class="info-cell"><div><div class="cell-title">冲煞</div><span id="detailChongsha">冲马 煞南</span></div></div><div class="info-cell"><div><div class="cell-title">值神</div><span id="detailZhishen">司命</span></div></div>
+      <div class="info-cell" style="grid-column:span 1"><div><div class="cell-title">胎神占方</div><span id="detailTaishen">占门碓房内北</span></div></div><div class="info-cell" style="grid-column:span 2"><div><div class="cell-title">彭祖百忌</div><span id="detailPengzu">甲不开仓　财物耗亡<br>子不问卜　自惹祸殃</span></div></div>
       <div class="info-cell hour-cell" style="grid-column:span 3">
         <div class="hour-grid" id="detailHourGrid">
-          <div class="hour-label">ʱ��<br>�˼�</div>
-          <span>��</span><span>��</span><span>��</span><span>��</span><span>��</span><span>��</span><span>��</span><span>��</span><span>��</span><span>��</span><span>��</span><span>��</span>
-          <span>��</span><span>��</span><span>��</span><span>î</span><span>��</span><span>��</span><span>��</span><span>δ</span><span>��</span><span>��</span><span>��</span><span>��</span>
-          <span class="hour-good">��</span><span class="hour-bad">��</span><span class="hour-good">��</span><span class="hour-bad">��</span><span class="hour-good">��</span><span class="hour-bad">��</span><span class="hour-good">��</span><span class="hour-bad">��</span><span class="hour-good">��</span><span class="hour-good">��</span><span class="hour-bad">��</span><span class="hour-good">��</span>
+          <div class="hour-label">时辰<br>宜忌</div>
+          <span>甲</span><span>乙</span><span>丙</span><span>丁</span><span>戊</span><span>己</span><span>庚</span><span>辛</span><span>壬</span><span>癸</span><span>甲</span><span>乙</span>
+          <span>子</span><span>丑</span><span>寅</span><span>卯</span><span>辰</span><span>巳</span><span>午</span><span>未</span><span>申</span><span>酉</span><span>戌</span><span>亥</span>
+          <span class="hour-good">吉</span><span class="hour-bad">凶</span><span class="hour-good">吉</span><span class="hour-bad">凶</span><span class="hour-good">吉</span><span class="hour-bad">凶</span><span class="hour-good">吉</span><span class="hour-bad">凶</span><span class="hour-good">吉</span><span class="hour-good">吉</span><span class="hour-bad">凶</span><span class="hour-good">吉</span>
         </div>
       </div>
     </div></div>
@@ -1362,253 +1362,253 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 
 
   <section class="page" id="page-zeri">
-    <div class="topline"><a class="back-btn" href="/tools/">?</a><div class="section-title">��������</div></div>
+    <div class="topline"><a class="back-btn" href="/tools/">‹</a><div class="section-title">良辰吉日</div></div>
     <div class="card zeri-panel" id="zeriTodayCard"></div>
     <div class="card zeri-panel">
       <div class="zeri-tabs">
-        <button class="zeri-tab active" data-zeri-mode="general" type="button">����</button>
-        <button class="zeri-tab" data-zeri-mode="marriage" type="button">��Ȣ</button>
+        <button class="zeri-tab active" data-zeri-mode="general" type="button">择日</button>
+        <button class="zeri-tab" data-zeri-mode="marriage" type="button">嫁娶</button>
       </div>
       <div class="zeri-form" id="zeriGeneralForm">
-        <label>ѡ������</label>
+        <label>选择事项</label>
         <select id="zeriActivity">
-          <option value="��Ȣ">��Ȣ���</option>
-          <option value="��լ">�����լ</option>
-          <option value="����">��ҵ����</option>
-          <option value="����">ǩԼ����</option>
-          <option value="����">����Զ��</option>
-          <option value="����">��������</option>
+          <option value="嫁娶">嫁娶结婚</option>
+          <option value="入宅">搬家入宅</option>
+          <option value="开市">开业开市</option>
+          <option value="交易">签约交易</option>
+          <option value="出行">出行远行</option>
+          <option value="祈福">祈福祭祀</option>
         </select>
-        <label>��ѯ�·�</label>
+        <label>查询月份</label>
         <input id="zeriMonth" type="month">
-        <button class="zeri-btn" id="zeriSearchBtn" type="button">��ʼ����</button>
+        <button class="zeri-btn" id="zeriSearchBtn" type="button">开始择日</button>
       </div>
       <div class="zeri-form" id="zeriMarriageForm" style="display:none">
-        <label>Ů����Ф</label>
+        <label>女命生肖</label>
         <select id="zeriBride"></select>
-        <label>��ѯ�·�</label>
+        <label>查询月份</label>
         <input id="zeriMarriageMonth" type="month">
-        <button class="zeri-btn" id="zeriMarriageBtn" type="button">ɸѡ��Ȣ����</button>
+        <button class="zeri-btn" id="zeriMarriageBtn" type="button">筛选嫁娶吉日</button>
       </div>
     </div>
     <div class="zeri-results" id="zeriResults"></div>
   </section>
 
   <section class="page" id="page-dream">
-    <div class="topline"><a class="back-btn" href="/tools/">?</a><div class="section-title">�ܹ�����</div></div>
+    <div class="topline"><a class="back-btn" href="/tools/">‹</a><div class="section-title">周公解梦</div></div>
     <div class="card zeri-panel">
-      <div class="fortune-detail-title">���������Ѻ�ɽ�</div>
-      <div class="fortune-detail-text">�����μ����ˡ�����������飬�鿴��ͳ�����������ο���</div>
+      <div class="fortune-detail-title">梦中有象，醒后可解</div>
+      <div class="fortune-detail-text">输入梦见的人、物、场景或心情，查看传统民俗里的象意参考。</div>
       <div class="zeri-form" style="margin-top:12px">
-        <input class="zeri-input" id="dreamInput" placeholder="���磺�μ�ˮ���ߡ����ԡ�����">
-        <button class="zeri-btn" id="dreamSearchBtn" type="button">��ʼ����</button>
+        <input class="zeri-input" id="dreamInput" placeholder="例如：梦见水、蛇、考试、掉牙">
+        <button class="zeri-btn" id="dreamSearchBtn" type="button">开始解梦</button>
       </div>
     </div>
     <div class="card zeri-panel" id="dreamResult">
-      <div class="fortune-detail-title">��������</div>
+      <div class="fortune-detail-title">常见梦象</div>
       <div class="dream-hot-tags" id="dreamToolTags"></div>
     </div>
   </section>
 
   <section class="page" id="page-scrolls">
-    <div class="topline"><a class="back-btn" href="/tools/">?</a><div class="section-title">����С��</div></div>
+    <div class="topline"><a class="back-btn" href="/tools/">‹</a><div class="section-title">玄枢小卷</div></div>
     <div class="card scroll-hero">
-      <h1>����С��</h1>
-      <p>����ʱ��֪����</p>
+      <h1>玄枢小卷</h1>
+      <p>观天时，知万象</p>
     </div>
     <div id="scrollList"></div>
   </section>
 
   <section class="page" id="page-scroll-detail">
-    <div class="topline"><button class="back-btn" data-open="scrolls">?</button><div class="section-title">����С��</div></div>
+    <div class="topline"><button class="back-btn" data-open="scrolls">‹</button><div class="section-title">玄枢小卷</div></div>
     <div class="card scroll-detail" id="scrollDetail"></div>
   </section>
 
   <section class="page" id="page-solar">
-    <div class="topline"><a class="back-btn" href="/tools/">?</a><div class="section-title">��������</div></div>
+    <div class="topline"><a class="back-btn" href="/tools/">‹</a><div class="section-title">节气养生</div></div>
     <div class="solar-hero">
-      <h1 id="termName">����</h1><button class="solar-badge solar-badge-btn" id="termPickerBtn" type="button"><span class="term-entry-main"><span class="term-entry-label">��ǰ������</span><span class="term-entry-name" id="termEntryName">����</span><span class="term-caret" id="termEntryCaret">?</span></span><span class="term-entry-hint" id="termEntryHint">�ᴥ�л���ʮ�Ľ���</span></button>
-      <div class="solar-time" id="termTime">2024��5��5�ա�10:23:15<br>ũ�� ����إ��</div>
-      <div class="solar-text" id="termDesc">���ģ���ʮ�Ľ����еĵ�7���������ļ��ĵ�һ����������־����Ҫʱ�ڵ���ʽ��ʼ��</div>
+      <h1 id="termName">立夏</h1><button class="solar-badge solar-badge-btn" id="termPickerBtn" type="button"><span class="term-entry-main"><span class="term-entry-label">当前节气：</span><span class="term-entry-name" id="termEntryName">立夏</span><span class="term-caret" id="termEntryCaret">⌄</span></span><span class="term-entry-hint" id="termEntryHint">轻触切换二十四节气</span></button>
+      <div class="solar-time" id="termTime">2024年5月5日　10:23:15<br>农历 三月廿七</div>
+      <div class="solar-text" id="termDesc">立夏，二十四节气中的第7个节气，夏季的第一个节气，标志着重要时节的正式开始。</div>
       <div class="mountains" style="inset:130px -10px 0 64px;background-size:360px auto"></div><div class="lotus" id="termArt"></div>
     </div>
-    <div class="card health-card"><div><h2>��������</h2><p id="termHealth">����ʱ�ڣ����������������Ļ�����ע����ʳ�嵭�����������泩��</p></div><div class="tea-art"></div></div>
+    <div class="card health-card"><div><h2>节气养生</h2><p id="termHealth">立夏时节，万物生长，宜养心护阳，注意饮食清淡，保持心情舒畅。</p></div><div class="tea-art"></div></div>
     <div class="card advice-list">
-      <div class="advice-row"><span class="advice-icon">��</span><div><h3>��ʳ</h3><p id="termDiet">���嵭����������߹������࣬��ʳ�������塣</p></div><span>?</span></div>
-      <div class="advice-row"><span class="advice-icon">��</span><div><h3>���</h3><p id="termRest">��˯����˳Ӧ��Ȼ����֤����˯�ߡ�</p></div><span>?</span></div>
-      <div class="advice-row"><span class="advice-icon">��</span><div><h3>�˶�</h3><p id="termSport">�ʶ��˶�����ɢ�������ܡ�̫���ȣ�΢΢�������ɡ�</p></div><span>?</span></div>
-      <div class="advice-row"><span class="advice-icon">��</span><div><h3>����</h3><p id="termMood">���������泩�����⼱�꣬����������</p></div><span>?</span></div>
+      <div class="advice-row"><span class="advice-icon">碗</span><div><h3>饮食</h3><p>宜清淡，多吃新鲜蔬果、豆类，少食辛辣油腻。</p></div><span>›</span></div>
+      <div class="advice-row"><span class="advice-icon">坐</span><div><h3>起居</h3><p>晚睡早起，顺应自然，保证充足睡眠。</p></div><span>›</span></div>
+      <div class="advice-row"><span class="advice-icon">跑</span><div><h3>运动</h3><p>适度运动，如散步、慢跑、太极等，微微出汗即可。</p></div><span>›</span></div>
+      <div class="advice-row"><span class="advice-icon">心</span><div><h3>心情</h3><p>保持心情舒畅，避免急躁，静心养阳。</p></div><span>›</span></div>
     </div>
   </section>
 
   <div class="term-picker-mask" id="termPickerModal">
     <div class="term-picker-panel">
-      <div class="term-picker-head"><h3>ѡ�����</h3><button class="term-picker-close" id="termPickerClose" type="button">��</button></div>
+      <div class="term-picker-head"><h3>选择节气</h3><button class="term-picker-close" id="termPickerClose" type="button">×</button></div>
       <div class="term-picker-grid" id="termPickerGrid"></div>
     </div>
   </div>
 
   <section class="page" id="page-mine">
     <div class="mine-hero">
-      <div class="card mine-profile-card"><span class="avatar"></span><span class="mine-name"><h1>�ҵ�����</h1><p>����ʱ��֪����</p></span></div>
+      <div class="card mine-profile-card"><span class="avatar"></span><span class="mine-name"><h1>我的玄枢</h1><p>观天时，知四序</p></span></div>
     </div>
     <div class="card mine-section-card">
-      <div class="mine-section-head"><h2>����ӡ��</h2><p>���ؼ�¼</p></div>
+      <div class="mine-section-head"><h2>玄枢印记</h2><p>本地记录</p></div>
       <div class="mine-mark-grid">
-        <div class="mine-mark-item"><b id="mineDays">0</b><span>�ѹ���ʱ<small>�ۼƴ�APP����</small></span></div>
-        <div class="mine-mark-item"><b id="mineOracle">0</b><span>������ǩ<small>�ۼ�ҡǩ����</small></span></div>
-        <div class="mine-mark-item"><b id="mineDreams">0</b><span>�ξ�ͼ��<small>�ۼƽ��δ���</small></span></div>
-        <div class="mine-mark-item"><b id="mineLiuyao">0</b><span>��س��¼<small>�ۼ����Դ���</small></span></div>
-        <div class="mine-mark-item"><b id="mineBazi">0</b><span>���ֵ���<small>�Ѵ�����������</small></span></div>
-        <div class="mine-mark-item"><b id="mineSolar">0</b><span>�ѹ۽���<small>�������������</small></span></div>
+        <div class="mine-mark-item"><b id="mineDays">0</b><span>已观天时<small>累计打开APP天数</small></span></div>
+        <div class="mine-mark-item"><b id="mineOracle">0</b><span>已收灵签<small>累计摇签次数</small></span></div>
+        <div class="mine-mark-item"><b id="mineDreams">0</b><span>梦境图鉴<small>累计解梦次数</small></span></div>
+        <div class="mine-mark-item"><b id="mineLiuyao">0</b><span>六爻记录<small>累计起卦次数</small></span></div>
+        <div class="mine-mark-item"><b id="mineBazi">0</b><span>八字档案<small>已创建八字数量</small></span></div>
+        <div class="mine-mark-item"><b id="mineSolar">0</b><span>已观节气<small>浏览过节气数量</small></span></div>
       </div>
-      <div class="mine-mark-note">�������ʱ������ת֮��</div>
+      <div class="mine-mark-note">观天地四时，记流转之痕</div>
     </div>
     <div class="card mine-section-card desktop-card">
-      <div><h2>���ӵ�����</h2><p>�´�һ�㼴������ͬ APP ʹ��</p></div>
-      <button id="desktopGuideBtn" type="button">�鿴����</button>
+      <div><h2>添加到桌面</h2><p>下次一点即开，如同 APP 使用</p></div>
+      <button id="desktopGuideBtn" type="button">查看方法</button>
     </div>
     <div class="card mine-list">
-      <button class="mine-row" id="shareSiteBtn" type="button"><span>�J</span><span>��������</span><span>?</span></button>
-      <button class="mine-row" data-open="support"><span>��</span><span>֧������</span><span>?</span></button>
-      <button class="mine-row" data-open="about"><span>?</span><span>��������</span><span>?</span></button>
+      <button class="mine-row" id="shareSiteBtn" type="button"><span>↗</span><span>分享玄枢</span><span>›</span></button>
+      <button class="mine-row" data-open="support"><span>◎</span><span>支持玄枢</span><span>›</span></button>
+      <button class="mine-row" data-open="about"><span>ⓘ</span><span>关于我们</span><span>›</span></button>
     </div>
   </section>
 
 
   <div class="install-tip-mask" id="installTipModal">
     <div class="install-tip-card">
-      <h3>���������ӵ�����</h3>
-      <p>�´�һ�㼴������ͬ APP ʹ��</p>
+      <h3>将玄枢添加到桌面</h3>
+      <p>下次一点即开，如同 APP 使用</p>
       <div class="install-tip-actions">
-        <button class="primary" id="installTipGuide" type="button">�鿴����</button>
-        <button id="installTipLater" type="button">�ݲ�</button>
+        <button class="primary" id="installTipGuide" type="button">查看方法</button>
+        <button id="installTipLater" type="button">暂不</button>
       </div>
     </div>
   </div>
 
   <div class="desktop-modal-mask" id="desktopGuideModal">
     <div class="desktop-modal-panel">
-      <div class="desktop-modal-head"><h3>���ӵ�����</h3><button class="desktop-modal-close" id="desktopGuideClose" type="button">��</button></div>
-      <div class="desktop-step"><b>iPhone / iPad Safari��</b><br>��ײ�������ť �� ���ӵ�����Ļ �� ����</div>
-      <div class="desktop-step"><b>��׿ Chrome��</b><br>�����Ͻǲ˵� �� ���ӵ�����Ļ �� ����</div>
-      <div class="desktop-step"><b>�����ǰҳ��û�з�����ť�����Ͻǲ˵���</b><br>���ȸ�����ַ�������ֻ��Դ� Safari �� Chrome �򿪺����ӵ����档</div>
-      <button class="action-btn" id="copySiteUrlBtn" type="button" style="margin-top:12px;width:100%">������ַ</button>
+      <div class="desktop-modal-head"><h3>添加到桌面</h3><button class="desktop-modal-close" id="desktopGuideClose" type="button">×</button></div>
+      <div class="desktop-step"><b>iPhone / iPad Safari：</b><br>点底部分享按钮 → 添加到主屏幕 → 添加</div>
+      <div class="desktop-step"><b>安卓 Chrome：</b><br>点右上角菜单 → 添加到主屏幕 → 添加</div>
+      <div class="desktop-step"><b>如果当前页面没有分享按钮或右上角菜单：</b><br>请先复制网址，再用手机自带 Safari 或 Chrome 打开后添加到桌面。</div>
+      <button class="action-btn" id="copySiteUrlBtn" type="button" style="margin-top:12px;width:100%">复制网址</button>
     </div>
   </div>
 
   <section class="page" id="page-schedule">
-    <div class="topline"><button class="back-btn" data-open="mine">?</button><div class="section-title">�ҵ��ճ�</div></div>
+    <div class="topline"><button class="back-btn" data-open="mine">‹</button><div class="section-title">我的日程</div></div>
     <div class="card form-card">
-      <label>���ѱ���</label>
-      <input id="scheduleTitle" placeholder="���磺�ݷÿͻ�����������">
-      <label style="margin-top:12px">��������</label>
+      <label>提醒标题</label>
+      <input id="scheduleTitle" placeholder="例如：拜访客户、生日提醒">
+      <label style="margin-top:12px">提醒日期</label>
       <input id="scheduleDate" type="date">
-      <label style="margin-top:12px">��ע</label>
-      <textarea id="scheduleNote" placeholder="д����Ҫ���ѵ�����"></textarea>
-      <button class="action-btn" id="addScheduleBtn" style="margin-top:14px">�����ճ�</button>
-      <div id="scheduleCount" style="font-size:15px;color:var(--muted);margin:12px 0 4px">0���ճ̴�����</div>
+      <label style="margin-top:12px">备注</label>
+      <textarea id="scheduleNote" placeholder="写下需要提醒的事项"></textarea>
+      <button class="action-btn" id="addScheduleBtn" style="margin-top:14px">添加日程</button>
+      <div id="scheduleCount" style="font-size:15px;color:var(--muted);margin:12px 0 4px">0个日程待提醒</div>
       <div class="schedule-list" id="scheduleList"></div>
     </div>
   </section>
 
   <section class="page" id="page-reminders">
-    <div class="topline"><button class="back-btn" data-open="mine">?</button><div class="section-title">��������</div></div>
+    <div class="topline"><button class="back-btn" data-open="mine">‹</button><div class="section-title">提醒设置</div></div>
     <div class="card form-card">
-      <div class="switch-row"><span>��������</span><button class="switch on" data-switch></button></div>
-      <div class="switch-row"><span>��������</span><button class="switch on" data-switch></button></div>
-      <div class="switch-row"><span>�ճ�����</span><button class="switch on" data-switch></button></div>
-      <div class="switch-row"><span>ÿ����������</span><button class="switch" data-switch></button></div>
+      <div class="switch-row"><span>节日提醒</span><button class="switch on" data-switch></button></div>
+      <div class="switch-row"><span>节气提醒</span><button class="switch on" data-switch></button></div>
+      <div class="switch-row"><span>日程提醒</span><button class="switch on" data-switch></button></div>
+      <div class="switch-row"><span>每日运势提醒</span><button class="switch" data-switch></button></div>
     </div>
   </section>
 
   <section class="page" id="page-about">
-    <div class="topline"><button class="back-btn" data-open="mine">?</button><div class="section-title">��������</div></div>
+    <div class="topline"><button class="back-btn" data-open="mine">‹</button><div class="section-title">关于我们</div></div>
     <div class="card form-card">
       <div class="about-logo"></div>
-      <div class="fortune-detail-title" style="text-align:center">����������</div>
+      <div class="fortune-detail-title" style="text-align:center">玄枢万年历</div>
       <div class="about-text">
         <div class="about-section">
-          <h3>��������</h3>
-          <p>������������һ���Դ�ͳ�����������Ļ�Ϊ���ĵ��ճ����ߡ�����ϣ�������������������������ա���س�����ֵ�����������������������ã����û��ڲ鿴���ڵ�ͬʱ��Ҳ���˽���ʱ�����봫ͳ�Ļ���</p>
+          <h3>关于玄枢</h3>
+          <p>玄枢万年历是一款以传统历法与民俗文化为核心的日常工具。我们希望把日历、黄历、节气、择日、六爻、八字等内容做得清楚、安静、好用，让用户在查看日期的同时，也能了解天时节令与传统文化。</p>
         </div>
         <div class="about-section">
-          <h3>��Ҫ����</h3>
+          <h3>主要功能</h3>
           <ul>
-            <li>������ũ������֧����������ղ�ѯ</li>
-            <li>ÿ���˼ɡ���������ʱ���˼ɲο�</li>
-            <li>�������ơ�������ǩ������һ�������</li>
-            <li>��س���ԡ��������̡����յ�����ϵ�й������</li>
+            <li>公历、农历、干支、节气与节日查询</li>
+            <li>每日宜忌、吉神凶神、时辰宜忌参考</li>
+            <li>今日运势、吕祖灵签、今日一句等内容</li>
+            <li>六爻起卦、八字排盘、择吉日等玄枢系列工具入口</li>
           </ul>
         </div>
         <div class="about-section">
-          <h3>ʹ��˵��</h3>
-          <p>��Ӧ��������Ҫ�����ճ���ѯ����ͳ�Ļ�ѧϰ�����ײο�����ͬ���ɶ�������������������������ܴ��ڲ��죬��������ο�������ʵ���������ʹ�á�</p>
+          <h3>使用说明</h3>
+          <p>本应用内容主要用于日常查询、传统文化学习与民俗参考。不同流派对历法、黄历与命理的理解可能存在差异，结果仅供参考，请结合实际情况理性使用。</p>
         </div>
         <div class="about-section">
-          <h3>��ܰ��ʾ</h3>
-          <p>��Ӧ�ò��ṩҽ�ơ����ɡ�Ͷ�ʵ�רҵ���飬Ҳ������κ���ʵ�����е�רҵ�������Ҫ��������Ȩ��������רҵ��ʿ��ʵ�����Ϊ׼��</p>
+          <h3>温馨提示</h3>
+          <p>本应用不提供医疗、法律、投资等专业建议，也不替代任何现实决策中的专业意见。重要事项请以权威机构、专业人士或实际情况为准。</p>
         </div>
         <div class="about-section">
-          <h3>�������</h3>
-          <p>�������ʹ�ù��������κν��顢�������Ҫ���ӵĹ��ܣ���ӭͨ���·���ʽ�������ǡ�ÿһ��������������������ø������������á�</p>
+          <h3>意见反馈</h3>
+          <p>如果你在使用过程中有任何建议、问题或想要增加的功能，欢迎通过下方方式告诉我们。每一条反馈，都会帮助玄枢变得更清晰、更好用。</p>
         </div>
       </div>
-      <div class="contact-line">΢�ţ�mpsuo2008cn</div>
-      <div class="contact-line">���䣺112238304@qq.com</div>
-      <div class="contact-line">�汾��V2.0.0</div>
-      <button class="contact-line mine-row" data-open="support" style="width:100%;grid-template-columns:44px 1fr 18px;padding-left:0;padding-right:0"><span>��</span><span>֧������</span><span>?</span></button>
+      <div class="contact-line">微信：mpsuo2008cn</div>
+      <div class="contact-line">邮箱：112238304@qq.com</div>
+      <div class="contact-line">版本：V2.0.0</div>
+      <button class="contact-line mine-row" data-open="support" style="width:100%;grid-template-columns:44px 1fr 18px;padding-left:0;padding-right:0"><span>◎</span><span>支持玄枢</span><span>›</span></button>
     </div>
   </section>
 
   <section class="page" id="page-support">
-    <div class="topline"><button class="back-btn" data-open="mine">?</button><div class="section-title">֧������</div></div>
+    <div class="topline"><button class="back-btn" data-open="mine">‹</button><div class="section-title">支持玄枢</div></div>
     <div class="card form-card">
       <div class="support-intro">
-        <h2>֧������</h2>
-        <p>����Ŀǰ���ʹ�á���������������߶����а�������ӭ����Ը���͵ķ�ʽ֧�����Ǽ���ά�������ơ�</p>
+        <h2>支持玄枢</h2>
+        <p>玄枢目前免费使用。如果你觉得这个工具对你有帮助，欢迎以自愿打赏的方式支持我们继续维护和完善。</p>
       </div>
       <div class="pay-grid">
         <div class="card pay-card">
-          <h3>΢��֧��</h3>
-          <img src="/v2-preview/assets/pay-wechat.jpg" alt="΢���տ���" width="1280" height="1744" loading="lazy">
+          <h3>微信支持</h3>
+          <img src="/v2-preview/assets/pay-wechat.jpg" alt="微信收款码" width="1280" height="1744" loading="lazy">
         </div>
         <div class="card pay-card">
-          <h3>֧����֧��</h3>
-          <img src="/v2-preview/assets/pay-alipay.jpg" alt="֧�����տ���" width="1215" height="1890" loading="lazy">
+          <h3>支付宝支持</h3>
+          <img src="/v2-preview/assets/pay-alipay.jpg" alt="支付宝收款码" width="1215" height="1890" loading="lazy">
         </div>
       </div>
-      <div class="support-note">������ȫ��Ը����Ӱ���κι���ʹ�á���л���ÿһ�����⣬���ǻ�������ں��������Ż������������ͷ�����ά����</div>
+      <div class="support-note">打赏完全自愿，不影响任何功能使用。感谢你的每一份心意，我们会把它用于后续功能优化、内容整理和服务器维护。</div>
     </div>
   </section>
   <footer class="site-footer">
-    <div><a href="https://beian.miit.gov.cn/" rel="noreferrer" target="_blank">¤ICP��2026004046��</a></div>
+    <div><a href="https://beian.miit.gov.cn/" rel="noreferrer" target="_blank">陇ICP备2026004046号</a></div>
     <div>
       <a class="beian-link" href="https://beian.mps.gov.cn/#/query/webSearch?code=62010302001821" rel="noreferrer" target="_blank">
         <img src="/v2-preview/assets/beian-icon.png" alt="" width="20" height="20" loading="lazy">
-        <span>�ʹ�������62010302001821��</span>
+        <span>甘公网安备62010302001821号</span>
       </a>
     </div>
-    <div>��վ���ݽ��������������Ļ��ο��������Կ�����</div>
+    <div>本站内容仅供娱乐与民俗文化参考，请理性看待。</div>
   </footer>
 </div>
 <nav class="bottom-nav">
-  <button class="nav-btn active" data-tab="calendar"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="soft-fill" x="4.8" y="6.2" width="22.4" height="21.2" rx="4.2"/><rect x="5.8" y="7.6" width="20.4" height="18.9" rx="3.6"/><path d="M11 4.6v5.1M21 4.6v5.1M9.2 13.1h13.6"/><circle class="deep-fill" cx="11.2" cy="17.2" r="1.55"/><circle class="deep-fill" cx="16" cy="17.2" r="1.55"/><circle class="deep-fill" cx="20.8" cy="17.2" r="1.55"/><circle class="deep-fill" cx="11.2" cy="22" r="1.55"/><circle class="deep-fill" cx="16" cy="22" r="1.55"/><circle class="deep-fill" cx="20.8" cy="22" r="1.55"/></svg></span><span>����</span></button>
-  <button class="nav-btn" data-tab="discover"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><circle class="soft-fill" cx="16" cy="16" r="11.2"/><circle cx="16" cy="16" r="11.2"/><path d="M7.8 20.7c2.5-2.4 4.8-5.4 7.1-5.4 2.1 0 3.1 3.2 4.7 3.2 1.2 0 2.2-1.5 4.5-4.1"/><path d="M8.2 22.1c4.2-1.4 9.1-1.6 15.7-.4"/><circle class="sun-fill" cx="22.7" cy="10.1" r="3.2"/><path d="M7.2 17.4c1.9-.8 3.4-.8 4.7 0M19 22.4c1.9-.9 3.5-.8 5 .2"/></svg></span><span>������</span></button>
-  <a class="nav-btn" href="/tools/"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="soft-fill" x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M10.7 10V8.3c0-1.1.9-2 2-2h6.6c1.1 0 2 .9 2 2V10"/><rect x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M5.8 16h20.4"/><rect x="13.2" y="14.1" width="5.6" height="5.1" rx="1.1"/><path d="M7.8 23.2c3.3-1.2 5.2-1.1 7.3.2M18.4 24.2c2.3-1.8 4.2-2.2 6.7-1.2"/></svg></span><span>����</span></a>
-  <button class="nav-btn" data-tab="mine"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><circle class="soft-fill" cx="16" cy="16" r="11.3"/><path d="M27.2 16c0 2.4-.7 4.6-2 6.4"/><path d="M4.9 16A11.1 11.1 0 0 1 24.6 9"/><circle cx="16" cy="13.1" r="3.5"/><path d="M9.4 23c1.7-3.5 4.1-5.1 6.6-5.1s4.9 1.6 6.6 5.1"/><path d="M19.4 24.8c2.2-2 4.1-2.2 6.7-.7 1 .6 1.9.7 2.9.2"/><path d="M21.1 26.5c1.6-1 3-1 4.6-.1"/></svg></span><span>�ҵ�</span></button>
+  <button class="nav-btn active" data-tab="calendar"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="soft-fill" x="4.8" y="6.2" width="22.4" height="21.2" rx="4.2"/><rect x="5.8" y="7.6" width="20.4" height="18.9" rx="3.6"/><path d="M11 4.6v5.1M21 4.6v5.1M9.2 13.1h13.6"/><circle class="deep-fill" cx="11.2" cy="17.2" r="1.55"/><circle class="deep-fill" cx="16" cy="17.2" r="1.55"/><circle class="deep-fill" cx="20.8" cy="17.2" r="1.55"/><circle class="deep-fill" cx="11.2" cy="22" r="1.55"/><circle class="deep-fill" cx="16" cy="22" r="1.55"/><circle class="deep-fill" cx="20.8" cy="22" r="1.55"/></svg></span><span>日历</span></button>
+  <button class="nav-btn" data-tab="discover"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><circle class="soft-fill" cx="16" cy="16" r="11.2"/><circle cx="16" cy="16" r="11.2"/><path d="M7.8 20.7c2.5-2.4 4.8-5.4 7.1-5.4 2.1 0 3.1 3.2 4.7 3.2 1.2 0 2.2-1.5 4.5-4.1"/><path d="M8.2 22.1c4.2-1.4 9.1-1.6 15.7-.4"/><circle class="sun-fill" cx="22.7" cy="10.1" r="3.2"/><path d="M7.2 17.4c1.9-.8 3.4-.8 4.7 0M19 22.4c1.9-.9 3.5-.8 5 .2"/></svg></span><span>观万象</span></button>
+  <a class="nav-btn" href="/tools/"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="soft-fill" x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M10.7 10V8.3c0-1.1.9-2 2-2h6.6c1.1 0 2 .9 2 2V10"/><rect x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M5.8 16h20.4"/><rect x="13.2" y="14.1" width="5.6" height="5.1" rx="1.1"/><path d="M7.8 23.2c3.3-1.2 5.2-1.1 7.3.2M18.4 24.2c2.3-1.8 4.2-2.2 6.7-1.2"/></svg></span><span>工具</span></a>
+  <button class="nav-btn" data-tab="mine"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><circle class="soft-fill" cx="16" cy="16" r="11.3"/><path d="M27.2 16c0 2.4-.7 4.6-2 6.4"/><path d="M4.9 16A11.1 11.1 0 0 1 24.6 9"/><circle cx="16" cy="13.1" r="3.5"/><path d="M9.4 23c1.7-3.5 4.1-5.1 6.6-5.1s4.9 1.6 6.6 5.1"/><path d="M19.4 24.8c2.2-2 4.1-2.2 6.7-.7 1 .6 1.9.7 2.9.2"/><path d="M21.1 26.5c1.6-1 3-1 4.6-.1"/></svg></span><span>我的</span></button>
 </nav>
 <div class="home-indicator"></div>
 <div class="month-picker" id="monthPicker">
   <div class="month-panel">
-    <h3>ѡ������</h3>
+    <h3>选择年月</h3>
     <div class="picker-row">
       <select id="yearSelect"></select>
       <select id="monthSelect"></select>
     </div>
     <div class="picker-actions">
-      <button id="monthCancel">ȡ��</button>
-      <button class="primary" id="monthConfirm">ȷ��</button>
+      <button id="monthCancel">取消</button>
+      <button class="primary" id="monthConfirm">确定</button>
     </div>
   </div>
 </div>
@@ -1631,82 +1631,82 @@ function trackEvent(eventName, eventLabel) {
 }
 window.trackEvent = trackEvent;
 const days = [
-  ['28','إʮ','muted weekend'],['29','إһ','muted'],['30','إ��','muted'],['1','�Ͷ���','festival'],['2','إ��',''],['3','إ��',''],['4','�����','festival weekend'],
-  ['5','����','festival weekend'],['6','إ��',''],['7','إ��',''],['8','����','selected'],['9','����',''],['10','����',''],['11','����','festival weekend'],
-  ['12','ĸ�׽�','festival weekend'],['13','����',''],['14','����',''],['15','����',''],['16','����',''],['17','��ʮ',''],['18','ʮһ','festival weekend'],
-  ['19','ʮ��','festival weekend'],['20','С��','term'],['21','ʮ��',''],['22','ʮ��',''],['23','ʮ��',''],['24','ʮ��',''],['25','ʮ��','festival weekend'],
-  ['26','ʮ��','festival weekend'],['27','��ʮ',''],['28','إһ',''],['29','إ��',''],['30','إ��',''],['31','إ��',''],['1','��ͯ��','muted']
+  ['28','廿十','muted weekend'],['29','廿一','muted'],['30','廿二','muted'],['1','劳动节','festival'],['2','廿四',''],['3','廿五',''],['4','青年节','festival weekend'],
+  ['5','立夏','festival weekend'],['6','廿八',''],['7','廿九',''],['8','四月','selected'],['9','初二',''],['10','初三',''],['11','初四','festival weekend'],
+  ['12','母亲节','festival weekend'],['13','初六',''],['14','初七',''],['15','初八',''],['16','初九',''],['17','初十',''],['18','十一','festival weekend'],
+  ['19','十二','festival weekend'],['20','小满','term'],['21','十四',''],['22','十五',''],['23','十六',''],['24','十七',''],['25','十八','festival weekend'],
+  ['26','十九','festival weekend'],['27','二十',''],['28','廿一',''],['29','廿二',''],['30','廿三',''],['31','廿四',''],['1','儿童节','muted']
 ];
-const monthNames = ['����','����','����','����','����','����','����','����','����','ʮ��','����','����'];
+const monthNames = ['正月','二月','三月','四月','五月','六月','七月','八月','九月','十月','冬月','腊月'];
 const sampleFestivals = {
-  '5-1': '�Ͷ���',
-  '5-4': '�����',
-  '5-12': 'ĸ�׽�',
-  '6-1': '��ͯ��',
-  '10-1': '�����'
+  '5-1': '劳动节',
+  '5-4': '青年节',
+  '5-12': '母亲节',
+  '6-1': '儿童节',
+  '10-1': '国庆节'
 };
 const todaySeed = new Date();
 let currentYear = todaySeed.getFullYear();
 let currentMonth = todaySeed.getMonth() + 1;
 let selectedDate = new Date(currentYear, currentMonth - 1, todaySeed.getDate());
 
-const LM = ['��','��','��','��','��','��','��','��','��','ʮ','��','��'];
-const LD = ['','��һ','����','����','����','����','����','����','����','����','��ʮ','ʮһ','ʮ��','ʮ��','ʮ��','ʮ��','ʮ��','ʮ��','ʮ��','ʮ��','��ʮ','إһ','إ��','إ��','إ��','إ��','إ��','إ��','إ��','إ��','��ʮ'];
-const WN = ['��','һ','��','��','��','��','��'];
-const ZODIACS = ['��','ţ','��','��','��','��','��','��','��','��','��','��'];
+const LM = ['正','二','三','四','五','六','七','八','九','十','冬','腊'];
+const LD = ['','初一','初二','初三','初四','初五','初六','初七','初八','初九','初十','十一','十二','十三','十四','十五','十六','十七','十八','十九','二十','廿一','廿二','廿三','廿四','廿五','廿六','廿七','廿八','廿九','三十'];
+const WN = ['日','一','二','三','四','五','六'];
+const ZODIACS = ['鼠','牛','虎','兔','龙','蛇','马','羊','猴','鸡','狗','猪'];
 const SUN_SIGNS = [
-  { name:'Ħ����', start:[12,22], color:'ī���', words:'����������������ȰѸ�����˳����̸�µ�չ����' },
-  { name:'ˮƿ��', start:[1,20], color:'��ˮ��', words:'�����ʺϻ����Ƕȿ����⣬���뷨���ȼ�¼�������Ŷ��ۡ�' },
-  { name:'˫����', start:[2,19], color:'ź�ɷ�', words:'���ո�������ǿ�����ºͱ��Ҳ��������������¡�' },
-  { name:'������', start:[3,21], color:'��ɰ��', words:'�����ж������㣬�ʺ��ƽ�СĿ�꣬�������������һ����' },
-  { name:'��ţ��', start:[4,20], color:'�ɰ���', words:'�������س�����ۣ��������顢�ƻ���������Ϊ�ѡ�' },
-  { name:'˫����', start:[5,21], color:'�°�ɫ', words:'�����ʺϹ�ͨ��д����Լ���������Ȼ�һ�֣������˳���֡�' },
-  { name:'��з��', start:[6,22], color:'�����', words:'�����ʺ��չ˼������Լ����������ʱ�Ȱ������ġ�' },
-  { name:'ʨ����', start:[7,23], color:'�̽�ɫ', words:'�����������㣬�ʺ�չʾ������Ҫ����������ء�' },
-  { name:'��Ů��', start:[8,23], color:'����ɫ', words:'����������ϸ�ڡ����̼ƻ�����С����˳������Ȼ����' },
-  { name:'�����', start:[9,23], color:'����ɫ', words:'������Э�����ϵ�޸���������ƽ�⣬����һʱƫִ��' },
-  { name:'��Ы��', start:[10,24], color:'���ɫ', words:'���ն�������ǿ���ʺ���̸����©��ȱ�����˹��Ȳ²⡣' },
-  { name:'������', start:[11,23], color:'�����', words:'�����ʺϳ��С�ѧϰ�뿪���۽磬�ƻ�Խ���Խ����Զ��' }
+  { name:'摩羯座', start:[12,22], color:'墨玉黑', words:'今日宜稳中求进，先把根基理顺，再谈新的展开。' },
+  { name:'水瓶座', start:[1,20], color:'湖水青', words:'今日适合换个角度看问题，新想法可先记录，不急着定论。' },
+  { name:'双鱼座', start:[2,19], color:'藕荷粉', words:'今日感受力较强，宜温和表达，也宜整理心绪与旧事。' },
+  { name:'白羊座', start:[3,21], color:'朱砂红', words:'今日行动力较足，适合推进小目标，但大事仍需多想一步。' },
+  { name:'金牛座', start:[4,20], color:'松柏绿', words:'今日宜守成与积累，财务、人情、计划都以稳妥为佳。' },
+  { name:'双子座', start:[5,21], color:'月白色', words:'今日适合沟通、写作、约见，言语先缓一分，事情便顺三分。' },
+  { name:'巨蟹座', start:[6,22], color:'珍珠白', words:'今日适合照顾家人与自己，情绪起伏时先安顿身心。' },
+  { name:'狮子座', start:[7,23], color:'鎏金色', words:'今日气场较足，适合展示与表达，但要留给别人余地。' },
+  { name:'处女座', start:[8,23], color:'竹青色', words:'今日宜整理细节、复盘计划，把小处做顺，大处自然有序。' },
+  { name:'天秤座', start:[9,23], color:'秋香色', words:'今日利协商与关系修复，凡事求平衡，不宜一时偏执。' },
+  { name:'天蝎座', start:[10,24], color:'绛紫色', words:'今日洞察力较强，适合深谈、查漏补缺，不宜过度猜测。' },
+  { name:'射手座', start:[11,23], color:'琥珀金', words:'今日适合出行、学习与开阔眼界，计划越清楚越能走远。' }
 ];
 const STAR_MONTH_TEXTS = [
-  '�����ʺϴ�����������������������׼���Ч��',
-  '���������Ȼ�����ʺϰѸ��������С��һ��һ���ƽ���',
-  '�����˼ʻ������࣬���ٳ�ŵ������֡�',
-  '�����ʺ������ɼƻ�����������Ҫ��������������'
+  '本月适合打基础，慢慢来，反而更容易见成效。',
+  '本月运势先缓后扬，适合把复杂问题拆小，一步一步推进。',
+  '本月人际互动增多，宜少承诺、多兑现。',
+  '本月适合清理旧计划，把真正重要的事情留下来。'
 ];
 const DAILY_QUOTES = [
-  ['�е�ˮ�<br>��������ʱ', '��ά'],
-  ['ɽ�к���<br>�ɻ���ƣ���ˮ���', '���˼��ľ��'],
-  ['��������<br>��������', '������'],
-  ['�����뿪<br>����΢��', '���˸�̷��'],
-  ['�ľ���Ȼ��<br>�»�����Բ', '����'],
-  ['��������ˮ��ƿ<br>���԰�Ȼ', '����'],
-  ['һ���徻<br>�򾳴���', '����'],
-  ['����Ԥ����<br>��Ԥ���', '����ǡ�'],
-  ['ֹ֪�����ж�<br>�������ܾ�', '����ѧ��'],
-  ['�������<br>ˮ������', '����'],
-  ['���н�<br>��������ǿ��Ϣ', '�����ס�'],
-  ['������<br>�����Ժ������', '�����ס�'],
-  ['�չ�һ��<br>�����ƾ�', '����'],
-  ['��������<br>��������', '�����'],
-  ['���ж���<br>���´���', '����'],
-  ['֪�䲻���κ�<br>����֮����', '��ׯ�ӡ�'],
-  ['���аٻ�������<br>�������綬��ѩ', '���Żۿ�'],
-  ['���к���<br>Ī��ǰ��', '������'],
-  ['������Ӧ<br>��ȥ��', '����'],
-  ['����һ��<br>�������', '����'],
-  ['��ʧ��Ե<br>��������', '����'],
-  ['���²���<br>ʱ������', '����'],
-  ['������ʱ<br>˳�ƶ�Ϊ', '����'],
-  ['��ˮ������<br>���������ϲ���', '������']
+  ['行到水穷处<br>坐看云起时', '王维'],
+  ['山中何事<br>松花酿酒，春水煎茶', '《人间草木》'],
+  ['不乱于心<br>不困于情', '丰子恺'],
+  ['花看半开<br>酒饮微醺', '《菜根谭》'],
+  ['心静自然凉<br>事缓方能圆', '玄枢'],
+  ['云在青天水在瓶<br>各自安然', '禅语'],
+  ['一念清净<br>万境从容', '玄枢'],
+  ['凡事预则立<br>不预则废', '《礼记》'],
+  ['知止而后有定<br>定而后能静', '《大学》'],
+  ['清风徐来<br>水波不兴', '苏轼'],
+  ['天行健<br>君子以自强不息', '《周易》'],
+  ['地势坤<br>君子以厚德载物', '《周易》'],
+  ['日拱一卒<br>功不唐捐', '胡适'],
+  ['静以修身<br>俭以养德', '诸葛亮'],
+  ['心有定处<br>万事从容', '玄枢'],
+  ['知其不可奈何<br>而安之若命', '《庄子》'],
+  ['春有百花秋有月<br>夏有凉风冬有雪', '无门慧开'],
+  ['但行好事<br>莫问前程', '民间格言'],
+  ['事来则应<br>事去则静', '玄枢'],
+  ['缓行一步<br>自有清风', '玄枢'],
+  ['得失随缘<br>心无增减', '禅语'],
+  ['岁月不居<br>时节如流', '孔融'],
+  ['守正待时<br>顺势而为', '玄枢'],
+  ['流水不争先<br>争的是滔滔不绝', '民间格言']
 ];
-const ZERI_DALI = { '��':[1,7], '��':[1,7], '��':[2,8], '��':[2,8], '��':[3,9], '��':[3,9], '��':[4,10], '��':[4,10], 'ţ':[5,11], '��':[5,11], '��':[6,12], '��':[6,12] };
-const ZERI_XIAOLI = { '��':[1,7], '��':[1,7], 'ţ':[2,8], '��':[2,8], '��':[3,9], '��':[3,9], '��':[4,10], '��':[4,10], '��':[5,11], '��':[5,11], '��':[6,12], '��':[6,12] };
+const ZERI_DALI = { '鸡':[1,7], '兔':[1,7], '虎':[2,8], '猴':[2,8], '蛇':[3,9], '猪':[3,9], '龙':[4,10], '狗':[4,10], '牛':[5,11], '羊':[5,11], '鼠':[6,12], '马':[6,12] };
+const ZERI_XIAOLI = { '龙':[1,7], '狗':[1,7], '牛':[2,8], '羊':[2,8], '鼠':[3,9], '马':[3,9], '鸡':[4,10], '兔':[4,10], '虎':[5,11], '猴':[5,11], '蛇':[6,12], '猪':[6,12] };
 function pad2(n) { return String(n).padStart(2, '0'); }
 function dateKey(date) { return date.getFullYear() + '-' + pad2(date.getMonth() + 1) + '-' + pad2(date.getDate()); }
 function sameDay(a, b) { return a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate(); }
 function safeArray(v) { return Array.isArray(v) ? v.filter(Boolean) : (v ? [String(v)] : []); }
-function splitGanZhi(gz) { return gz ? gz.replace('��', '�ꡡ').replace('��', '�¡�').replace('��', '��') : ''; }
+function splitGanZhi(gz) { return gz ? gz.replace('年', '年　').replace('月', '月　').replace('日', '日') : ''; }
 function getInfo(y, m, d) {
   try {
     if (typeof Solar === 'undefined') throw new Error('Solar missing');
@@ -1718,7 +1718,7 @@ function getInfo(y, m, d) {
       solar,
       lunar,
       lMonth: lm,
-      lMonthName: (lm < 0 ? '��' : '') + LM[Math.abs(lm) - 1],
+      lMonthName: (lm < 0 ? '闰' : '') + LM[Math.abs(lm) - 1],
       lDay: lunar.getDay(),
       lDayName: LD[lunar.getDay()] || '',
       yGz: lunar.getYearInGanZhi ? lunar.getYearInGanZhi() : '',
@@ -1746,16 +1746,16 @@ function getInfo(y, m, d) {
     };
   } catch (e) {
     const fallbackDay = ((d - 1) % 30) + 1;
-    return { date: new Date(y, m - 1, d), lMonthName: monthNames[(m - 1) % 12].replace('��',''), lDayName: LD[fallbackDay], yGz:'�׳�', mGz:'����', dGz:'����', jieQi:'', festivals:[], solarFestivals:[], yi:['����','����','����'], ji:['����','����'], jiShen:['���'], xiongSha:['����'], chongSx:'��', chongGan:'��', chong:'��', sha:'��', zhiXing:'��', xiu:'��', naYin:'���н�', taiShen:'ռ���Է��ڱ�', pengZuG:'�ײ�����', pengZuZ:'�Ӳ��ʲ�', tianShen:'˾��', tianLuck:'��' };
+    return { date: new Date(y, m - 1, d), lMonthName: monthNames[(m - 1) % 12].replace('月',''), lDayName: LD[fallbackDay], yGz:'甲辰', mGz:'己巳', dGz:'甲子', jieQi:'', festivals:[], solarFestivals:[], yi:['祭祀','祈福','出行'], ji:['动土','安葬'], jiShen:['天恩'], xiongSha:['五虚'], chongSx:'马', chongGan:'甲', chong:'午', sha:'南', zhiXing:'建', xiu:'角', naYin:'海中金', taiShen:'占门碓房内北', pengZuG:'甲不开仓', pengZuZ:'子不问卜', tianShen:'司命', tianLuck:'吉' };
   }
 }
 function lunarLabel(info) {
   const festival = info.jieQi || info.festivals[0] || info.solarFestivals[0];
   if (festival) return festival;
-  if (info.lDay === 1) return info.lMonthName + '��';
+  if (info.lDay === 1) return info.lMonthName + '月';
   return info.lDayName;
 }
-function yijiText(list, fallback) { return (list && list.length ? list : [fallback]).slice(0, 12).join('��'); }
+function yijiText(list, fallback) { return (list && list.length ? list : [fallback]).slice(0, 12).join('　'); }
 
 function getSunSign(date) {
   const marker = (date.getMonth() + 1) * 100 + date.getDate();
@@ -1768,18 +1768,18 @@ function getSunSign(date) {
 }
 function getMoonPhase(info) {
   const d = info.lDay || 1;
-  if (d === 1) return '˷��';
-  if (d < 7) return '��ü��';
-  if (d < 10) return '������';
-  if (d < 15) return 'ӯ͹��';
-  if (d === 15 || d === 16) return '����';
-  if (d < 23) return '��͹��';
-  if (d < 26) return '������';
-  return '����';
+  if (d === 1) return '朔月';
+  if (d < 7) return '蛾眉月';
+  if (d < 10) return '上弦月';
+  if (d < 15) return '盈凸月';
+  if (d === 15 || d === 16) return '望月';
+  if (d < 23) return '亏凸月';
+  if (d < 26) return '下弦月';
+  return '残月';
 }
 function starText(score) {
   const n = Math.max(1, Math.min(5, score));
-  return '������'.slice(0, n) + '������'.slice(0, 5 - n);
+  return '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n);
 }
 function buildStarInfo(date) {
   const info = getInfo(date.getFullYear(), date.getMonth() + 1, date.getDate());
@@ -1790,14 +1790,14 @@ function buildStarInfo(date) {
     info,
     sign,
     moon,
-    term: info.jieQi || document.getElementById('termName')?.textContent || 'ƽ��',
+    term: info.jieQi || document.getElementById('termName')?.textContent || '平气',
     love: starText(3 + (seed % 3)),
     career: starText(3 + ((seed + 1) % 3)),
     wealth: starText(3 + ((seed + 2) % 3)),
     luckyNumber: (seed % 9) + 1,
     monthText: STAR_MONTH_TEXTS[seed % STAR_MONTH_TEXTS.length],
     trend: Array.from({ length: 7 }, (_, i) => 34 + ((seed + i * 13) % 52)),
-    todayText: moon + '���գ�' + sign.name + '��Ϣ���ԡ�' + sign.words + '���ո�֧Ϊ' + (info.dGz || '����') + '�գ����Ի����˼�Ϊ����˳�ƶ��С�'
+    todayText: moon + '临日，' + sign.name + '气息较显。' + sign.words + '今日干支为' + (info.dGz || '当日') + '日，仍以黄历宜忌为主，顺势而行。'
   };
 }
 function renderStarInfo() {
@@ -1806,10 +1806,10 @@ function renderStarInfo() {
   setText('skyMoon', data.moon);
   setText('skySign', data.sign.name);
   setText('skyTerm', data.term);
-  setText('skyGanzhi', (data.info.dGz || '') + '��');
-  setText('skyLove', '���� ' + data.love);
-  setText('skyCareer', '��ҵ ' + data.career);
-  setText('skyWealth', '���� ' + data.wealth);
+  setText('skyGanzhi', (data.info.dGz || '') + '日');
+  setText('skyLove', '爱情 ' + data.love);
+  setText('skyCareer', '事业 ' + data.career);
+  setText('skyWealth', '财运 ' + data.wealth);
   setText('starName', data.sign.name);
   setText('starAdvice', data.sign.words);
   setText('starNumber', data.luckyNumber);
@@ -1829,21 +1829,21 @@ function renderDailyQuote() {
   const quoteText = document.getElementById('dailyQuoteText');
   const quoteSource = document.getElementById('dailyQuoteSource');
   if (quoteText) quoteText.innerHTML = quote[0];
-  if (quoteSource) quoteSource.textContent = '��' + quote[1].replace(/^��|��$/g, '') + '��';
+  if (quoteSource) quoteSource.textContent = '《' + quote[1].replace(/^《|》$/g, '') + '》';
 }
 function updateHomeSummary(info) {
   const summaryDate = document.querySelector('.summary-date');
   const ganzhi = document.querySelector('.summary-card .ganzhi');
   const yiSpan = document.querySelector('.summary-card .badge.yi')?.nextElementSibling;
   const jiSpan = document.querySelector('.summary-card .badge.ji')?.nextElementSibling;
-  if (summaryDate) summaryDate.textContent = info.lMonthName + '��' + info.lDayName;
-  if (ganzhi) ganzhi.textContent = info.yGz + '�ꡡ' + info.mGz + '�¡�' + info.dGz + '�ա���' + WN[info.date.getDay()];
-  if (yiSpan) yiSpan.textContent = yijiText(info.yi, 'ƽ����');
-  if (jiSpan) jiSpan.textContent = yijiText(info.ji, '��');
+  if (summaryDate) summaryDate.textContent = info.lMonthName + '月' + info.lDayName;
+  if (ganzhi) ganzhi.textContent = info.yGz + '年　' + info.mGz + '月　' + info.dGz + '日　周' + WN[info.date.getDay()];
+  if (yiSpan) yiSpan.textContent = yijiText(info.yi, '平常事');
+  if (jiSpan) jiSpan.textContent = yijiText(info.ji, '无');
   const fortuneYi = document.querySelector('.fortune-line b')?.nextElementSibling;
   const fortuneJi = document.querySelectorAll('.fortune-line b')[1]?.nextElementSibling;
-  if (fortuneYi) fortuneYi.textContent = '˳���ƽ�' + yijiText(info.yi, '�����ƻ�').replace(/��/g, '��') + '֮��';
-  if (fortuneJi) fortuneJi.textContent = '��������' + yijiText(info.ji, '�嶯����').replace(/��/g, '��');
+  if (fortuneYi) fortuneYi.textContent = '顺势推进' + yijiText(info.yi, '整理计划').replace(/　/g, '、') + '之事';
+  if (fortuneJi) fortuneJi.textContent = '谨慎处理' + yijiText(info.ji, '冲动决策').replace(/　/g, '、');
   renderStarInfo();
   renderDailyQuote();
 }
@@ -1894,47 +1894,47 @@ function applyRotatingHomeAssets() {
 }
 const detailDays = [
   {
-    date: '2024��5��7��',
-    lunar: '����إ��',
-    ganzhi: '�׳��ꡡ�����¡��ﺥ�ա��ܶ�',
-    yi: '���롡��ԡ����������ݡ���ԫ��������ȡ',
-    ji: '��լ����Ȣ�����С�����',
-    goodGods: 'ĸ�֡�����������͡�����',
-    badGods: '���ơ���ġ���ɷ���������',
-    wuxing: '��ˮ',
-    chongsha: '���� ɷ��',
-    zhishen: '����',
-    taishen: 'ռ�����ⶫ��',
-    pengzu: '�ﲻ���ϡ�������ǿ<br>������Ȣ����������'
+    date: '2024年5月7日',
+    lunar: '三月廿九',
+    ganzhi: '甲辰年　己巳月　癸亥日　周二',
+    yi: '祭祀　沐浴　解除　破屋　坏垣　馀事勿取',
+    ji: '入宅　嫁娶　开市　安葬',
+    goodGods: '母仓　玉宇　除神　鸣吠　金堂',
+    badGods: '月破　大耗　灾煞　天火　五虚',
+    wuxing: '大海水',
+    chongsha: '冲蛇 煞西',
+    zhishen: '勾陈',
+    taishen: '占房床外东南',
+    pengzu: '癸不词讼　理弱敌强<br>亥不嫁娶　不利新郎'
   },
   {
-    date: '2024��5��8��',
-    lunar: '���³�һ',
+    date: '2024年5月8日',
+    lunar: '四月初一',
     today: true,
-    ganzhi: '�׳��ꡡ�����¡������ա�����',
-    yi: '���롡���������á����С���������ˡ��ɲɡ���ѧ�����С����ס���ȯ',
-    ji: '��լ�����ᡡ�����ľ������',
-    goodGods: '��ºϡ��µºϡ���������ࡡʱ��������',
-    badGods: '�׻������̡����顡�������˷硡��ɷ',
-    wuxing: '���н�',
-    chongsha: '���� ɷ��',
-    zhishen: '˾��',
-    taishen: 'ռ���Է��ڱ�',
-    pengzu: '�ײ����֡��������<br>�Ӳ��ʲ������ǻ���'
+    ganzhi: '甲辰年　己巳月　甲子日　周三',
+    yi: '祭祀　祈福　求嗣　出行　解除　订盟　纳采　入学　开市　交易　立券',
+    ji: '入宅　安葬　作灶　伐木　上梁',
+    goodGods: '天德合　月德合　天恩　四相　时阳　生气',
+    badGods: '白虎　天刑　五虚　土符　八风　劫煞',
+    wuxing: '海中金',
+    chongsha: '冲马 煞南',
+    zhishen: '司命',
+    taishen: '占门碓房内北',
+    pengzu: '甲不开仓　财物耗亡<br>子不问卜　自惹祸殃'
   },
   {
-    date: '2024��5��9��',
-    lunar: '���³���',
-    ganzhi: '�׳��ꡡ�����¡��ҳ��ա�����',
-    yi: '���⡡���С��ɲɡ���Ȣ����ľ�����������𡡲�ж',
-    ji: '�������ò�������������������',
-    goodGods: '��������ϡ����ա���ϲ����ҽ������',
-    badGods: '��ԡ���ҡ���Ļ�����ɡ�����',
-    wuxing: '���н�',
-    chongsha: '���� ɷ��',
-    zhishen: '����',
-    taishen: '��ĥ���ⶫ��',
-    pengzu: '�Ҳ���ֲ��ǧ�겻��<br>�󲻹ڴ�����������'
+    date: '2024年5月9日',
+    lunar: '四月初二',
+    ganzhi: '甲辰年　己巳月　乙丑日　周四',
+    yi: '开光　出行　纳采　嫁娶　伐木　架马　出火　拆卸',
+    ji: '安床　置产　破土　动土　安葬',
+    goodGods: '天恩　三合　临日　天喜　天医　玉堂',
+    badGods: '厌对　招摇　四击　归忌　重日',
+    wuxing: '海中金',
+    chongsha: '冲羊 煞东',
+    zhishen: '勾陈',
+    taishen: '碓磨厕外东南',
+    pengzu: '乙不栽植　千株不长<br>丑不冠带　主不还乡'
   }
 ];
 let detailIndex = 1;
@@ -1972,84 +1972,66 @@ function buildCalendarDays(year, month) {
 }
 function renderCalendar() {
   applyRotatingHomeAssets();
-  document.getElementById('monthTitle').textContent = currentYear + '��' + currentMonth + '��';
+  document.getElementById('monthTitle').textContent = currentYear + '年' + currentMonth + '月';
   const data = buildCalendarDays(currentYear, currentMonth);
   document.getElementById('calendarGrid').innerHTML = data.map(d => '<button class="day ' + d.classes + '" data-date="' + d.key + '" data-open="detail"><div class="solar">' + d.day + '</div><div class="lunar">' + d.lunar + '</div></button>').join('');
   updateHomeSummary(getInfo(selectedDate.getFullYear(), selectedDate.getMonth() + 1, selectedDate.getDate()));
 }
 renderCalendar();
-const terms = ['����','��ˮ','����','����','����','����','����','С��','â��','����','С��','����','����','����','��¶','���','��¶','˪��','����','Сѩ','��ѩ','����','С��','��'];
+const terms = ['立春','雨水','惊蛰','春分','清明','谷雨','立夏','小满','芒种','夏至','小暑','大暑','立秋','处暑','白露','秋分','寒露','霜降','立冬','小雪','大雪','冬至','小寒','大寒'];
 const termTexts = {
-  '����': ['Լÿ��2��3-5��<br>����ʼ�����������', '����Ϊ��ʮ�Ľ���֮�ף�����ⶳ���ݳ�ʼ���������������', '��ʳ���ʷ�ɢ֮Ʒ����²ˡ���ѿ�����񡢺��棬��ʳ����֮�', '��˯���𣬳�����ͷ�����������������ͨ�绻������', '�˻�����ͥ����չ��ǣ�̫��ȭ���˶ν���ѣ����˾��ҳ�����', '��ŭ���꣬��̤���ͻ�����ϲ������˿�����', '����һ������ػ�����������Ҳ�ôӶ������ѹ����ˡ�'],
-  '��ˮ': ['Լÿ��2��18-20��<br>�����ٹȣ���ľ�ȶ�', '��ˮʱ�ڽ�ˮ����������δ����ʪ��ʼ�����˽�Ƣ��ʪ��', '��ʳɽҩ��޲�ס����ӡ�С���࣬��ʳ�������壬����Ƣθ��', '�����ﶳ�����˹�����£����令�������ͽ��ס�', '�����ڰ˶ν������ߣ�����ð���˶�������ʱ���ɡ�', '�������������������������֡����˽�̸�������ľ�������', '��ˮ������������Ҳ����������ġ�'],
-  '����': ['Լÿ��3��5-7��<br>���׶���������', '����֮����ʼ�����ݳ澪�ѣ��������������︴�ա�', '��ʳ����Ρ�������Ρ�������Ƣ����ʳ������ɢ̫��֮�', '����ӭ������˳Ӧ��������֮�ƣ����ڳ�ͨ�硣', '�˽���̤�ࡢ�ŷ��ݣ�΢΢�������������������ɾ���������', '�λ�������������������ȥ�������ߣ����洺��չ��', 'һ�����ף����ﶼ���ˡ�������Ļ���Ҳ�ñ������ˡ�'],
-  '����': ['Լÿ��3��20-22��<br>��ҹ��������ƽ', '������ҹƽ�֣�������ƽ���������룬�ǵ��͵�ʱ�ڡ�', '��ʳƽ��֮��缦����������ɽҩ�����ˣ��ɴ󺮴��ȡ�', '������������ͬ�ѣ������С��Ƭ������', '�˷ŷ��ݡ���̫����ɢ������������չ�������˴��ݡ�', '����ƽ��֮ʱ����ҲҪƽ�������������Ե����֡�', '����֮����콥��������Ҳ��������������'],
-  '����': ['Լÿ��4��4-6��<br>���徰�����������', '����ʱ�ڷ��徰������ľ��ï��Ҳ��̤���ɨ����Ҫʱ�', '��ʳʱ����ɫ�߲ˡ����ˡ��㴻�����ţ���ʳ�����纣�����⡣', '����̤�࣬˳Ӧ������������ɨ׷˼�˽ڰ�������ȱ��ˡ�', '�˵�ɽ�����Ρ��ŷ��ݣ��󺹺�ܷ磬����ʪ�ء�', '��ɨ׷Զ�������������������ӣ�������˹����ϧ��ǰ��', '������ֻ�ǽ�����Ҳ��˼��Ľ��ա�'],
-  '����': ['Լÿ��4��19-21��<br>�����ٹȣ��������', '����Ϊ�������һ������������ٹȣ�������ʢ��ʪ�����ء�', '��ʳ޲�ס���С�������ϡ�ɽҩ��ʪ�������²������ˡ�', '������ͨ���������ڻ���ɹ��������ù��', '�˿��ߡ��٤����Ӿ��������ʪ�����������˶���', '����֮�����׸��꣬��һ���²裬��������һ���������̡�', '�����Ǵ����������ᣬ�����Ɑ�裬�����Ҫ���ˡ�'],
-  '����': ['Լÿ��5��5-7��<br>����ʼ�������ﷱï', '����Ϊ�ļ���һ��������������������ﻪʵ�������Ļ�����', '��ʳ�嵭����������߹������࣬��ʳ�������塣Ѽ������ϡ����������', '��˯����˳Ӧ�糤�����С��15-30����������', '�ʶ��˶���ɢ�������ܡ�̫����΢΢�������ɣ��ɴ�������', '���������泩�����⼱�꣬����������', '�ӽ������糤ҹ�̣���ؼ�������ʢ�ļ������ˡ�'],
-  'С��': ['Լÿ��5��20-22��<br>���ཥ�����������', 'С��ʪ�Ƚ������ｫӯδӯ����ʳ��������ʪ��', '�˳Կ�ˡ���÷���̶������ϣ���ʳ��ͣ����²���������', '�����С�����񣬱������յ�ͷ��ɹ�����־�����ˬͨ�硣', '�˳���������ɢ�����ܿ�������£�������ʱ��ˮ��', 'С��δ����֪�㳣�֡�����������ȫ����һ����ط����ǻۡ�', 'С������������õ�״̬������ӯ�������ոպá�'],
-  'â��': ['Լÿ��6��5-7��<br>â�����գ���â֮�ȿ���', 'â����ũ�·�æ��ʱ�ڣ�ʪ�Ƚ����������İ���', '��ʳ��ζ����������÷��ɽ髡����ѣ������̶�������÷�����', '����С�����ģ���������������յ����˹��䡣', '���峿������������˶ν����٤��ѣ��Ͷ��ж�����ۡ�', 'æ�����ң��������ꡣâ����æ��ҲҪ���Լ���һ�ڲ��ʱ�䡣', 'â��æ�֣�ũ�������ֵ�������Ҳ����һ���������º�ϰ�ߡ�'],
-  '����': ['Լÿ��6��21-22��<br>�������������ʢ', '����������ʢ������������֮�����ϣ��˾���������', '��ʳ�̶������ӡ���Ҷ�ࡢ���ϡ���ϣ��������򣬱��Ⱪʳ������', '��˯����������С�������ұ���ͨ����ˬ��', '����Ӿ�����ߡ�̫�������������������˶������༰ʱ��ˮ��', '�ľ���Ȼ�������»�һ�������˳������֮���������������������ء�', 'һ���а������һ�죬���˽��죬ҹ�������䳤�ˡ�'],
-  'С��': ['Լÿ��7��6-8��<br>������ʢ������δ��', 'С��������ʢ��������ʼ���ȵ�δ�����㣬�˷���¡�', '��ʳź�����ӡ��̶������ϣ������²裬��ʳ����֮�ﻤƢθ��', '��������������ͨ���������յ��¶Ȳ��˹��͡�', '���峿��������ߡ�̫������������������������', '�������ģ����������ǣ�����Ƭ��ʤ��ǧ�����', 'С���������̽������������¡�����Ӧ������������'],
-  '����': ['Լÿ��7��22-24��<br>������ʢ��ʪ�Ƚ���', '����һ����������ʢ��ʪ�Ƚ������˲�ˮ���������Ķ��ġ�', '��ʳ�̶���������������Ҷ�衢��ϣ����Ƚ��������ˮ��', '���־���ͨ����ˬ������������ţ��յ�����ֱ����', '���糿��������ߡ�̫�������˾����˶���������ֹ��', '�������ȣ���Ҳ���׻����󡣶��ˮ�������磬�ľ���Ȼ����', '�����������Ͳ�Զ�ˡ�һ�������ȵ����ӣ��Ź�ȥ�������졣'],
-  '����': ['Լÿ��8��7-9��<br>��ȥ�������������', '����Ϊ�＾��ʼ������δ�����������������������Ρ�', '��ʳ�ٺϡ��������桢��ź�����ʳ�����տ���ҧ������ϡ�', '���������뼦���ˣ�ҹ�佥����˯���Ǻö��ӡ�', '�˵�ɽ�����ܡ����ߣ������ˬ���ǻ����˶��ĺ�ʱ�ڡ�', '����������˼���ǡ�������ķ�����£����ľ�������', '����ķ����Ѿ����˲�һ����ζ�������ŵ�����'],
-  '����': ['Լÿ��8��22-24��<br>������ֹ���Ƶ�����', '����֮�����Ƚ��ˣ��������⽥�ԣ��������', '��ʳѼ�ӡ��桢�ٺϡ����������������ˮ����ʳ������', '��˯����˯ǰ�ݽ����ߣ�ҹ�������������ꡣ', '�˵�ɽԶ�㡢���У����ջ����˶���ѣ�ע���������¡�', '������ȣ���Ҳ�����ˡ�����һ������ļ��䣬׼�����', '�����"��"����ֹ����˼������������Ϊֹ�����⽥����'],
-  '��¶': ['Լÿ��9��7-9��<br>¶�����ף���������', '��¶ʱ����ҹ�²����󣬲�ľ��¶���������ء�', '��ʳ�桢���ܲ���ɽҩ����ź����λ�θ����ʳ����֮�', '���·��������令�ò����ͺ󱳣�˯ǰ��ˮ�ݽš�', '�����ܡ����ߡ�̫�����峿¶��ʱ���˳����ŵء�', '��¶���ҹ��һҹ��һҹ�������Ų����������ֵ��ϸƷ��', '�峿��Ҷ�ϵ�¶�飬���������д����ص�ʫ��'],
-  '���': ['Լÿ��9��22-24��<br>��ҹ��ƽ����ɫƽ��', '���������룬��ҹ��������ƽ����ɫ��Ũ��', '��ʳз���𻨸⡢�桢ʯ����ʳƽ�ͣ���ʳ��������֮�', '���������뼦���ˣ����ұ����ʶ�ʪ������', '�˵�ɽ�����С���̫���������ˬ���˶�����ʱ��', '����ƽ��֮�գ���ҲҪ��ƫ���С��������ִ�ţ�˳����Ȼ��', '���֮��ҹ��������ڵ����ˣ���һյ�ƣ���һ���衣'],
-  '��¶': ['Լÿ��10��8-9��<br>¶�����䣬������Ҳ', '��¶֮���⽥�أ�����¶�䣬���������', '��ʳ֥�顢���ҡ�ɽҩ����ź��������ȵ����࣬��ʳ������', '�㲿��ůΪҪ��˯ǰ��ˮ�ݽţ�������˯����������', '�����ܡ����ߡ��˶ν����˶���ʱ���·�����', '����������ʹ־�����������ʺϳ����ͷ�˼�����˴�ϲ�󱯡�', '��¶����������ߵ�һ�������߼������Ƕ����ˡ�'],
-  '˪��': ['Լÿ��10��23-24��<br>˪ʼ������ľ����', '˪�����＾���һ�������������������ٲݵ��㡣', '��ʳ���ӡ��桢���ܲ������⣬�²��������Ƣθ��', '�����������ճ�����������Ӻ�ů��δ���Ȼ���ϥ��', '��̫�����˶ν������ߣ����˳������磬��̫�������ٶ���', '���ն��أ���Ҳ�����ա������ɵģ�׼��ӭ���µġ�', '˪��֮�����￪ʼ�ղء���Ҳ�ð��Լ��ľ������ջ�����'],
-  '����': ['Լÿ��11��7-8��<br>����ʼ���������ղ�', '����Ϊ������ʼ����رղأ�����Ǳ�գ�������������', '��ʳ���⡢���⡢���ҡ��ڶ��������²�����������������䡣', '��������ش��չ⣬������ů����˯ǰ��ˮ�ݽš�', '��̫�����˶ν��������˶������˴󺹣��ܺ����¡�', '�����˲أ���ҲҪ������˼���ǣ��Ѿ����������괺�졣', '���ղ���һ��֮�գ�����һ��֮ʼ�������µĸ�������������'],
-  'Сѩ': ['Լÿ��11��22-23��<br>��δ���ѩδ��', 'Сѩʱ��������������ѩ���ֵ�δ��ʢ�����²�������', '��ʳ�������ܲ������ӡ�ɽҩ������Ƣ������Ƚ���ů����', '��ůΪҪ�����令��ͷ���ͽ��ף����ҳ�ͨ�绻����', '�����ڰ˶ν����٤����������������ɢ��ɹ̫����', '���ս�����鲻�˸�������ȥ����һյů�ƣ���һ�����顣', 'Сѩ������Ĵ�ѩ�׷ɣ��Ƕ���ĵ�һ��������ʺ�'],
-  '��ѩ': ['Լÿ��12��6-8��<br>ѩʢ������', '��ѩ֮������ʢ�����֮�����ڱղأ�������������', '��ʳ���⡢ţ�⡢ɽҩ���ڶ�����ʳ���䣬�����¿�ˮ��', '�������𣬱ܺ����£�����Ӻ񣬳��Ŵ�ñΧ����', '������̫�����˶ν��������˶�ѡ�������ע�����������', '��ѩ��ɽ����ҲҪ��ס�����ز����˲����ǻ��', '��ѩѹ֦ͷ���������ڵ�ͷ������������'],
-  '����': ['Լÿ��12��21-23��<br>����������һ������', '����������ת������Ҫ�ڵ㣬�����Դ˽�����һ��������', '��ʳ���ӡ���������Ŵ�׷�����Բ���棬�²����ء�', '��˯���𣬱ܺ���ů������ҹ��Щ��ң������Χ¯��', '��̫�����˶ν����������ߣ����˾����˶����Ծ���Ϊ����', '����һ����������ڰ�Ҳ�������ϣ����һ�졣�������⡣', '����˵���������꣬��Ϊ�������𣬹���һ���һ��ࡣ'],
-  'С��': ['Լÿ��1��5-7��<br>�������÷�����', 'С����С�������أ���¡��ʱ�ڣ��˷���������', '��ʳ���⡢Ŵ�׷�����Բ�����ң���ʳů������ʳ���䡣', '��ůΪҪ�����令�������ͽţ�˯ǰ��ˮ�ݽ����ߡ�', '�����ڰ˶ν���̫������������ʱ����ɢ����ע�������', 'С�����䣬��ȴ��ů�������˴���绰�����Լ��ݺ��Ȳ衣', 'С���亮����÷���ѿ������컹��Զ��'],
-  '��': ['Լÿ��1��20-21��<br>�������������ⰵ��', '��Ϊ��ʮ�Ľ������ڣ��������������˱�ů���ء�', '��ʳ�²�֮��缦�������⡢Ŵ�׷�����ʳ���䣬���������', '��˯���𣬾�����ůͨ�磬���Ŵ�ͷ�����ţ�����������', '�����ڰ˶ν���̫������������ʱɢ����΢΢���ȼ��ɡ�', '�������һ�����������ﵽ������Ҳ�����ת�۵㡣�������顣', '��֮����������ˡ������⼸�죬�������ת�ǡ�']
+  '立夏': ['2024年5月5日　10:23:15<br>农历 三月廿七', '立夏，二十四节气中的第7个节气，夏季的第一个节气，标志着重要时节的正式开始。', '立夏时节，万物生长，宜养心护阳，注意饮食清淡，保持心情舒畅。'],
+  '小满': ['2024年5月20日　21:59:17<br>农历 四月十三', '小满，麦类等夏熟作物籽粒开始饱满，但尚未成熟，万物渐盈而未满。', '小满湿热渐起，宜清利祛湿，饮食清淡，少熬夜。'],
+  '芒种': ['2024年6月5日　12:09:40<br>农历 四月廿九', '芒种，芒作可收，有芒之谷可种，是农事繁忙的时节。', '芒种宜养心安神，避暑湿，劳作有度。'],
+  '夏至': ['2024年6月21日　04:50:46<br>农历 五月十六', '夏至，白昼最长，阳气至盛，天地之气交合。', '夏至宜静养心气，清暑生津，避免暴晒。'],
+  '小暑': ['2024年7月6日　22:19:49<br>农历 六月初一', '小暑，暑气初盛，天气开始炎热但未到极点。', '小暑宜防暑降温，清淡饮食，午后少外出。'],
+  '大暑': ['2024年7月22日　15:44:11<br>农历 六月十七', '大暑，一年中暑热最盛的时段，湿热交蒸。', '大暑宜补水养阴，少食油腻，保持居室通风。']
 };
 const termAssets = {
-  '����': 'term-01-lichun-ai.webp',
-  '��ˮ': 'term-02-yushui-ai.webp',
-  '����': 'term-03-jingzhe-ai.webp',
-  '����': 'term-04-chunfen-ai.webp',
-  '����': 'term-05-qingming-ai.webp',
-  '����': 'term-06-guyu-ai.webp',
-  '����': 'term-07-lixia-ai.webp',
-  'С��': 'term-08-xiaoman-ai.webp',
-  'â��': 'term-09-mangzhong-ai.webp',
-  '����': 'term-10-xiazhi-ai.webp',
-  'С��': 'term-11-xiaoshu-ai.webp',
-  '����': 'term-12-dashu-ai.webp',
-  '����': 'term-13-liqiu-ai.webp',
-  '����': 'term-14-chushu-ai.webp',
-  '��¶': 'term-15-bailu-ai.webp',
-  '���': 'term-16-qiufen-ai.webp',
-  '��¶': 'term-17-hanlu-ai.webp',
-  '˪��': 'term-18-shuangjiang-ai.webp',
-  '����': 'term-19-lidong-ai.webp',
-  'Сѩ': 'term-20-xiaoxue-ai.webp',
-  '��ѩ': 'term-21-daxue-ai.webp',
-  '����': 'term-22-dongzhi-ai.webp',
-  'С��': 'term-23-xiaohan-ai.webp',
-  '��': 'term-24-dahan-ai.webp'
+  '立春': 'term-01-lichun-ai.webp',
+  '雨水': 'term-02-yushui-ai.webp',
+  '惊蛰': 'term-03-jingzhe-ai.webp',
+  '春分': 'term-04-chunfen-ai.webp',
+  '清明': 'term-05-qingming-ai.webp',
+  '谷雨': 'term-06-guyu-ai.webp',
+  '立夏': 'term-07-lixia-ai.webp',
+  '小满': 'term-08-xiaoman-ai.webp',
+  '芒种': 'term-09-mangzhong-ai.webp',
+  '夏至': 'term-10-xiazhi-ai.webp',
+  '小暑': 'term-11-xiaoshu-ai.webp',
+  '大暑': 'term-12-dashu-ai.webp',
+  '立秋': 'term-13-liqiu-ai.webp',
+  '处暑': 'term-14-chushu-ai.webp',
+  '白露': 'term-15-bailu-ai.webp',
+  '秋分': 'term-16-qiufen-ai.webp',
+  '寒露': 'term-17-hanlu-ai.webp',
+  '霜降': 'term-18-shuangjiang-ai.webp',
+  '立冬': 'term-19-lidong-ai.webp',
+  '小雪': 'term-20-xiaoxue-ai.webp',
+  '大雪': 'term-21-daxue-ai.webp',
+  '冬至': 'term-22-dongzhi-ai.webp',
+  '小寒': 'term-23-xiaohan-ai.webp',
+  '大寒': 'term-24-dahan-ai.webp'
 };
 const termFallbackTexts = {
-  '����': ['Լÿ��2��3-5��<br>����ʼ�����������', '����Ϊ��ʮ�Ľ���֮�ף�����ⶳ���������������', '����չ��ǣ���˯������ŭ���Ρ�'],
-  '��ˮ': ['Լÿ��2��18-20��<br>�����ٹȣ���ľ�ȶ�', '��ˮʱ�ڽ�ˮ�����������΢��������չ����', '�˽�Ƣ��ʪ����ʳ�ºͣ�ע�������'],
-  '����': ['Լÿ��3��5-7��<br>���׶���������', '����֮���ݳ澪�ѣ�����ʼ��������������', '��˳�������嵭��ʳ������ɢ����'],
-  '����': ['Լÿ��3��20-22��<br>��ҹ��������ƽ', '������ҹƽ�֣�������ƽ������������ʢ��', '�˵�����־����ʳƽ�⣬�������ˡ�'],
-  '����': ['Լÿ��4��4-6��<br>���徰�����������', '����ʱ�ڷ��徰����Ҳ��̤���ɨ����Ҫʱ�', '�������������ʳ��������ľ����ʡ�'],
-  '����': ['Լÿ��4��19-21��<br>�����ٹȣ��������', '����Ϊ�������һ������������ٹȣ�������ʢ��', '����ʪ��Ƣ����ʳ���ߣ��ٰ�ҹ��'],
-  '����': ['Լÿ��8��7-9��<br>��ȥ�������������', '����Ϊ�＾��ʼ������δ��������������', '���������Σ�����������Ϣ���ա�'],
-  '����': ['Լÿ��8��22-24��<br>������ֹ���Ƶ�����', '����֮�����Ƚ��ˣ��������⽥���ԡ�', '����˯���𣬷������ʳ����'],
-  '��¶': ['Լÿ��9��7-9��<br>¶�����ף���������', '��¶ʱ����ҹ�²����󣬲�ľ��¶��', '����λ�θ�����·�������̰������'],
-  '���': ['Լÿ��9��22-24��<br>��ҹ��ƽ����ɫƽ��', '���������룬��ҹ��������ƽ��', '��ƽ����ʳ����������������ԡ�'],
-  '��¶': ['Լÿ��10��8-9��<br>¶�����䣬������Ҳ', '��¶֮���⽥�أ�����¶�䡣', '����������㲿��ů����ʳ������'],
-  '˪��': ['Լÿ��10��23-24��<br>˪ʼ������ľ����', '˪�����＾���һ������������������', '���²������Ƣθ���������¡�'],
-  '����': ['Լÿ��11��7-8��<br>����ʼ���������ղ�', '����Ϊ������ʼ����رղأ�����Ǳ�ա�', '���������������������ܺ���ů��'],
-  'Сѩ': ['Լÿ��11��22-23��<br>��δ���ѩδ��', 'Сѩʱ��������������ѩ���֡�', '���²������������˶����������顣'],
-  '��ѩ': ['Լÿ��12��6-8��<br>ѩʢ������', '��ѩ֮������ʢ�����֮�����ڱղء�', '��������������ʳ���䣬ע�����������'],
-  '����': ['Լÿ��12��21-23��<br>����������һ������', '����������ת������Ҫ�ڵ㣬�����Դ˽�����', '���²����أ���˯��ů����������'],
-  'С��': ['Լÿ��1��5-7��<br>�������÷�����', 'С����С���������أ���¡��ʱ�ڡ�', '�˷�����������ʳů�����ٺ�������'],
-  '��': ['Լÿ��1��20-21��<br>�������������ⰵ��', '��Ϊ��ʮ�Ľ������һ�ڣ�������������', '�˱�ů���أ�������������ʳ����']
+  '立春': ['约每年2月3-5日<br>春气始建，万物更生', '立春为二十四节气之首，东风解冻，天地阳气渐生。', '宜舒展筋骨，早睡早起，少怒养肝。'],
+  '雨水': ['约每年2月18-20日<br>雨生百谷，草木萌动', '雨水时节降水渐增，春意从微寒中慢慢展开。', '宜健脾祛湿，饮食温和，注意防寒。'],
+  '惊蛰': ['约每年3月5-7日<br>春雷动，万物醒', '惊蛰之后蛰虫惊醒，春雷始鸣，阳气升发。', '宜顺肝气，清淡饮食，早起散步。'],
+  '春分': ['约每年3月20-22日<br>昼夜均，阴阳平', '春分昼夜平分，寒暑趋平，万物生机正盛。', '宜调和情志，饮食平衡，动静相宜。'],
+  '清明': ['约每年4月4-6日<br>气清景明，万物洁齐', '清明时节风清景明，也是踏青祭扫的重要时令。', '宜舒肝理气，少食发物，保持心境清朗。'],
+  '谷雨': ['约每年4月19-21日<br>雨生百谷，茶香初成', '谷雨为春季最后一个节气，雨润百谷，生长渐盛。', '宜祛湿健脾，多食新蔬，少熬夜。'],
+  '立秋': ['约每年8月7-9日<br>暑去凉来，秋意初生', '立秋为秋季开始，暑热未尽而金气渐生。', '宜润燥养肺，少辛辣，作息渐收。'],
+  '处暑': ['约每年8月22-24日<br>暑气渐止，云淡风清', '处暑之后炎热渐退，早晚凉意渐明显。', '宜早睡早起，防秋燥，饮食清润。'],
+  '白露': ['约每年9月7-9日<br>露凝而白，秋凉渐重', '白露时节昼夜温差增大，草木凝露。', '宜润肺护胃，添衣防凉，少贪寒饮。'],
+  '秋分': ['约每年9月22-24日<br>昼夜再平，秋色平分', '秋分阴阳相半，昼夜均而寒暑平。', '宜平和饮食，养肺润燥，安神早卧。'],
+  '寒露': ['约每年10月8-9日<br>露气寒冷，将凝结也', '寒露之后寒意渐重，秋深露冷。', '宜养阴防燥，足部保暖，少食寒凉。'],
+  '霜降': ['约每年10月23-24日<br>霜始降，草木黄落', '霜降是秋季最后一个节气，天气渐寒。', '宜温补润燥，护脾胃，早晚添衣。'],
+  '立冬': ['约每年11月7-8日<br>冬气始立，万物收藏', '立冬为冬季开始，天地闭藏，阳气潜收。', '宜早卧晚起，温养肾阳，避寒保暖。'],
+  '小雪': ['约每年11月22-23日<br>寒未深而雪未大', '小雪时节天气渐寒，降雪初现。', '宜温补防寒，保持运动，调畅心情。'],
+  '大雪': ['约每年12月6-8日<br>雪盛而冬深', '大雪之后寒气更盛，天地之气趋于闭藏。', '宜温肾护阳，少食生冷，注意防滑防寒。'],
+  '冬至': ['约每年12月21-23日<br>阴极阳生，一阳来复', '冬至是阴阳转换的重要节点，白昼自此渐长。', '宜温补养藏，早睡保暖，静养心神。'],
+  '小寒': ['约每年1月5-7日<br>寒气渐深，梅香初动', '小寒虽小，寒意已重，是隆冬时节。', '宜防寒养肾，温食暖饮，少耗阳气。'],
+  '大寒': ['约每年1月20-21日<br>寒极将尽，春意暗生', '大寒为二十四节气最后一节，寒极而春近。', '宜保暖养藏，静待春生，饮食温润。']
 };
 const defaultTitle = document.title;
 const defaultDescription = document.querySelector('meta[name="description"]')?.content || '';
@@ -2061,17 +2043,17 @@ function setSeo(title, description) {
   if (meta) meta.setAttribute('content', description || defaultDescription);
 }
 const scrollItems = [
-  { id: 'xiaoman-food', group: '������', title: 'С����ʲô', intro: 'С��ʱ�ڣ�������ʣ�����Ƣθ��', content: 'С��ʱ�ڣ��������ȶ�ʪ�����أ���䳣˵��С�������ʡ���Ҳ��ʳ��ˡ���������Ƣθ��ϰ�ס���ʳ���嵭�����˹������塣', tradition: '��ͳ������Ϊ��С��δ�������ｫӯδӯ����ʱ��ʳ�������ȡ���ʪ�����У���ˡ���÷�����ࡢʱ���߹��Կ�Ӧʱ��', reminder: '�������ѣ���ʳ������ζ����ʳ��ͣ����²���������' },
-  { id: 'xiazhi-health', group: '������', title: '��������', intro: '�糤ҹ�̣������ľ�����', content: '����֮��������ʢ�����������ʱ��˳Ӧ��ʱ����˯���𵫲��˰�ҹ������С��������������', tradition: '��ͳ�������������ġ����������������򣬱����ľ�ƽ�ͣ���ʳ��ȡ�̶������ӡ���Ҷ���Ϲ�������֮Ʒ��', reminder: '�������ѣ��ľ���Ȼ�������»�һ�㣬������˳��' },
-  { id: 'liqiu-yi', group: '������', title: '������ʲô', intro: '�����������ղ���ɢ��', content: '�������＾��ʼ�Ľ������δ�����������𡣴�ʱ���������ģ�������Ϣ���ٺ�������', tradition: '��ͳ���������ڡ��ա�����ʳ����������ȣ��������н��ƣ����˹��ȱ�æ��������ɢ��', reminder: '�������ѣ��������ջ��������������ٳ�����' },
-  { id: 'liunian', group: '������', title: '����������ô��', intro: '����֮�䣬�����������', content: '���ֿ����꣬ͨ���Ե������ɵ�֧��ԭ�֡�����֮������˺ϳ����۲�仯�������ǵ���һ���ּ��ף���Ҫ�������ϵ��', tradition: '��ͳ������Ϊ��������һ��֮����������׶�֮�ƣ�ԭ���������������Σ����ܿ����������������Ҫ����֮����', reminder: '�������ѣ��������������Ʋο����������������ʵ�жϡ�' },
-  { id: 'shishen', group: '������', title: 'ʲô��ʮ��', intro: 'ʮ���б𣬸�������', content: 'ʮ���ǰ�����������Ϊ���ģ��۲����������������ϵ��һ�����ƣ������١�ƫ�١����ơ�ƫ�ơ�ʳ���˹ٵȡ�', tradition: '��ͳ�����У�ʮ��ֻ�Ǽ��ױ�ǩ����������ϵͳ�����ɴ������顢��ϵ���������������·�ʽ��', reminder: '�������ѣ�ʮ��Ҫ�����˥��λ����������������˹����жϡ�' },
-  { id: 'piancai', group: '������', title: 'ƫ����ʲô��˼', intro: 'ƫ������Ե����ơ�', content: 'ƫ����ʮ���ж���������֮�ơ���Ե֮�ơ�������������Դ���ȣ�Ҳ�����ж����ͻ�����ʶ�йء�', tradition: '��ͳ�����ƫ���Ƿ�Ϊ�ã�Ҫ������ǿ����λ����������������ϣ����ܼ�ƫ�Ʊ���вơ�', reminder: '�������ѣ���������ҲҪ�������У��ƶ��������ȡ�' },
-  { id: 'dream-snake', group: '�ξ���', title: '�μ���ʲô��˼', intro: '������������δ����', content: '�μ��������׽����г�����Ϊ�仯�����ǡ����������������������������������������ͽ�������֮�¡�', tradition: '��ͳ���Ͳ�����һ�ζ����ס������о��壬�����Ϊ������δ��֮�£����ξ�ƽ�ͣ�������仯����֮��', reminder: '�������ѣ���ֻ������֮һ���Ѻ��Ҫ����ʵ�ж���' },
-  { id: 'dream-ex', group: '�ξ���', title: '�μ�ǰ��ʲô��˼', intro: '�������Σ�δ�ؾ��顣', content: '�μ�ǰ�Σ�������䡢�ź����Ƚϡ���ϵģʽ�йأ���һ��������Ҫ�ص���ȥ��', tradition: '���׽�����������ζ�Ϊ����δ�����������졣Ҳ����ֻ�ǽ����龳�����˹������䡣', reminder: '�������ѣ����β��ؼ��⣬���չ˵��µ��Լ���' },
-  { id: 'dream-teeth', group: '�ξ���', title: '�μ�����ʲô��˼', intro: '������ʾ��������˼��', content: '�μ������������г���ǣ�ҡ����ࡢ���ˡ�ѹ���йء��ִ��Ƕ�Ҳ��������š�˯��״̬��ء�', tradition: '��ͳ���Ͷ������������������Ե֮�����κ󲻰����ɷ�˼�����Ƿ����������ѹ����ʢ��', reminder: '�������ѣ����Զ�������������ͼ��ˡ�' },
-  { id: 'caishen', group: '������', title: '����λ��ʲô��˼', intro: '˳��Ӧʱ����λ���С�', content: '����λ�ǻ����и����ճ��Ƶõķ�λ�ο��������������е����������С���Ƶȳ�����', tradition: '��ͳ����������λ��ʱ�����䣬����λ���Ǳ�֤�òƣ����Ǳ�������ȡ��˳�ƶ��С�', reminder: '�������ѣ���λ�����ο��������Ĳ��������ڽ����жϡ�' },
-  { id: 'yiji', group: '������', title: '�����˼���ô��', intro: '�������У��������ܡ�', content: '�����˼��Ǵ�ͳ�����жԵ��������벻����������ײο��������ڳ��С����С���Ȣ��������ѡ��', tradition: '��ͳ���ͻ��ϸ�֧����ɷ��ֵ�񡢳�ɷ�����ء��˼ɲ��Ǿ���������ʺ���Ϊ��������ʱ�Ĳο���', reminder: '�������ѣ����¶࿴������С�²��ع��Ⱦ��ࡣ' }
+  { id: 'xiaoman-food', group: '节气卷', title: '小满吃什么', intro: '小满时节，苦菜正鲜，宜养脾胃。', content: '小满时节，天气渐热而湿气渐重，民间常说“小满见三鲜”，也有食苦菜、尝新麦、养脾胃的习俗。饮食宜清淡，不宜过分油腻。', tradition: '传统解释认为，小满未满，万物将盈未盈。此时饮食重在清热、祛湿、和中，苦菜、青梅、豆类、时令蔬果皆可应时。', reminder: '今日提醒：少食辛辣厚味，饮食清和，凡事不必求满。' },
+  { id: 'xiazhi-health', group: '节气卷', title: '夏至养生', intro: '昼长夜短，宜养心静气。', content: '夏至之后，阳气至盛，白昼最长。此时宜顺应天时，晚睡早起但不宜熬夜，午间可小憩，以养心气。', tradition: '传统养生讲“夏养心”，夏至宜清暑生津，保持心境平和，饮食可取绿豆、莲子、荷叶、瓜果等清润之品。', reminder: '今日提醒：心静自然凉，凡事缓一点，更容易顺。' },
+  { id: 'liqiu-yi', group: '节气卷', title: '立秋宜什么', intro: '秋气初起，宜收不宜散。', content: '立秋是秋季开始的节令，暑气未消而秋意已起。此时宜慢慢收心，调整作息，少耗气力。', tradition: '传统上立秋重在“收”，饮食宜润，起居宜稳，处事宜有节制，不宜过度奔忙与情绪外散。', reminder: '今日提醒：把心神收回来，先整理，再出发。' },
+  { id: 'liunian', group: '命理卷', title: '八字流年怎么看', intro: '流年之变，观运势起伏。', content: '八字看流年，通常以当年的天干地支与原局、大运之间的生克合冲来观察变化。它不是单看一个字吉凶，而要看整体关系。', tradition: '传统命理认为，流年如一年之气，大运如阶段之势，原局如根本。三者相参，方能看出起伏、机会与需要谨慎之处。', reminder: '今日提醒：看流年重在趋势参考，不宜用来替代现实判断。' },
+  { id: 'shishen', group: '命理卷', title: '什么叫十神', intro: '十神有别，各主其象。', content: '十神是八字中以日主为中心，观察其他天干与日主关系的一套名称，如正官、偏官、正财、偏财、食神、伤官等。', tradition: '传统解释中，十神不只是吉凶标签，而是象意系统。它可代表性情、关系、事务类型与行事方式。', reminder: '今日提醒：十神要结合旺衰、位置与组合来看，不宜孤立判断。' },
+  { id: 'piancai', group: '命理卷', title: '偏财是什么意思', intro: '偏财主机缘与外财。', content: '偏财在十神中多象征流动之财、机缘之财、人情往来、资源调度，也常与行动力和机会意识有关。', tradition: '传统命理里，偏财是否为用，要看日主强弱、位置组合与大运流年配合，不能见偏财便断有财。', reminder: '今日提醒：机会来了也要量力而行，财动更需心稳。' },
+  { id: 'dream-snake', group: '梦境卷', title: '梦见蛇什么意思', intro: '梦中有象，其意未明。', content: '梦见蛇在民俗解梦中常被视为变化、隐忧、警觉或生命力的象征。具体仍需结合梦中情绪和近日所遇之事。', tradition: '传统解释不主张一梦定吉凶。若梦中惊惧，多可视为心中有未解之事；若梦境平和，则可作变化将至之象。', reminder: '今日提醒：梦只是心象之一，醒后更要看现实行动。' },
+  { id: 'dream-ex', group: '梦境卷', title: '梦见前任什么意思', intro: '旧人入梦，未必旧情。', content: '梦见前任，常与记忆、遗憾、比较、关系模式有关，不一定代表还要回到过去。', tradition: '民俗解梦里，旧人入梦多为旧事未尽或心绪回响。也可能只是近日情境触发了过往记忆。', reminder: '今日提醒：旧梦不必急解，先照顾当下的自己。' },
+  { id: 'dream-teeth', group: '梦境卷', title: '梦见掉牙什么意思', intro: '梦有所示，亦有所思。', content: '梦见掉牙在民俗中常与牵挂、口舌、家人、压力有关。现代角度也可能与紧张、睡眠状态相关。', tradition: '传统解释多把牙齿视作根基与亲缘之象。若梦后不安，可反思近期是否言语过急、压力过盛。', reminder: '今日提醒：少言多听，关照身体和家人。' },
+  { id: 'caishen', group: '黄历卷', title: '财神位是什么意思', intro: '顺天应时，择位而行。', content: '财神位是黄历中根据日辰推得的方位参考，常用于民俗中的祈福、开市、求财等场景。', tradition: '传统黄历讲究方位与时日相配，财神位并非保证得财，而是表达趋吉取象、顺势而行。', reminder: '今日提醒：方位可作参考，真正的财运仍在勤谨与判断。' },
+  { id: 'yiji', group: '黄历卷', title: '今日宜忌怎么看', intro: '宜有所行，忌有所避。', content: '黄历宜忌是传统历法中对当日适宜与不宜事项的民俗参考，常用于出行、开市、嫁娶、动土等选择。', tradition: '传统解释会结合干支、神煞、值神、冲煞等因素。宜忌不是绝对命令，更适合作为安排事务时的参考。', reminder: '今日提醒：大事多看条件，小事不必过度拘泥。' }
 ];
 function renderScrollList() {
   const root = document.getElementById('scrollList');
@@ -2083,9 +2065,9 @@ function renderScrollList() {
         <span class="scroll-tag">${item.group}</span>
         <h3>${item.title}</h3>
         <p>${item.intro}</p>
-        <span class="scroll-enter">����С�� ?</span>
+        <span class="scroll-enter">进入小卷 ›</span>
       </button>`).join('');
-    return `<div class="scroll-group-title">��${group}��</div><div class="scroll-list">${cards}</div>`;
+    return `<div class="scroll-group-title">【${group}】</div><div class="scroll-list">${cards}</div>`;
   }).join('');
 }
 function renderScrollDetail(id) {
@@ -2097,14 +2079,14 @@ function renderScrollDetail(id) {
     <h1>${item.title}</h1>
     <span class="scroll-tag">${item.group}</span>
     <p>${item.content}</p>
-    <h3>��ͳ����</h3>
+    <h3>传统解释</h3>
     <p>${item.tradition}</p>
-    <h3>��������</h3>
+    <h3>今日提醒</h3>
     <p>${item.reminder}</p>
-    <h3>����Ƽ�</h3>
+    <h3>相关推荐</h3>
     <div class="scroll-recommend">${recommends.map(x => `<button data-scroll-id="${x.id}" type="button">${x.title}</button>`).join('')}</div>
   `;
-  setSeo(item.title + '_����', item.intro);
+  setSeo(item.title + '_玄枢', item.intro);
 }
 const mineStatsKey = 'xuanshu_v2_mine_stats';
 const mineDreamHistoryKey = 'xuanshu_v2_dream_history';
@@ -2164,12 +2146,12 @@ function addDreamHistory(text) {
   writeLocalJson(mineDreamHistoryKey, list.slice(0, 12));
 }
 const footprintNames = {
-  bazi: '��������',
-  liuyao: '��س����',
-  zeri: '��������',
-  solar: '��������',
-  dream: '�ܹ�����',
-  scrolls: '����С��'
+  bazi: '八字排盘',
+  liuyao: '六爻起卦',
+  zeri: '良辰吉日',
+  solar: '节气养生',
+  dream: '周公解梦',
+  scrolls: '玄枢小卷'
 };
 function addFootprint(id) {
   const name = footprintNames[id];
@@ -2197,15 +2179,15 @@ function renderMinePage() {
   if (dreamHistory) {
     const list = readLocalJson(mineDreamHistoryKey, []).slice(0, 3);
     dreamHistory.innerHTML = list.length
-      ? list.map(item => `<div class="mine-record-item"><span>${item}</span><span>��</span></div>`).join('')
-      : '<div class="mine-record-empty">�����ξ���¼��ȥ����ҹ�ξ�����һ�Ρ�</div>';
+      ? list.map(item => `<div class="mine-record-item"><span>${item}</span><span>梦</span></div>`).join('')
+      : '<div class="mine-record-empty">暂无梦境记录，去「昨夜梦境」解一梦。</div>';
   }
   const footprints = document.getElementById('mineFootprints');
   if (footprints) {
     const list = readLocalJson(mineFootprintsKey, []);
     footprints.innerHTML = list.length
       ? list.map(item => `<span class="footprint-tag">${item}</span>`).join('')
-      : '<span class="footprint-tag">�����㼣</span>';
+      : '<span class="footprint-tag">暂无足迹</span>';
   }
 }
 function openDesktopGuide() {
@@ -2238,9 +2220,9 @@ document.addEventListener('click', e => {
   const hrefBtn = e.target.closest('[data-href]');
   if (hrefBtn) {
     const href = hrefBtn.dataset.href || '';
-    if (href.includes('liuyao')) { trackEvent('xuanshu_liuyao_click', '��س����'); incMineStat('liuyao'); addFootprint('liuyao'); }
-    if (href.includes('bazi')) { trackEvent('xuanshu_bazi_click', '��������'); incMineStat('bazi'); addFootprint('bazi'); }
-    if (href.includes('hehun')) { trackEvent('xuanshu_hehun_click', '���ֺϻ�'); addFootprint('hehun'); }
+    if (href.includes('liuyao')) { trackEvent('xuanshu_liuyao_click', '六爻起卦'); incMineStat('liuyao'); addFootprint('liuyao'); }
+    if (href.includes('bazi')) { trackEvent('xuanshu_bazi_click', '八字排盘'); incMineStat('bazi'); addFootprint('bazi'); }
+    if (href.includes('hehun')) { trackEvent('xuanshu_hehun_click', '八字合婚'); addFootprint('hehun'); }
     location.href = href;
     return;
   }
@@ -2254,11 +2236,11 @@ document.addEventListener('click', e => {
   const tab = e.target.closest('[data-tab]');
   if (tab) {
     const tabEvents = {
-      calendar: ['xuanshu_home_click', '��ҳ'],
-      discover: ['xuanshu_wanxiang_click', '������'],
-      tools: ['xuanshu_tools_click', '����'],
-      mine: ['xuanshu_mine_click', '�ҵ�'],
-      solar: ['xuanshu_jieqi_click', '��������']
+      calendar: ['xuanshu_home_click', '首页'],
+      discover: ['xuanshu_wanxiang_click', '观万象'],
+      tools: ['xuanshu_tools_click', '工具'],
+      mine: ['xuanshu_mine_click', '我的'],
+      solar: ['xuanshu_jieqi_click', '节气养生']
     };
     const event = tabEvents[tab.dataset.tab];
     if (event) trackEvent(event[0], event[1]);
@@ -2267,9 +2249,9 @@ document.addEventListener('click', e => {
   const open = e.target.closest('[data-open]');
   if (open) {
     const openEvents = {
-      zeri: ['xuanshu_liangchen_click', '��������'],
-      dream: ['xuanshu_zhougong_click', '�ܹ�����'],
-      scrolls: ['xuanshu_xiaojuan_click', '����С��']
+      zeri: ['xuanshu_liangchen_click', '良辰吉日'],
+      dream: ['xuanshu_zhougong_click', '周公解梦'],
+      scrolls: ['xuanshu_xiaojuan_click', '玄枢小卷']
     };
     const event = openEvents[open.dataset.open];
     if (event) trackEvent(event[0], event[1]);
@@ -2286,15 +2268,15 @@ document.addEventListener('click', e => {
 
 function dreamResultHtml(item, inputText) {
   if (!item) {
-    const clean = inputText ? inputText.replace(/[<>]/g, '') : '����δ��';
-    return `<h4>${clean}</h4><p>��δ��¼������󡣿ɻ�һ��������Ĵ����ԣ����硰�μ��ߡ����μ�ǰ�Ρ����μ���������</p><p>���������������Ļ��ο��������Կ�����</p>`;
+    const clean = inputText ? inputText.replace(/[<>]/g, '') : '梦象未填';
+    return `<h4>${clean}</h4><p>暂未收录这个梦象。可换一个更具体的词试试，例如“梦见蛇”“梦见前任”“梦见掉牙”。</p><p>仅供娱乐与民俗文化参考，请理性看待。</p>`;
   }
   return `<h4>${item.title}</h4>
-    <p><b>��ͳ�����</b>${item.traditional}</p>
-    <p><b>����������</b>${item.psychology}</p>
-    <p><b>�������ѣ�</b>${item.advice}</p>
-    <p><b>����ξ���</b>${item.related.join('��')}</p>
-    <p>���������������Ļ��ο��������Կ�����</p>`;
+    <p><b>传统解读：</b>${item.traditional}</p>
+    <p><b>心理解析：</b>${item.psychology}</p>
+    <p><b>今日提醒：</b>${item.advice}</p>
+    <p><b>相关梦境：</b>${item.related.join('、')}</p>
+    <p>仅供娱乐与民俗文化参考，请理性看待。</p>`;
 }
 function runDreamSearch(inputId, resultId) {
   const input = document.getElementById(inputId);
@@ -2302,8 +2284,8 @@ function runDreamSearch(inputId, resultId) {
   if (!input || !result) return;
   const value = input.value.trim();
   const found = window.findDreamResult ? window.findDreamResult(value) : null;
-  if (inputId === 'dreamQuickInput') trackEvent('xuanshu_dream_entry_click', '��ҹ�ξ�');
-  if (inputId === 'dreamInput') trackEvent('xuanshu_zhougong_click', '�ܹ�����');
+  if (inputId === 'dreamQuickInput') trackEvent('xuanshu_dream_entry_click', '昨夜梦境');
+  if (inputId === 'dreamInput') trackEvent('xuanshu_zhougong_click', '周公解梦');
   result.innerHTML = dreamResultHtml(found, value);
   result.classList.add('show');
   if (value) {
@@ -2338,8 +2320,8 @@ document.addEventListener('click', e => {
 
 function zeriScore(info, activity) {
   let score = 60;
-  if (info.tianLuck === '��') score += 12;
-  if (info.tianLuck === '��') score -= 12;
+  if (info.tianLuck === '吉') score += 12;
+  if (info.tianLuck === '凶') score -= 12;
   if (info.yi.includes(activity)) score += 18;
   if (info.ji.includes(activity)) score -= 22;
   score += Math.min(10, info.yi.length);
@@ -2348,7 +2330,7 @@ function zeriScore(info, activity) {
 }
 function zeriResultHtml(info, activity, extra) {
   const score = zeriScore(info, activity);
-  return '<div class="zeri-result"><h3>' + (info.date.getMonth() + 1) + '��' + info.date.getDate() + '�� <span class="zeri-score-pill">' + score + '��</span></h3><p>' + info.lMonthName + '��' + info.lDayName + '��' + info.yGz + '�� ' + info.mGz + '�� ' + info.dGz + '��</p><p>�ˣ�' + yijiText(info.yi, 'ƽ����') + '</p><p>�ɣ�' + yijiText(info.ji, '��') + '</p><p>��ɷ��' + (info.chongSx ? '��' + info.chongSx : '��') + (info.sha ? ' ɷ' + info.sha : '') + (extra ? '<br>' + extra : '') + '</p></div>';
+  return '<div class="zeri-result"><h3>' + (info.date.getMonth() + 1) + '月' + info.date.getDate() + '日 <span class="zeri-score-pill">' + score + '分</span></h3><p>' + info.lMonthName + '月' + info.lDayName + '　' + info.yGz + '年 ' + info.mGz + '月 ' + info.dGz + '日</p><p>宜：' + yijiText(info.yi, '平常事') + '</p><p>忌：' + yijiText(info.ji, '无') + '</p><p>冲煞：' + (info.chongSx ? '冲' + info.chongSx : '—') + (info.sha ? ' 煞' + info.sha : '') + (extra ? '<br>' + extra : '') + '</p></div>';
 }
 function findZeriDays(year, month, activity, bride) {
   const days = new Date(year, month, 0).getDate();
@@ -2361,10 +2343,10 @@ function findZeriDays(year, month, activity, bride) {
       const lm = Math.abs(info.lMonth || 0);
       const isDali = (ZERI_DALI[bride] || []).includes(lm);
       const isXiaoli = (ZERI_XIAOLI[bride] || []).includes(lm);
-      if (isDali) { score += 12; extra = 'Ů��' + bride + '��������'; }
-      else if (isXiaoli) { score += 6; extra = 'Ů��' + bride + '��С����'; }
-      else { score -= 8; extra = 'Ů��' + bride + '���Ǵ�����/С���£������ο�'; }
-      if (info.ji.includes('��Ȣ')) score -= 30;
+      if (isDali) { score += 12; extra = '女命' + bride + '：大利月'; }
+      else if (isXiaoli) { score += 6; extra = '女命' + bride + '：小利月'; }
+      else { score -= 8; extra = '女命' + bride + '：非大利月/小利月，仅作参考'; }
+      if (info.ji.includes('嫁娶')) score -= 30;
     }
     if (!info.ji.includes(activity) && (info.yi.includes(activity) || score >= 72)) list.push({ info, score, extra });
   }
@@ -2377,8 +2359,8 @@ function setZeriMode(mode) {
 }
 function renderZeriPage() {
   const info = getInfo(selectedDate.getFullYear(), selectedDate.getMonth() + 1, selectedDate.getDate());
-  const score = zeriScore(info, '����');
-  document.getElementById('zeriTodayCard').innerHTML = '<div class="fortune-detail-title">�������ղο� <span class="zeri-score-pill">' + score + '��</span></div><div class="fortune-detail-text">' + selectedDate.getFullYear() + '��' + (selectedDate.getMonth()+1) + '��' + selectedDate.getDate() + '�ա�' + info.lMonthName + '��' + info.lDayName + '<br>�ˣ�' + yijiText(info.yi, 'ƽ����') + '<br>�ɣ�' + yijiText(info.ji, '��') + '</div>';
+  const score = zeriScore(info, '出行');
+  document.getElementById('zeriTodayCard').innerHTML = '<div class="fortune-detail-title">今日择日参考 <span class="zeri-score-pill">' + score + '分</span></div><div class="fortune-detail-text">' + selectedDate.getFullYear() + '年' + (selectedDate.getMonth()+1) + '月' + selectedDate.getDate() + '日　' + info.lMonthName + '月' + info.lDayName + '<br>宜：' + yijiText(info.yi, '平常事') + '<br>忌：' + yijiText(info.ji, '无') + '</div>';
   const monthValue = selectedDate.getFullYear() + '-' + pad2(selectedDate.getMonth() + 1);
   const zeriMonth = document.getElementById('zeriMonth');
   const zeriMarriageMonth = document.getElementById('zeriMarriageMonth');
@@ -2391,22 +2373,22 @@ function renderZeriPage() {
 function runZeriSearch() {
   const month = document.getElementById('zeriMonth').value || (selectedDate.getFullYear() + '-' + pad2(selectedDate.getMonth() + 1));
   const [y, m] = month.split('-').map(Number);
-  const activity = document.getElementById('zeriActivity').value || '��Ȣ';
+  const activity = document.getElementById('zeriActivity').value || '嫁娶';
   const list = findZeriDays(y, m, activity);
-  document.getElementById('zeriResults').innerHTML = list.length ? list.map(x => zeriResultHtml(x.info, activity, x.extra)).join('') : '<div class="card zeri-panel">������δɸ�����Լ��գ��ɻ�һ��������·��ٿ���</div>';
+  document.getElementById('zeriResults').innerHTML = list.length ? list.map(x => zeriResultHtml(x.info, activity, x.extra)).join('') : '<div class="card zeri-panel">本月暂未筛出明显吉日，可换一个事项或月份再看。</div>';
 }
 function runMarriageSearch() {
   const month = document.getElementById('zeriMarriageMonth').value || (selectedDate.getFullYear() + '-' + pad2(selectedDate.getMonth() + 1));
   const [y, m] = month.split('-').map(Number);
-  const bride = document.getElementById('zeriBride').value || '��';
-  const list = findZeriDays(y, m, '��Ȣ', bride);
-  document.getElementById('zeriResults').innerHTML = list.length ? list.map(x => zeriResultHtml(x.info, '��Ȣ', x.extra)).join('') : '<div class="card zeri-panel">���¼�Ȣɸѡ���٣��ɻ��²鿴��</div>';
+  const bride = document.getElementById('zeriBride').value || '鼠';
+  const list = findZeriDays(y, m, '嫁娶', bride);
+  document.getElementById('zeriResults').innerHTML = list.length ? list.map(x => zeriResultHtml(x.info, '嫁娶', x.extra)).join('') : '<div class="card zeri-panel">本月嫁娶筛选较少，可换月查看。</div>';
 }
 const picker = document.getElementById('monthPicker');
 const yearSelect = document.getElementById('yearSelect');
 const monthSelect = document.getElementById('monthSelect');
-yearSelect.innerHTML = Array.from({ length: 21 }, (_, i) => 2020 + i).map(y => `<option value="${y}">${y}��</option>`).join('');
-monthSelect.innerHTML = Array.from({ length: 12 }, (_, i) => i + 1).map(m => `<option value="${m}">${m}��</option>`).join('');
+yearSelect.innerHTML = Array.from({ length: 21 }, (_, i) => 2020 + i).map(y => `<option value="${y}">${y}年</option>`).join('');
+monthSelect.innerHTML = Array.from({ length: 12 }, (_, i) => i + 1).map(m => `<option value="${m}">${m}月</option>`).join('');
 document.getElementById('monthPrev').addEventListener('click', () => {
   currentMonth--;
   if (currentMonth < 1) { currentMonth = 12; currentYear--; }
@@ -2450,48 +2432,48 @@ picker.addEventListener('click', e => {
 document.getElementById('zeriSearchBtn')?.addEventListener('click', runZeriSearch);
 document.getElementById('zeriMarriageBtn')?.addEventListener('click', runMarriageSearch);
 const lvzuSeedSigns = [
-  { no: 1, level: '����', poem: '�������������<br>һ�տ���������', career: '������', love: '�л�Ӧ', money: '���н�' },
-  { no: 8, level: '�м�', poem: '��ɢ�����罥��<br>ǰ;���й��˷�', career: '������', love: '�����', money: '��Ϊ��' },
-  { no: 12, level: '�ϼ�', poem: '������ĥ���ַ�<br>�ɳ���ϲһʱ��', career: '��ת��', love: '���޺�', money: '������' },
-  { no: 19, level: '��ƽ', poem: '����·Զ���붨<br>Ī��粨��ȥ��', career: '������', love: '�𼱴�', money: '��ð��' },
-  { no: 23, level: 'С��', poem: '����������絽<br>�µ���ͷ���г�', career: '��ʱ��', love: '������', money: 'С�е�' },
-  { no: 32, level: '�ϼ�', poem: '�ƿ��³�������<br>���������ǰ��', career: '��ת��', love: '��һ����˳', money: '���˼�' },
-  { no: 46, level: '�м�', poem: '���н��Ϸ粨��<br>һƬ���ĵ�����', career: '���ƽ�', love: '������', money: '������' },
-  { no: 58, level: '��ƽ', poem: '����ǰϪˮδ��<br>�����Ȳ�������', career: '�ȹ۲�', love: '�����', money: '�˽���' },
-  { no: 71, level: '�ϼ�', poem: '��ľ�괺���ٷ�<br>����ϲ��������', career: '�»���', love: '��ϲ��', money: '�ɼ���' },
-  { no: 89, level: 'С��', poem: 'һ��������ǰ��<br>��������Ī��Ǩ', career: '������', love: '�����', money: 'ƽ��' }
+  { no: 1, level: '上上', poem: '春风得意马蹄轻<br>一日看尽长安花', career: '宜主动', love: '有回应', money: '稳中进' },
+  { no: 8, level: '中吉', poem: '云散月明风渐定<br>前途自有贵人扶', career: '遇助力', love: '缓则成', money: '守为佳' },
+  { no: 12, level: '上吉', poem: '宝镜重磨光又发<br>旧愁新喜一时开', career: '见转机', love: '可修和', money: '渐有益' },
+  { no: 19, level: '中平', poem: '行人路远心须定<br>莫向风波问去留', career: '宜守正', love: '勿急催', money: '少冒险' },
+  { no: 23, level: '小吉', poem: '花开须待东风到<br>事到临头自有成', career: '等时机', love: '慢慢来', money: '小有得' },
+  { no: 32, level: '上吉', poem: '云开月出正分明<br>不须进退问前程', career: '有转机', love: '慢一步更顺', money: '不宜急' },
+  { no: 46, level: '中吉', poem: '舟行江上风波静<br>一片归心到岸边', career: '可推进', love: '渐安定', money: '利正财' },
+  { no: 58, level: '中平', poem: '欲渡前溪水未深<br>还须稳步听佳音', career: '先观察', love: '有阻隔', money: '宜谨慎' },
+  { no: 71, level: '上吉', poem: '枯木逢春花再发<br>重重喜气入门来', career: '新机会', love: '有喜象', money: '可见财' },
+  { no: 89, level: '小吉', poem: '一轮明月照前川<br>静待佳期莫妄迁', career: '稳中求', love: '宜真诚', money: '平稳' }
 ];
-const oracleLevels = ['����', '�ϼ�', '�м�', 'С��', '��ƽ', '��ƽ'];
+const oracleLevels = ['上上', '上吉', '中吉', '小吉', '中平', '下平'];
 const oraclePoemPairs = [
-  ['һ��������ǰ��', '��������Ī��Ǩ'],
-  ['���ͱ��۹�Զ��', '��������������'],
-  ['����ϸ��֦֦��', '������ʱ������'],
-  ['�ƿ���ɢ�����', '�صó������г�'],
-  ['�е�ˮ��ɽ��ת', '��ͷһ����ǰ��'],
-  ['���ö�������Ժ', '÷���㶯������'],
-  ['�����Ի�������', '���Ĳ���������'],
-  ['Զ�͹��������', 'ǰԵ����ϲ����'],
-  ['���н��Ϸ粨��', 'һƬ���ĵ�����'],
-  ['��ľ�괺���ٷ�', '����ϲ��������'],
-  ['����ǰϪˮδ��', '�����Ȳ�������'],
-  ['������ĥ���ַ�', '�ɳ���ϲһʱ��'],
-  ['��ɢ�����罥��', 'ǰ;���й��˷�'],
-  ['�������������', 'һ�տ���������'],
-  ['����������絽', '�µ���ͷ���г�'],
-  ['����·Զ���붨', 'Ī��粨��ȥ��'],
-  ['����������ɫ��', '��ͥ���к�����'],
-  ['ʯ�в��������', '��������������'],
-  ['������ǰ��ҹ��', '����������ͥ��'],
-  ['������ִ�����', 'ˮ������������'],
-  ['ɽ��ˮ������·', '�����ƿ���̹;'],
-  ['��紵����ͩҶ', 'һƬ��������¥'],
-  ['ƽ��һ�����׶�', '�����»�������'],
-  ['�����������ܶ�', '��·��ң־��ͨ'],
-  ['����֦ͷ�㽥��', '��������������']
+  ['一轮明月照前川', '静待佳期莫妄迁'],
+  ['风送扁舟过远津', '贵人相助见精神'],
+  ['花逢细雨枝枝润', '事遇良时日日新'],
+  ['云开雾散天光现', '守得初心自有成'],
+  ['行到水穷山又转', '回头一步见前程'],
+  ['玉兔东升光满院', '梅花香动报春声'],
+  ['有意栽花花渐发', '无心插柳柳成阴'],
+  ['远客归来逢旧友', '前缘再续喜相亲'],
+  ['舟行江上风波静', '一片归心到岸边'],
+  ['枯木逢春花再发', '重重喜气入门来'],
+  ['欲渡前溪水未深', '还须稳步听佳音'],
+  ['宝镜重磨光又发', '旧愁新喜一时开'],
+  ['云散月明风渐定', '前途自有贵人扶'],
+  ['春风得意马蹄轻', '一日看尽长安花'],
+  ['花开须待东风到', '事到临头自有成'],
+  ['行人路远心须定', '莫向风波问去留'],
+  ['柳暗花明春色近', '门庭渐有好音来'],
+  ['石中藏玉须雕琢', '火里生莲见本真'],
+  ['静坐窗前听夜雨', '明朝花发满庭芳'],
+  ['天边雁字传佳信', '水上莲香入梦来'],
+  ['山重水复疑无路', '月满云开见坦途'],
+  ['金风吹动梧桐叶', '一片清声入玉楼'],
+  ['平地一声春雷动', '旧门新户见光明'],
+  ['江湖虽阔舟能渡', '世路虽遥志可通'],
+  ['丹桂枝头香渐满', '良辰美景待君逢']
 ];
-const oracleCareers = ['������', '��ת��', '���ƽ�', '�ȹ۲�', '������', '������', '������', '��ʱ��', '���»�', '�����'];
-const oracleLoves = ['�л�Ӧ', '��һ����˳', '������', '�𼱴�', '�����', '���޺�', '��ϲ��', '�ȹ�ͨ', '������', 'Ե�ֽ�'];
-const oracleMoney = ['���н�', '��Ϊ��', '������', '��ð��', 'С�е�', '������', '�ɼ���', '�˽���', '��ƫϲ', '������'];
+const oracleCareers = ['宜主动', '见转机', '可推进', '先观察', '稳中求', '贵人助', '宜守正', '等时机', '有新机', '缓则成'];
+const oracleLoves = ['有回应', '慢一步更顺', '渐安定', '勿急催', '宜真诚', '可修和', '有喜象', '先沟通', '心意明', '缘分近'];
+const oracleMoney = ['稳中进', '守为佳', '利正财', '少冒险', '小有得', '渐有益', '可见财', '宜节制', '有偏喜', '财宜守'];
 const lvzuSigns = Array.from({ length: 100 }, (_, index) => {
   const no = index + 1;
   const pair = oraclePoemPairs[index % oraclePoemPairs.length];
@@ -2513,10 +2495,10 @@ function renderOracleCount() {
   const now = new Date();
   const seed = now.getFullYear() * 372 + (now.getMonth() + 1) * 31 + now.getDate() + Math.floor(Date.now() / 60000);
   const count = 3000 + (seed * 97 % 6001);
-  el.textContent = '��������' + count + '�˳�ǩ';
+  el.textContent = '今日已有' + count + '人抽签';
 }
 function renderOracle(sign) {
-  document.getElementById('oracleSign').textContent = `��${String(sign.no).padStart(2, '0')}ǩ �� ${sign.level}`;
+  document.getElementById('oracleSign').textContent = `第${String(sign.no).padStart(2, '0')}签 · ${sign.level}`;
   document.getElementById('oraclePoem').innerHTML = sign.poem;
   document.getElementById('oracleCareer').textContent = sign.career;
   document.getElementById('oracleLove').textContent = sign.love;
@@ -2524,7 +2506,7 @@ function renderOracle(sign) {
 }
 document.getElementById('oracleBtn')?.addEventListener('click', () => {
   const card = document.getElementById('oracleCard');
-  trackEvent('xuanshu_lingqian_click', '������ǩ');
+  trackEvent('xuanshu_lingqian_click', '今日灵签');
   renderOracleCount();
   incMineStat('oracle');
   currentOracleIndex = (currentOracleIndex + Math.floor(Math.random() * (lvzuSigns.length - 1)) + 1) % lvzuSigns.length;
@@ -2548,13 +2530,13 @@ try {
 function renderSchedules() {
   const list = document.getElementById('scheduleList');
   const count = document.getElementById('scheduleCount');
-  count.textContent = `${schedules.length}���ճ̴�����`;
+  count.textContent = `${schedules.length}个日程待提醒`;
   list.innerHTML = schedules.length
-    ? schedules.map(item => `<div class="schedule-item"><span><b>${item.title}</b><br>${item.date || 'δ������'} �� ${item.note || '�ޱ�ע'}</span><span>?</span></div>`).join('')
-    : '<div class="schedule-item"><span>�����ճ̣�����һ�����Ѱ�</span></div>';
+    ? schedules.map(item => `<div class="schedule-item"><span><b>${item.title}</b><br>${item.date || '未设日期'} · ${item.note || '无备注'}</span><span>›</span></div>`).join('')
+    : '<div class="schedule-item"><span>暂无日程，添加一个提醒吧</span></div>';
 }
 document.getElementById('addScheduleBtn')?.addEventListener('click', () => {
-  const title = document.getElementById('scheduleTitle').value.trim() || 'δ�����ճ�';
+  const title = document.getElementById('scheduleTitle').value.trim() || '未命名日程';
   const date = document.getElementById('scheduleDate').value;
   const note = document.getElementById('scheduleNote').value.trim();
   schedules.unshift({ title, date, note });
@@ -2568,12 +2550,12 @@ document.querySelectorAll('[data-switch]').forEach(btn => {
   btn.addEventListener('click', () => btn.classList.toggle('on'));
 });
 const FORTUNE_TEST_LINES = {
-  'ƫ��': ['���ղƶ��ڶ�����С��ԣ�����̰�ࡣ', '������ϸ����������Ŀ�������á�', 'ƫ�Ʋ��˼���˳��֮����Ե�ɵá�', '�������������ƣ��ɳ嶯��ע��', '��С�ƻ����˼��þ��ա�'],
-  '�һ�': ['�������������˼��ʣ��º�����������', '�һ�������֮�䣬��һ����̽����һ����ϡ�', '��Ե�˵����������˳����Ȼ��', '�ʺ������ʺ򣬵����˱��Ȼ�Ӧ��', '������Եתů��Ц��ȵ��������á�'],
-  '����': ['�����������ȶ���˳��', '���պ��˲���С��������һ���¡�', '˳�ƶ��У�����ԥ����Ե��', '�˳��ż��ˣ����׵õ�һ�����õĻ���', '���������ϣ��Ķ����³ɡ�'],
-  '��ҵ': ['��������ͨ���˶��ƻ���', '��ҵ�����ƣ�������ʱ�ķ���', '�Ȱ�ϸ�ڲ��룬������Ȼ˳��', '�����ʺϸ��̡��㱨��̸������', '�������ߣ�����֮ǰ�������ص㡣']
+  '偏财': ['今日财动于东，宜小额尝试，不宜贪多。', '财气在细处，整理账目反有所得。', '偏财不宜急求，顺手之财随缘可得。', '今日利正念生财，忌冲动下注。', '有小财机，宜见好就收。'],
+  '桃花': ['今日宜慢，不宜急问，温和最有力量。', '桃花在言语之间，少一点试探，多一点真诚。', '旧缘宜淡看，新意可顺其自然。', '适合主动问候，但不宜逼迫回应。', '今日人缘转暖，笑意比道理更有用。'],
+  '好运': ['贵在主动，先动则顺。', '今日好运藏在小事里，先完成一件事。', '顺势而行，少犹豫则多机缘。', '宜出门见人，容易得到一句有用的话。', '好运在西南，心定则事成。'],
+  '事业': ['今日利沟通，宜定计划。', '事业宜稳推，不宜临时改方向。', '先把细节补齐，后面自然顺。', '今日适合复盘、汇报、谈合作。', '贵人在线，开口之前先理清重点。']
 };
-const FORTUNE_TEST_STARS = ['������', '������', '������', '������', '������'];
+const FORTUNE_TEST_STARS = ['★★★☆☆', '★★★☆☆', '★★★★☆', '★★★★☆', '★★★★★'];
 let fortuneClickCounter = 0;
 const fortuneLastIndex = {};
 function fortuneSeed(kind) {
@@ -2583,77 +2565,77 @@ function fortuneSeed(kind) {
   return base + kindValue + Math.floor(Date.now() / 900) + fortuneClickCounter * 17;
 }
 function buildFortuneTestAnswer(kind) {
-  const lines = FORTUNE_TEST_LINES[kind] || FORTUNE_TEST_LINES['ƫ��'];
+  const lines = FORTUNE_TEST_LINES[kind] || FORTUNE_TEST_LINES['偏财'];
   const seed = fortuneSeed(kind);
   let lineIndex = seed % lines.length;
   if (fortuneLastIndex[kind] === lineIndex && lines.length > 1) lineIndex = (lineIndex + 1) % lines.length;
   fortuneLastIndex[kind] = lineIndex;
   const line = lines[lineIndex];
   const star = FORTUNE_TEST_STARS[(seed + lineIndex) % FORTUNE_TEST_STARS.length];
-  return '<b>' + kind + '��</b><span class="test-stars">' + star + '</span><br>' + line;
+  return '<b>' + kind + '：</b><span class="test-stars">' + star + '</span><br>' + line;
 }
 function runFortuneTest(kind) {
   const result = document.getElementById('testResult');
   const answer = document.getElementById('testAnswer');
   result.classList.add('show', 'loading');
   result.classList.remove('done');
-  answer.innerHTML = buildFortuneTestAnswer(kind || 'ƫ��');
+  answer.innerHTML = buildFortuneTestAnswer(kind || '偏财');
   setTimeout(() => {
     result.classList.remove('loading');
     result.classList.add('done');
   }, 900);
 }
 window.runFortuneTest = runFortuneTest;
-const HEAVENLY_STEMS = ['��','��','��','��','��','��','��','��','��','��'];
-const EARTHLY_BRANCHES = ['��','��','��','î','��','��','��','δ','��','��','��','��'];
-const FIRST_HOUR_STEM = { '��':'��', '��':'��', '��':'��', '��':'��', '��':'��', '��':'��', '��':'��', '��':'��', '��':'��', '��':'��' };
+const HEAVENLY_STEMS = ['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'];
+const EARTHLY_BRANCHES = ['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'];
+const FIRST_HOUR_STEM = { '甲':'甲', '己':'甲', '乙':'丙', '庚':'丙', '丙':'戊', '辛':'戊', '丁':'庚', '壬':'庚', '戊':'壬', '癸':'壬' };
 const DAY_BRANCH_GOOD_HOURS = {
-  '��':['��','��','î','��','��','��'],
-  '��':['��','î','��','��','��','��'],
-  '��':['��','��','��','��','δ','��'],
-  'î':['��','��','î','��','δ','��'],
-  '��':['��','��','��','��','��','��'],
-  '��':['��','��','��','δ','��','��'],
-  '��':['��','��','î','��','��','��'],
-  'δ':['��','î','��','��','��','��'],
-  '��':['��','��','��','��','δ','��'],
-  '��':['��','��','î','��','δ','��'],
-  '��':['��','��','��','��','��','��'],
-  '��':['��','��','��','δ','��','��']
+  '子':['子','丑','卯','午','申','酉'],
+  '丑':['寅','卯','巳','申','戌','亥'],
+  '寅':['子','丑','辰','巳','未','戌'],
+  '卯':['子','寅','卯','午','未','酉'],
+  '辰':['寅','辰','巳','申','酉','亥'],
+  '巳':['丑','辰','午','未','戌','亥'],
+  '午':['子','丑','卯','午','申','酉'],
+  '未':['寅','卯','巳','申','戌','亥'],
+  '申':['子','丑','辰','巳','未','戌'],
+  '酉':['子','寅','卯','午','未','酉'],
+  '戌':['寅','辰','巳','申','酉','亥'],
+  '亥':['丑','辰','午','未','戌','亥']
 };
 function renderHourGrid(info) {
   const grid = document.getElementById('detailHourGrid');
   if (!grid) return;
-  const dayGan = (info.dGz || '����').charAt(0);
-  const dayZhi = (info.dGz || '����').charAt(1);
-  const firstStem = FIRST_HOUR_STEM[dayGan] || '��';
+  const dayGan = (info.dGz || '甲子').charAt(0);
+  const dayZhi = (info.dGz || '甲子').charAt(1);
+  const firstStem = FIRST_HOUR_STEM[dayGan] || '甲';
   const startIndex = HEAVENLY_STEMS.indexOf(firstStem);
-  const goodHours = DAY_BRANCH_GOOD_HOURS[dayZhi] || DAY_BRANCH_GOOD_HOURS['��'];
+  const goodHours = DAY_BRANCH_GOOD_HOURS[dayZhi] || DAY_BRANCH_GOOD_HOURS['子'];
   const stems = EARTHLY_BRANCHES.map((_, i) => HEAVENLY_STEMS[(startIndex + i) % 10]);
   grid.innerHTML =
-    '<div class="hour-label">ʱ��<br>�˼�</div>' +
+    '<div class="hour-label">时辰<br>宜忌</div>' +
     stems.map(stem => '<span>' + stem + '</span>').join('') +
     EARTHLY_BRANCHES.map(branch => '<span>' + branch + '</span>').join('') +
     EARTHLY_BRANCHES.map(branch => {
       const ok = goodHours.includes(branch);
-      return '<span class="' + (ok ? 'hour-good' : 'hour-bad') + '">' + (ok ? '��' : '��') + '</span>';
+      return '<span class="' + (ok ? 'hour-good' : 'hour-bad') + '">' + (ok ? '吉' : '凶') + '</span>';
     }).join('');
 }
 function renderDetail() {
   const info = getInfo(selectedDate.getFullYear(), selectedDate.getMonth() + 1, selectedDate.getDate());
   const isToday = sameDay(selectedDate, new Date());
-  document.getElementById('detailDate').textContent = selectedDate.getFullYear() + '��' + (selectedDate.getMonth() + 1) + '��' + selectedDate.getDate() + '��';
-  document.getElementById('detailLunar').textContent = info.lMonthName + '��' + info.lDayName;
-  document.getElementById('detailGanzhi').innerHTML = info.yGz + '�ꡡ' + info.mGz + '�¡�' + info.dGz + '�ա���' + WN[selectedDate.getDay()] + (isToday ? ' <span class="today-mark">����</span>' : '');
-  document.getElementById('detailYi').textContent = yijiText(info.yi, 'ƽ����');
-  document.getElementById('detailJi').textContent = yijiText(info.ji, '��');
-  document.getElementById('detailGoodGods').textContent = yijiText(info.jiShen, '��');
-  document.getElementById('detailBadGods').textContent = yijiText(info.xiongSha, '��');
-  document.getElementById('detailWuxing').textContent = info.naYin || '��';
-  document.getElementById('detailChongsha').textContent = (info.chongSx ? '��' + info.chongSx : '��') + (info.sha ? ' ɷ' + info.sha : '');
-  document.getElementById('detailZhishen').textContent = info.tianShen || info.zhiXing || '��';
-  document.getElementById('detailTaishen').textContent = info.taiShen || '��';
-  document.getElementById('detailPengzu').innerHTML = (info.pengZuG || '��') + '<br>' + (info.pengZuZ || '��');
+  document.getElementById('detailDate').textContent = selectedDate.getFullYear() + '年' + (selectedDate.getMonth() + 1) + '月' + selectedDate.getDate() + '日';
+  document.getElementById('detailLunar').textContent = info.lMonthName + '月' + info.lDayName;
+  document.getElementById('detailGanzhi').innerHTML = info.yGz + '年　' + info.mGz + '月　' + info.dGz + '日　周' + WN[selectedDate.getDay()] + (isToday ? ' <span class="today-mark">今天</span>' : '');
+  document.getElementById('detailYi').textContent = yijiText(info.yi, '平常事');
+  document.getElementById('detailJi').textContent = yijiText(info.ji, '无');
+  document.getElementById('detailGoodGods').textContent = yijiText(info.jiShen, '无');
+  document.getElementById('detailBadGods').textContent = yijiText(info.xiongSha, '无');
+  document.getElementById('detailWuxing').textContent = info.naYin || '—';
+  document.getElementById('detailChongsha').textContent = (info.chongSx ? '冲' + info.chongSx : '—') + (info.sha ? ' 煞' + info.sha : '');
+  document.getElementById('detailZhishen').textContent = info.tianShen || info.zhiXing || '—';
+  document.getElementById('detailTaishen').textContent = info.taiShen || '—';
+  document.getElementById('detailPengzu').innerHTML = (info.pengZuG || '—') + '<br>' + (info.pengZuZ || '—');
   renderHourGrid(info);
 }
 function changeDetailDay(delta) {
@@ -2686,45 +2668,45 @@ function initTermPickerHint() {
   requestAnimationFrame(() => caret.classList.add('nudge'));
 }
 const termDateInfo = {
-  'С��': { month: 1, day: 5, time: '10:23:00' },
-  '��': { month: 1, day: 20, time: '03:56:00' },
-  '����': { month: 2, day: 4, time: '16:26:00' },
-  '��ˮ': { month: 2, day: 19, time: '12:13:00' },
-  '����': { month: 3, day: 5, time: '10:22:00' },
-  '����': { month: 3, day: 20, time: '11:06:00' },
-  '����': { month: 4, day: 4, time: '15:02:00' },
-  '����': { month: 4, day: 20, time: '22:03:00' },
-  '����': { month: 5, day: 5, time: '10:23:15' },
-  'С��': { month: 5, day: 20, time: '21:59:17' },
-  'â��': { month: 6, day: 5, time: '12:09:40' },
-  '����': { month: 6, day: 21, time: '04:50:46' },
-  'С��': { month: 7, day: 6, time: '22:19:49' },
-  '����': { month: 7, day: 22, time: '15:44:11' },
-  '����': { month: 8, day: 7, time: '08:09:00' },
-  '����': { month: 8, day: 23, time: '23:02:00' },
-  '��¶': { month: 9, day: 7, time: '11:11:00' },
-  '���': { month: 9, day: 23, time: '20:44:00' },
-  '��¶': { month: 10, day: 8, time: '03:00:00' },
-  '˪��': { month: 10, day: 23, time: '06:15:00' },
-  '����': { month: 11, day: 7, time: '06:20:00' },
-  'Сѩ': { month: 11, day: 22, time: '03:56:00' },
-  '��ѩ': { month: 12, day: 7, time: '23:17:00' },
-  '����': { month: 12, day: 22, time: '17:20:00' }
+  '小寒': { month: 1, day: 5, time: '10:23:00' },
+  '大寒': { month: 1, day: 20, time: '03:56:00' },
+  '立春': { month: 2, day: 4, time: '16:26:00' },
+  '雨水': { month: 2, day: 19, time: '12:13:00' },
+  '惊蛰': { month: 3, day: 5, time: '10:22:00' },
+  '春分': { month: 3, day: 20, time: '11:06:00' },
+  '清明': { month: 4, day: 4, time: '15:02:00' },
+  '谷雨': { month: 4, day: 20, time: '22:03:00' },
+  '立夏': { month: 5, day: 5, time: '10:23:15' },
+  '小满': { month: 5, day: 20, time: '21:59:17' },
+  '芒种': { month: 6, day: 5, time: '12:09:40' },
+  '夏至': { month: 6, day: 21, time: '04:50:46' },
+  '小暑': { month: 7, day: 6, time: '22:19:49' },
+  '大暑': { month: 7, day: 22, time: '15:44:11' },
+  '立秋': { month: 8, day: 7, time: '08:09:00' },
+  '处暑': { month: 8, day: 23, time: '23:02:00' },
+  '白露': { month: 9, day: 7, time: '11:11:00' },
+  '秋分': { month: 9, day: 23, time: '20:44:00' },
+  '寒露': { month: 10, day: 8, time: '03:00:00' },
+  '霜降': { month: 10, day: 23, time: '06:15:00' },
+  '立冬': { month: 11, day: 7, time: '06:20:00' },
+  '小雪': { month: 11, day: 22, time: '03:56:00' },
+  '大雪': { month: 12, day: 7, time: '23:17:00' },
+  '冬至': { month: 12, day: 22, time: '17:20:00' }
 };
 function getTermDate(name, year = selectedDate.getFullYear()) {
-  const info = termDateInfo[name] || termDateInfo['����'];
+  const info = termDateInfo[name] || termDateInfo['立夏'];
   return new Date(year, info.month - 1, info.day);
 }
 function formatTermTime(name, year = selectedDate.getFullYear()) {
-  const info = termDateInfo[name] || termDateInfo['����'];
+  const info = termDateInfo[name] || termDateInfo['立夏'];
   const date = getTermDate(name, year);
   const lunar = getInfo(date.getFullYear(), date.getMonth() + 1, date.getDate());
-  return `${date.getFullYear()}��${date.getMonth() + 1}��${date.getDate()}�ա�${info.time}<br>ũ�� ${lunar.lMonthName}��${lunar.lDayName}`;
+  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日　${info.time}<br>农历 ${lunar.lMonthName}月${lunar.lDayName}`;
 }
 function getCurrentSolarTermInfo() {
   const today = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), selectedDate.getDate());
   const ordered = terms.map(name => ({ name, date: getTermDate(name, selectedDate.getFullYear()) })).sort((a, b) => a.date - b.date);
-  let current = { name: '����', year: selectedDate.getFullYear() - 1 };
+  let current = { name: '冬至', year: selectedDate.getFullYear() - 1 };
   ordered.forEach(item => {
     if (item.date <= today) current = { name: item.name, year: selectedDate.getFullYear() };
   });
@@ -2751,7 +2733,7 @@ function closeTermPicker() {
   document.getElementById('termPickerModal')?.classList.remove('show');
 }
 function setTerm(name, year = selectedDate.getFullYear()) {
-  const data = termTexts[name] || termFallbackTexts[name] || [`${name}<br>��ʮ�Ľ���`, `${name}Ϊ��ʮ�Ľ���֮һ��˳Ӧ��ʱ�������仯��`, '��˳ʱ��������ʳ�нڣ�����г���'];
+  const data = termTexts[name] || termFallbackTexts[name] || [`${name}<br>二十四节气`, `${name}为二十四节气之一，顺应天时，观物候变化。`, '宜顺时调养，饮食有节，起居有常。'];
   const asset = termAssets[name] || 'term-07-lixia-ai.webp';
   selectedTermName = name;
   selectedTermYear = year;
@@ -2763,11 +2745,7 @@ function setTerm(name, year = selectedDate.getFullYear()) {
   if (entryName) entryName.textContent = name;
   document.getElementById('termTime').innerHTML = formatTermTime(name, year);
   document.getElementById('termDesc').textContent = data[1];
-  document.getElementById('termDiet').textContent = data[2];
-  document.getElementById('termRest').textContent = data[3];
-  document.getElementById('termSport').textContent = data[4];
-  document.getElementById('termMood').textContent = data[5];
-  document.getElementById('termHealth').textContent = data[6];
+  document.getElementById('termHealth').textContent = data[2];
   document.querySelectorAll('.term-tab').forEach(x => x.classList.toggle('active', x.dataset.term === name));
   addSolarTermView(name);
   renderTermPicker();
@@ -2787,13 +2765,13 @@ document.getElementById('desktopGuideModal')?.addEventListener('click', e => {
 function copySiteUrl() {
   const url = 'https://ixuanshu.cn/';
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(url).then(() => alert('��ַ�Ѹ��ƣ�' + url)).catch(() => alert(url));
+    navigator.clipboard.writeText(url).then(() => alert('网址已复制：' + url)).catch(() => alert(url));
   } else {
     alert(url);
   }
 }
 function shareSite() {
-  const data = { title: '����������', text: '����ʱ��֪����', url: 'https://ixuanshu.cn/' };
+  const data = { title: '玄枢万年历', text: '观天时，知四序', url: 'https://ixuanshu.cn/' };
   if (navigator.share) {
     navigator.share(data).catch(() => {});
   } else {
