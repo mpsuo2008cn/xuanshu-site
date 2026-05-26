@@ -116,6 +116,13 @@ body{display:flex;justify-content:center}
   </div>
 
   <footer class="site-footer">
+    <div><a href="https://beian.miit.gov.cn/" rel="noreferrer" target="_blank">陇ICP备2026004046号</a></div>
+    <div>
+      <a class="beian-link" href="https://beian.mps.gov.cn/#/query/webSearch?code=62010302001821" rel="noreferrer" target="_blank">
+        <img src="/v2-preview/assets/beian-icon.png" alt="" width="15" height="15" loading="lazy">
+        <span>甘公网安备62010302001821号</span>
+      </a>
+    </div>
     <div>本站内容仅供娱乐与民俗文化参考，请理性看待。</div>
   </footer>
 
@@ -227,7 +234,20 @@ body{display:flex;justify-content:center}
 
   <div id="scrollGroups"></div>
 
+  <section class="scroll-picks" style="margin:18px 0 0;padding:14px 18px;background:rgba(255,251,244,.86);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)">
+    <h3 style="margin:0 0 10px;color:var(--gold);font-size:16px">&#x1F4D6; 玄枢小卷精选</h3>
+    <div id="scrollPicks" style="display:grid;gap:8px"></div>
+    <a href="/scrolls/" style="display:block;margin-top:10px;color:var(--red);font-size:14px;text-decoration:none">进入小卷库 &#x2192;</a>
+  </section>
+
   <footer class="site-footer">
+    <div><a href="https://beian.miit.gov.cn/" rel="noreferrer" target="_blank">陇ICP备2026004046号</a></div>
+    <div>
+      <a class="beian-link" href="https://beian.mps.gov.cn/#/query/webSearch?code=62010302001821" rel="noreferrer" target="_blank">
+        <img src="/v2-preview/assets/beian-icon.png" alt="" width="15" height="15" loading="lazy">
+        <span>甘公网安备62010302001821号</span>
+      </a>
+    </div>
     <div>本站内容仅供娱乐与民俗文化参考，请理性看待。</div>
   </footer>
 
@@ -272,6 +292,17 @@ body{display:flex;justify-content:center}
     html += '</div>';
   });
   document.getElementById('scrollGroups').innerHTML = html;
+
+  // ── 精选小卷 ──
+  var picksEl = document.getElementById('scrollPicks');
+  if (picksEl) {
+    var picks = [
+      items.find(function(x){return x.id==='shishen'}),
+      items.find(function(x){return x.id==='bazi-rizhu'}),
+      items.find(function(x){return x.id==='liuyao-dongyao'})
+    ].filter(Boolean);
+    picksEl.innerHTML = picks.map(function(p){return '<a href="/scrolls/'+p.id+'.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);font-size:15px"><span>'+p.title+'</span><span style="color:var(--muted)">&#x203A;</span></a>'}).join('');
+  }
 })();
 </script>
 <script>

@@ -114,7 +114,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 .wifi { width: 15px; height: 12px; border: 3px solid #111; border-left-color: transparent; border-right-color: transparent; border-bottom: 0; border-radius: 12px 12px 0 0; }
 .battery { width: 24px; height: 12px; border: 2px solid #111; border-radius: 3px; position: relative; }
 .battery::after { content:""; position:absolute; right:-5px; top:3px; width:3px; height:5px; background:#111; border-radius:0 2px 2px 0; }
-.page { position: relative; z-index: 1; display: none; width: 100%; max-width: 100%; overflow-x: hidden; animation: fade .22s ease; }
+.page { position: relative; z-index: 1; display: none; width: 100%; max-width: 100%; overflow-x: hidden; }
 .page.active { display: block; }
 #page-detail {
   min-height: calc(100vh - 8px);
@@ -134,7 +134,6 @@ button { font: inherit; color: inherit; border: 0; background: none; }
   opacity: .96;
 }
 #page-detail > * { position: relative; z-index: 1; }
-@keyframes fade { from { opacity: .2; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 .hero { min-height: 132px; padding: 30px 14px 12px; position: relative; }
 .hero.with-bottom-art {
   min-height: 128px;
@@ -1166,7 +1165,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 <script src="/data/version.js"></script>
 </head>
 <body>
-<div class="splash" id="splash">
+<div class="splash hide" id="splash">
   <div class="splash-inner">
     <img class="splash-logo" src="../logo.webp" alt="玄枢" width="132" height="132">
     <div class="splash-tagline"><span>观</span><span>天</span><span class="tagline-gap">时</span><span>知</span><span>四</span><span>序</span></div>
@@ -1361,23 +1360,9 @@ button { font: inherit; color: inherit; border: 0; background: none; }
     </div></div>
   </section>
 
-  <section class="page" id="page-tools">
-    <div class="tools-hero"><h1>万年历<span class="brand-seal">玄枢</span></h1><p>观天时　知四序</p><div class="hero-art tools-hero-art" style="right:0;top:22px"><div class="mountains"></div><div class="sun"></div></div></div>
-    <div class="tool-grid">
-      <button class="card tool-card" data-href="../hehun/"><div class="tool-icon">囍</div><h3>八字合婚 🔥</h3><p>情侣配对<br>姻缘解析</p></button>
-      <button class="card tool-card" data-open="zeri"><div class="tool-icon">择</div><h3>良辰吉日</h3><p>结婚搬家<br>提车开业</p></button>
-      <button class="card tool-card" data-href="../bazi/"><div class="tool-icon">八</div><h3>八字排盘</h3><p>四柱命盘<br>大运流年</p></button>
-      <button class="card tool-card" data-href="../liuyao/"><div class="tool-icon">☷</div><h3>六爻起卦<span class="hot-badge">热门</span></h3><p>感情事业<br>起卦解惑</p></button>
-      <button class="card tool-card" data-tab="solar"><div class="tool-icon">养</div><h3>节气养生</h3><p>二十四节气<br>养生提醒</p></button>
-      <button class="card tool-card" data-open="dream"><div class="tool-icon">梦</div><h3>周公解梦</h3><p>梦中有象<br>醒后可解</p></button>
-      <button class="card tool-card" data-open="scrolls"><div class="tool-icon">卷</div><h3>玄枢小卷</h3><p>玄学知识<br>每日更新</p></button>
-      <button class="card tool-card" data-href="../huangli/"><div class="tool-icon">历</div><h3>今日黄历</h3><p>宜忌吉时<br>财神方位</p></button>
-    </div>
-  </section>
-
 
   <section class="page" id="page-zeri">
-    <div class="topline"><button class="back-btn" data-tab="tools">‹</button><div class="section-title">良辰吉日</div></div>
+    <div class="topline"><a class="back-btn" href="/tools/">‹</a><div class="section-title">良辰吉日</div></div>
     <div class="card zeri-panel" id="zeriTodayCard"></div>
     <div class="card zeri-panel">
       <div class="zeri-tabs">
@@ -1410,7 +1395,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
   </section>
 
   <section class="page" id="page-dream">
-    <div class="topline"><button class="back-btn" data-tab="tools">‹</button><div class="section-title">周公解梦</div></div>
+    <div class="topline"><a class="back-btn" href="/tools/">‹</a><div class="section-title">周公解梦</div></div>
     <div class="card zeri-panel">
       <div class="fortune-detail-title">梦中有象，醒后可解</div>
       <div class="fortune-detail-text">输入梦见的人、物、场景或心情，查看传统民俗里的象意参考。</div>
@@ -1426,7 +1411,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
   </section>
 
   <section class="page" id="page-scrolls">
-    <div class="topline"><button class="back-btn" data-tab="tools">‹</button><div class="section-title">玄枢小卷</div></div>
+    <div class="topline"><a class="back-btn" href="/tools/">‹</a><div class="section-title">玄枢小卷</div></div>
     <div class="card scroll-hero">
       <h1>玄枢小卷</h1>
       <p>观天时，知万象</p>
@@ -1440,7 +1425,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
   </section>
 
   <section class="page" id="page-solar">
-    <div class="topline"><button class="back-btn" data-tab="tools">‹</button><div class="section-title">节气养生</div></div>
+    <div class="topline"><a class="back-btn" href="/tools/">‹</a><div class="section-title">节气养生</div></div>
     <div class="solar-hero">
       <h1 id="termName">立夏</h1><button class="solar-badge solar-badge-btn" id="termPickerBtn" type="button"><span class="term-entry-main"><span class="term-entry-label">当前节气：</span><span class="term-entry-name" id="termEntryName">立夏</span><span class="term-caret" id="termEntryCaret">⌄</span></span><span class="term-entry-hint" id="termEntryHint">轻触切换二十四节气</span></button>
       <div class="solar-time" id="termTime">2024年5月5日　10:23:15<br>农历 三月廿七</div>
@@ -1610,7 +1595,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 <nav class="bottom-nav">
   <button class="nav-btn active" data-tab="calendar"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="soft-fill" x="4.8" y="6.2" width="22.4" height="21.2" rx="4.2"/><rect x="5.8" y="7.6" width="20.4" height="18.9" rx="3.6"/><path d="M11 4.6v5.1M21 4.6v5.1M9.2 13.1h13.6"/><circle class="deep-fill" cx="11.2" cy="17.2" r="1.55"/><circle class="deep-fill" cx="16" cy="17.2" r="1.55"/><circle class="deep-fill" cx="20.8" cy="17.2" r="1.55"/><circle class="deep-fill" cx="11.2" cy="22" r="1.55"/><circle class="deep-fill" cx="16" cy="22" r="1.55"/><circle class="deep-fill" cx="20.8" cy="22" r="1.55"/></svg></span><span>日历</span></button>
   <button class="nav-btn" data-tab="discover"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><circle class="soft-fill" cx="16" cy="16" r="11.2"/><circle cx="16" cy="16" r="11.2"/><path d="M7.8 20.7c2.5-2.4 4.8-5.4 7.1-5.4 2.1 0 3.1 3.2 4.7 3.2 1.2 0 2.2-1.5 4.5-4.1"/><path d="M8.2 22.1c4.2-1.4 9.1-1.6 15.7-.4"/><circle class="sun-fill" cx="22.7" cy="10.1" r="3.2"/><path d="M7.2 17.4c1.9-.8 3.4-.8 4.7 0M19 22.4c1.9-.9 3.5-.8 5 .2"/></svg></span><span>观万象</span></button>
-  <button class="nav-btn" data-tab="tools"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="soft-fill" x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M10.7 10V8.3c0-1.1.9-2 2-2h6.6c1.1 0 2 .9 2 2V10"/><rect x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M5.8 16h20.4"/><rect x="13.2" y="14.1" width="5.6" height="5.1" rx="1.1"/><path d="M7.8 23.2c3.3-1.2 5.2-1.1 7.3.2M18.4 24.2c2.3-1.8 4.2-2.2 6.7-1.2"/></svg></span><span>工具</span></button>
+  <a class="nav-btn" href="/tools/"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="soft-fill" x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M10.7 10V8.3c0-1.1.9-2 2-2h6.6c1.1 0 2 .9 2 2V10"/><rect x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M5.8 16h20.4"/><rect x="13.2" y="14.1" width="5.6" height="5.1" rx="1.1"/><path d="M7.8 23.2c3.3-1.2 5.2-1.1 7.3.2M18.4 24.2c2.3-1.8 4.2-2.2 6.7-1.2"/></svg></span><span>工具</span></a>
   <button class="nav-btn" data-tab="mine"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><circle class="soft-fill" cx="16" cy="16" r="11.3"/><path d="M27.2 16c0 2.4-.7 4.6-2 6.4"/><path d="M4.9 16A11.1 11.1 0 0 1 24.6 9"/><circle cx="16" cy="13.1" r="3.5"/><path d="M9.4 23c1.7-3.5 4.1-5.1 6.6-5.1s4.9 1.6 6.6 5.1"/><path d="M19.4 24.8c2.2-2 4.1-2.2 6.7-.7 1 .6 1.9.7 2.9.2"/><path d="M21.1 26.5c1.6-1 3-1 4.6-.1"/></svg></span><span>我的</span></button>
 </nav>
 <div class="home-indicator"></div>
@@ -1627,8 +1612,8 @@ button { font: inherit; color: inherit; border: 0; background: none; }
     </div>
   </div>
 </div>
-<script>document.write('<script src="/assets/lunar.js?v='+window.XUANSHU_VERSION+'"><\/script>');<\/script>></script>
-<script>document.write('<script src="/v2-preview/dreamData.js?v='+window.XUANSHU_VERSION+'"><\/script>');<\/script>></script>
+<script src="/assets/lunar.js"></script>
+<script src="/v2-preview/dreamData.js"></script>
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -1953,13 +1938,24 @@ const detailDays = [
   }
 ];
 let detailIndex = 1;
-setTimeout(() => {
-  const splash = document.getElementById('splash');
-  if (splash) {
-    splash.classList.add('hide');
-    setTimeout(() => splash.remove(), 1100);
+(function(){
+  var splash = document.getElementById('splash');
+  if (!splash) return;
+  var key = 'xuanshu_splash_seen_at';
+  var seen = null;
+  try { seen = localStorage.getItem(key); } catch(e) {}
+  var now = Date.now();
+  if (!seen || (now - parseInt(seen)) > 1800000) {
+    splash.classList.remove('hide');
+    setTimeout(function(){
+      splash.classList.add('hide');
+      setTimeout(function(){ splash.remove(); }, 1100);
+    }, 3000);
+    try { localStorage.setItem(key, now); } catch(e) {}
+  } else {
+    splash.remove();
   }
-}, 3000);
+})();
 function buildCalendarDays(year, month) {
   const first = new Date(year, month - 1, 1);
   const start = new Date(year, month - 1, 1 - first.getDay());
