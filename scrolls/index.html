@@ -58,6 +58,7 @@ body{display:flex;justify-content:center}
 .nav-btn{display:grid;place-items:center;align-content:center;gap:4px;color:#9b7b58;font-size:14px;opacity:.58;text-decoration:none}
 .nav-btn.active{color:var(--red);font-weight:700;opacity:1}
 </style>
+<script src="/data/version.js"></script>
 </head>
 <body>
 <main class="phone">
@@ -84,7 +85,7 @@ body{display:flex;justify-content:center}
   <a class="nav-btn" href="/?page=mine"><span>👤</span><span>我的</span></a>
 </nav>
 
-<script src="/data/scrolls.js"></script>
+<script>document.write('<script src="/data/scrolls.js?v='+window.XUANSHU_VERSION+'"><\/script>');<\/script>></script>
 <script>
 (function(){
   if (!window.XUANSHU_SCROLLS) return;
