@@ -58,7 +58,6 @@ body{display:flex;justify-content:center}
 .nav-btn{display:grid;place-items:center;align-content:center;gap:4px;color:#9b7b58;font-size:14px;opacity:.58;text-decoration:none}
 .nav-btn.active{color:var(--red);font-weight:700;opacity:1}
 </style>
-<script src="/data/version.js"></script>
 </head>
 <body>
 <main class="phone">
@@ -73,9 +72,9 @@ body{display:flex;justify-content:center}
   <div id="scrollGroups"></div>
 
   <section class="scroll-picks" style="margin:18px 0 0;padding:14px 18px;background:rgba(255,251,244,.86);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)">
-    <h3 style="margin:0 0 10px;color:var(--gold);font-size:16px">📖 玄枢小卷精选</h3>
+    <h3 style="margin:0 0 10px;color:var(--gold);font-size:16px">&#x1F4D6; 玄枢小卷精选</h3>
     <div id="scrollPicks" style="display:grid;gap:8px"></div>
-    <a href="/scrolls/" style="display:block;margin-top:10px;color:var(--red);font-size:14px;text-decoration:none">进入小卷库 →</a>
+    <a href="/scrolls/" style="display:block;margin-top:10px;color:var(--red);font-size:14px;text-decoration:none">进入小卷库 &#x2192;</a>
   </section>
 
   <footer class="site-footer">
@@ -99,6 +98,7 @@ body{display:flex;justify-content:center}
 </nav>
 
 <script src="/data/scrolls.js"></script>
+<script src="/data/scrolls-extra-20260527.js"></script>
 <script>
 (function(){
   if (!window.XUANSHU_SCROLLS) return;
@@ -115,7 +115,7 @@ body{display:flex;justify-content:center}
   tp.innerHTML = '<div class="today-pick-label">今日小卷</div>' +
     '<a href="/scrolls/' + todayItem.id + '.html"><span class="today-tag">' + todayItem.group + '</span>' + todayItem.title + '</a>' +
     '<p>' + todayItem.intro + '</p>';
-  tp.style.setProperty('--today-bg', "url(/v2-preview/assets/" + todayBg + ".webp)");
+  tp.style.setProperty('--today-bg', "url('/v2-preview/assets/" + todayBg + ".webp)");
   var assetIdx = Math.floor(Math.random() * cardAssets.length);
 
   // ── 分组列表 ──
@@ -139,7 +139,7 @@ body{display:flex;justify-content:center}
       items.find(function(x){return x.id==='bazi-rizhu'}),
       items.find(function(x){return x.id==='liuyao-dongyao'})
     ].filter(Boolean);
-    picksEl.innerHTML = picks.map(function(p){return '<a href="/scrolls/'+p.id+'.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);font-size:15px"><span>'+p.title+'</span><span style="color:var(--muted)">›</span></a>'}).join('');
+    picksEl.innerHTML = picks.map(function(p){return '<a href="/scrolls/'+p.id+'.html" style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);font-size:15px"><span>'+p.title+'</span><span style="color:var(--muted)">&#x203A;</span></a>'}).join('');
   }
 })();
 </script>

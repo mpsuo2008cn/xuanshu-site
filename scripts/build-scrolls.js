@@ -22,7 +22,15 @@ if (!match) {
   console.error('❌ data/scrolls.js 未找到有效数据');
   process.exit(1);
 }
-const scrolls = eval(match[1]); // eslint-disable-line
+let scrolls = eval(match[1]); // eslint-disable-line
+const extraPath = path.join(ROOT, 'data', 'scrolls-extra-20260527.js');
+if (fs.existsSync(extraPath)) {
+  const extraSrc = fs.readFileSync(extraPath, 'utf8');
+  const extraMatch = extraSrc.match(/var XUANSHU_SCROLLS_EXTRA_20260527 = (\[[\s\S]*?\n\]);/);
+  if (extraMatch) {
+    scrolls = scrolls.concat(eval(extraMatch[1])); // eslint-disable-line
+  }
+}
 console.log(`📚 发现 ${scrolls.length} 篇小卷`);
 
 // ── 构建每篇独立 HTML ─────────────────────────────────
@@ -261,6 +269,7 @@ body{display:flex;justify-content:center}
 </nav>
 
 <script src="/data/scrolls.js"></script>
+<script src="/data/scrolls-extra-20260527.js"></script>
 <script>
 (function(){
   if (!window.XUANSHU_SCROLLS) return;
@@ -287,7 +296,7 @@ body{display:flex;justify-content:center}
     items.filter(function(x){ return x.group === g; }).forEach(function(i){
       var bg = cardAssets[assetIdx % cardAssets.length];
       assetIdx++;
-      html += '<a class="scroll-card" href="/scrolls/' + i.id + '.html" style="--card-bg:url(\'/v2-preview/assets/' + bg + '.webp\')"><span class="scroll-tag">' + i.group + '</span><h3>' + i.title + '</h3><p>' + i.intro + '</p></a>';
+      html += '<a class="scroll-card" href="/scrolls/' + i.id + '.html" style="--card-bg:url(/v2-preview/assets/' + bg + '.webp)"><span class="scroll-tag">' + i.group + '</span><h3>' + i.title + '</h3><p>' + i.intro + '</p></a>';
     });
     html += '</div>';
   });

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'wanlianli-v143';
+const CACHE_NAME = 'wanlianli-v145';
 
 const CORE_ASSETS = [
   'index.html',
