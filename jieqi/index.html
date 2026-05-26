@@ -2131,7 +2131,7 @@ function incMineStat(name) {
   const stats = getMineStats();
   stats[name] = Number(stats[name] || 0) + 1;
   saveMineStats(stats);
-  renderMinePage();
+  if(document.getElementById("mineDays"))renderMinePage();
 }
 function addSolarTermView(name) {
   if (!name) return;
@@ -2139,7 +2139,7 @@ function addSolarTermView(name) {
   if (!stats.solarTerms.includes(name)) {
     stats.solarTerms.push(name);
     saveMineStats(stats);
-    renderMinePage();
+    if(document.getElementById("mineDays"))renderMinePage();
   }
 }
 function addDreamHistory(text) {
@@ -2163,7 +2163,7 @@ function addFootprint(id) {
   const list = readLocalJson(mineFootprintsKey, []).filter(item => item !== name);
   list.unshift(name);
   writeLocalJson(mineFootprintsKey, list.slice(0, 8));
-  renderMinePage();
+  if(document.getElementById("mineDays"))renderMinePage();
 }
 function renderMinePage() {
   const stats = getMineStats();
@@ -2223,7 +2223,7 @@ function showPage(id) {
   if (id === 'star-note') renderStarInfo();
   if (id === 'dream') addFootprint('dream');
   if (id === 'zeri') addFootprint('zeri');
-  if (id === 'mine') renderMinePage();
+  if (id === 'mine') if(document.getElementById("mineDays"))renderMinePage();
   tabs.forEach(b => setElementClass(b, 'active', b.dataset.tab === id || (id === 'solar' && b.dataset.tab === 'tools') || (id === 'zeri' && b.dataset.tab === 'tools') || (id === 'dream' && b.dataset.tab === 'tools') || (id === 'scrolls' && b.dataset.tab === 'tools') || (id === 'scroll-detail' && b.dataset.tab === 'tools') || (id === 'detail' && b.dataset.tab === 'detail')));
   scrollTo({ top: 0, behavior: 'auto' });
 }
@@ -2234,7 +2234,7 @@ window.__xuanshuHydratePage = function (id) {
   if (id === 'solar') syncCurrentSolarTerm();
   if (id === 'scrolls') renderScrollList();
   if (id === 'star-note') renderStarInfo();
-  if (id === 'mine') renderMinePage();
+  if (id === 'mine') if(document.getElementById("mineDays"))renderMinePage();
 };
 document.addEventListener('click', e => {
   const hrefBtn = e.target.closest('[data-href]');
@@ -2539,7 +2539,7 @@ document.getElementById('addScheduleBtn')?.addEventListener('click', () => {
   document.getElementById('scheduleTitle').value = '';
   document.getElementById('scheduleDate').value = '';
   document.getElementById('scheduleNote').value = '';
-  renderSchedules();
+  if(document.getElementById("scheduleCount"))renderSchedules();
 });
 document.querySelectorAll('[data-switch]').forEach(btn => {
   btn.addEventListener('click', () => btn.classList.toggle('on'));
@@ -2798,18 +2798,18 @@ document.getElementById('installTipModal')?.addEventListener('click', e => {
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
 }
-maybeShowInstallTip();
+if(document.getElementById("installTipModal"))maybeShowInstallTip();
 
 const termTabsEl = document.getElementById('termTabs');
 if (termTabsEl) termTabsEl.remove();
-initTermPickerHint();
+if(document.getElementById("termEntryHint"))initTermPickerHint();
 syncCurrentSolarTerm();
-initDreamTools();
+if(document.getElementById("dreamInput"))initDreamTools();
 renderOracle(lvzuSigns[currentOracleIndex]);
 renderOracleCount();
 renderDetail();
-renderSchedules();
-renderMinePage();
+if(document.getElementById("scheduleCount"))renderSchedules();
+if(document.getElementById("mineDays"))renderMinePage();
 function getInitialPageFromLocation() {
   const queryPage = new URLSearchParams(location.search).get('page');
   if (queryPage) return queryPage;
