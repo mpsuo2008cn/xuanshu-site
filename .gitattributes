@@ -2,7 +2,7 @@
 data/scrolls.js binary
 data/tools.js binary
 data/version.js binary
-*.html text eol=lf
+*.html binary
 *.css text eol=lf
 *.webp binary
 *.png binary
