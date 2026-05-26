@@ -1,0 +1,10 @@
+# 所有中文内容文件强制二进制处理，禁止换行符转换
+data/scrolls.js binary
+data/tools.js binary
+data/version.js binary
+*.html text eol=lf
+*.css text eol=lf
+*.webp binary
+*.png binary
+*.ico binary
+*.jpg binary
