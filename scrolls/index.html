@@ -101,7 +101,7 @@ body{display:flex;justify-content:center}
   tp.innerHTML = '<div class="today-pick-label">今日小卷</div>' +
     '<a href="/scrolls/' + todayItem.id + '.html"><span class="today-tag">' + todayItem.group + '</span>' + todayItem.title + '</a>' +
     '<p>' + todayItem.intro + '</p>';
-  tp.style.setProperty('--today-bg', "url(/v2-preview/assets/" + todayBg + ".webp)");
+  tp.style.setProperty('--today-bg', "url('/v2-preview/assets/" + todayBg + ".webp)");
   var assetIdx = Math.floor(Math.random() * cardAssets.length);
 
   // ── 分组列表 ──
@@ -111,7 +111,7 @@ body{display:flex;justify-content:center}
     items.filter(function(x){ return x.group === g; }).forEach(function(i){
       var bg = cardAssets[assetIdx % cardAssets.length];
       assetIdx++;
-      html += '<a class="scroll-card" href="/scrolls/' + i.id + '.html" style="--card-bg:url(/v2-preview/assets/' + bg + '.webp)"><span class="scroll-tag">' + i.group + '</span><h3>' + i.title + '</h3><p>' + i.intro + '</p></a>';
+      html += '<a class="scroll-card" href="/scrolls/' + i.id + '.html" style="--card-bg:url('/v2-preview/assets/' + bg + '.webp')"><span class="scroll-tag">' + i.group + '</span><h3>' + i.title + '</h3><p>' + i.intro + '</p></a>';
     });
     html += '</div>';
   });
