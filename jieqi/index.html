@@ -1440,10 +1440,10 @@ button { font: inherit; color: inherit; border: 0; background: none; }
     </div>
     <div class="card health-card"><div><h2>节气养生</h2><p id="termHealth">立夏时节，万物生长，宜养心护阳，注意饮食清淡，保持心情舒畅。</p></div><div class="tea-art"></div></div>
     <div class="card advice-list">
-      <div class="advice-row"><span class="advice-icon">碗</span><div><h3>饮食</h3><p>宜清淡，多吃新鲜蔬果、豆类，少食辛辣油腻。</p></div><span>›</span></div>
-      <div class="advice-row"><span class="advice-icon">坐</span><div><h3>起居</h3><p>晚睡早起，顺应自然，保证充足睡眠。</p></div><span>›</span></div>
-      <div class="advice-row"><span class="advice-icon">跑</span><div><h3>运动</h3><p>适度运动，如散步、慢跑、太极等，微微出汗即可。</p></div><span>›</span></div>
-      <div class="advice-row"><span class="advice-icon">心</span><div><h3>心情</h3><p>保持心情舒畅，避免急躁，静心养阳。</p></div><span>›</span></div>
+      <div class="advice-row"><span class="advice-icon">碗</span><div><h3>饮食</h3><p id="termDiet">宜清淡，多吃新鲜蔬果、豆类，少食辛辣油腻。</p></div><span>›</span></div>
+      <div class="advice-row"><span class="advice-icon">坐</span><div><h3>起居</h3><p id="termRest">晚睡早起，顺应自然，保证充足睡眠。</p></div><span>›</span></div>
+      <div class="advice-row"><span class="advice-icon">跑</span><div><h3>运动</h3><p id="termSport">适度运动，如散步、慢跑、太极等，微微出汗即可。</p></div><span>›</span></div>
+      <div class="advice-row"><span class="advice-icon">心</span><div><h3>心情</h3><p id="termMood">保持心情舒畅，避免急躁，静心养阳。</p></div><span>›</span></div>
     </div>
   </section>
 
@@ -2036,6 +2036,38 @@ const termFallbackTexts = {
   '冬至': ['约每年12月21-23日<br>阴极阳生，一阳来复', '冬至是阴阳转换的重要节点，白昼自此渐长。', '宜温补养藏，早睡保暖，静养心神。'],
   '小寒': ['约每年1月5-7日<br>寒气渐深，梅香初动', '小寒虽小，寒意已重，是隆冬时节。', '宜防寒养肾，温食暖饮，少耗阳气。'],
   '大寒': ['约每年1月20-21日<br>寒极将尽，春意暗生', '大寒为二十四节气最后一节，寒极而春近。', '宜保暖养藏，静待春生，饮食温润。']
+};
+const termAdviceDefaults = {
+  diet: '饮食宜应时清和，多用当季蔬果，少食厚味辛辣。',
+  rest: '起居宜顺应昼夜变化，早睡早起或适时小憩。',
+  sport: '运动宜舒缓有度，如散步、太极、八段锦，微汗即可。',
+  mood: '心境宜平和，少急躁，多静心，顺势而行。'
+};
+const termAdviceTexts = {
+  '立春': { diet: '宜食韭菜、豆芽、春笋等辛甘之品，少食酸收。', rest: '早睡早起，晨起舒展筋骨，开窗换气。', sport: '宜散步、舒展、八段锦，帮助阳气生发。', mood: '少怒少郁，多踏青赏花，使心气舒展。' },
+  '雨水': { diet: '宜山药、薏米、小米粥，温和健脾祛湿。', rest: '春寒未尽，不宜过早减衣，护好腰腹。', sport: '宜室内舒展、快走，避开阴雨寒湿。', mood: '雨水绵绵易生闷意，可听乐、读书、静心。' },
+  '惊蛰': { diet: '宜梨、菠菜、蜂蜜等清润之品，少食辛辣。', rest: '宜早起迎朝阳，保持居室通风。', sport: '宜踏青、放风筝、散步，微微出汗即可。', mood: '肝气易动，凡事缓一缓，少急少怒。' },
+  '春分': { diet: '宜平补清和，如豆浆、山药、时蔬，忌大寒大热。', rest: '昼夜均分，作息也宜平稳有常。', sport: '宜散步、太极、轻柔伸展，动静相宜。', mood: '阴阳平衡之时，心也宜不偏不倚。' },
+  '清明': { diet: '宜青团、荠菜、香椿等时令食物，少食发物。', rest: '早起踏青，祭扫追思宜节哀。', sport: '宜踏青、登山、放风筝，出汗后避风。', mood: '思念与生机并在，心宜清朗安定。' },
+  '谷雨': { diet: '宜薏米、赤小豆、冬瓜、山药祛湿健脾。', rest: '居室宜通风干燥，衣物勤晒，防湿困。', sport: '宜快走、瑜伽、游泳，微汗排湿。', mood: '春夏交接，心易浮动，可慢饮一杯茶。' },
+  '立夏': { diet: '宜清淡，多吃新鲜蔬果、豆类，少食辛辣油腻。', rest: '晚睡早起，午间小憩，顺应昼长夜短。', sport: '适度运动，如散步、慢跑、太极，微汗即可。', mood: '保持心情舒畅，避免急躁，静心养阳。' },
+  '小满': { diet: '宜苦菜、青梅、绿豆、冬瓜，清热利湿。', rest: '午后宜小憩，避开烈日，保持居室通风。', sport: '宜晨练或傍晚散步，出汗后及时补水。', mood: '小满未满，知足常乐，凡事留有余地。' },
+  '芒种': { diet: '宜酸梅汤、绿豆汤、时蔬，清暑化湿。', rest: '中午小憩养心，避免高温劳作过久。', sport: '宜清晨或傍晚活动，劳作有度，勿过汗。', mood: '忙而不乱，急而不躁，稳住节奏。' },
+  '夏至': { diet: '宜绿豆、莲子、荷叶、西瓜，清暑生津。', rest: '晚睡早起但不熬夜，午间小憩养心。', sport: '宜清晨傍晚慢走、游泳，避开正午烈日。', mood: '心静自然凉，凡事缓一点，更容易顺。' },
+  '小暑': { diet: '宜莲藕、冬瓜、绿豆，多饮温水，少食冰冷。', rest: '午后少外出，室内通风遮阳，空调不宜太低。', sport: '宜清晨快走或太极，避免大汗淋漓。', mood: '暑气扰心，宜少言少虑，静坐片刻。' },
+  '大暑': { diet: '宜绿豆汤、荷叶茶、苦瓜，补水养阴。', rest: '保持居室凉爽通风，午后尽量避暑。', sport: '宜低强度慢行，出汗即止，及时补水。', mood: '天热火气易盛，少争辩，多安神。' },
+  '立秋': { diet: '宜百合、银耳、梨、莲藕，润燥养肺。', rest: '早卧早起，夜间渐凉，护好腹部。', sport: '宜慢跑、快走、舒展，运动逐渐收敛。', mood: '暑热未尽，心神宜慢慢收回。' },
+  '处暑': { diet: '宜鸭肉、梨、百合，清润防秋燥。', rest: '早睡早起，睡前泡脚，早晚添衣。', sport: '宜登高、远足、骑行，注意补水。', mood: '暑气将止，整理心绪，准备入秋。' },
+  '白露': { diet: '宜梨、白萝卜、山药、莲藕，润肺护胃。', rest: '添衣防凉，护好脖颈和后背。', sport: '宜慢跑、快走、太极，露重时勿赤足。', mood: '一夜凉一夜，放慢脚步，细品秋意。' },
+  '秋分': { diet: '宜芝麻、蜂蜜、梨、石榴，饮食平和。', rest: '早卧早起，居室适度润燥。', sport: '宜登山、骑行、太极，秋高气爽正当时。', mood: '昼夜再平，心也要保持平衡。' },
+  '寒露': { diet: '宜芝麻、核桃、山药、温汤粥，少食寒凉。', rest: '足部保暖，睡前泡脚，护住阳气。', sport: '宜快走、八段锦，运动后及时添衣。', mood: '秋深露冷，宜收敛神气，少大喜大悲。' },
+  '霜降': { diet: '宜柿子、梨、白萝卜，温补润燥。', rest: '被褥加厚，护好腰膝，早晚添衣。', sport: '宜太极、慢走，晨练等太阳升起后再动。', mood: '秋收冬藏，心也跟着收，稳稳前行。' },
+  '立冬': { diet: '宜羊肉、鸡肉、黑豆、栗子，温养肾阳。', rest: '早卧晚起，待日光而作，睡前热水泡脚。', sport: '宜室内八段锦、太极，不宜大汗。', mood: '冬日宜藏，少思少虑，静养精神。' },
+  '小雪': { diet: '宜羊肉、萝卜、山药，温补防寒。', rest: '保暖为要，头颈脚踝都要护好。', sport: '宜室内舒展，晴好午后可散步晒阳。', mood: '点一盏暖灯，读一卷闲书，心不随寒。' },
+  '大雪': { diet: '宜牛羊肉、山药、黑豆，温肾护阳。', rest: '早卧晚起，出门戴帽围巾，防寒防滑。', sport: '宜室内太极、八段锦，户外选晴朗午后。', mood: '大雪封山，心宜守静，这是蓄力之时。' },
+  '冬至': { diet: '宜饺子、羊肉汤、糯米、红枣，温补养藏。', rest: '早卧晚起，避寒保暖，与家人围炉。', sport: '宜室内慢走、太极，以静养为主。', mood: '一阳初生，静待春光，心中留一点希望。' },
+  '小寒': { diet: '宜糯米饭、核桃、桂圆，温食暖饮。', rest: '腰腹和脚部保暖，睡前泡脚助眠。', sport: '宜室内八段锦，午后阳光好时散步。', mood: '天冷人宜暖，给自己一壶热茶。' },
+  '大寒': { diet: '宜鸡汤、羊肉、糯米饭，温补而不腻。', rest: '早睡晚起，居室温暖通风，防寒防滑。', sport: '宜室内太极、舒展，微微发热即可。', mood: '寒极春近，静待春归，不必急。' }
 };
 const defaultTitle = document.title;
 const defaultDescription = document.querySelector('meta[name="description"]')?.content || '';
@@ -2727,20 +2759,43 @@ function openTermPicker() {
 function closeTermPicker() {
   document.getElementById('termPickerModal')?.classList.remove('show');
 }
+function getTermDisplayData(name) {
+  const raw = termTexts[name] || termFallbackTexts[name] || [`${name}<br>二十四节气`, `${name}为二十四节气之一，顺应天时，观物候变化。`, '宜顺时调养，饮食有节，起居有常。'];
+  const advice = termAdviceTexts[name] || termAdviceDefaults;
+  const hasDetailedAdvice = raw.length >= 7;
+  return {
+    time: raw[0],
+    desc: raw[1],
+    health: hasDetailedAdvice ? raw[6] : (raw[2] || termAdviceDefaults.mood),
+    diet: hasDetailedAdvice ? raw[2] : advice.diet,
+    rest: hasDetailedAdvice ? raw[3] : advice.rest,
+    sport: hasDetailedAdvice ? raw[4] : advice.sport,
+    mood: hasDetailedAdvice ? raw[5] : advice.mood
+  };
+}
+function setTextById(id, value) {
+  const el = document.getElementById(id);
+  if (el && value) el.textContent = value;
+}
 function setTerm(name, year = selectedDate.getFullYear()) {
-  const data = termTexts[name] || termFallbackTexts[name] || [`${name}<br>二十四节气`, `${name}为二十四节气之一，顺应天时，观物候变化。`, '宜顺时调养，饮食有节，起居有常。'];
+  const data = getTermDisplayData(name);
   const asset = termAssets[name] || 'term-07-lixia-ai.webp';
   selectedTermName = name;
   selectedTermYear = year;
   document.documentElement.style.setProperty('--term-image', `url("/v2-preview/assets/${asset}")`);
   const termArt = document.getElementById('termArt');
   if (termArt) termArt.style.backgroundImage = `url("/v2-preview/assets/${asset}")`;
-  document.getElementById('termName').textContent = name;
+  setTextById('termName', name);
   const entryName = document.getElementById('termEntryName');
   if (entryName) entryName.textContent = name;
-  document.getElementById('termTime').innerHTML = formatTermTime(name, year);
-  document.getElementById('termDesc').textContent = data[1];
-  document.getElementById('termHealth').textContent = data[2];
+  const termTime = document.getElementById('termTime');
+  if (termTime) termTime.innerHTML = formatTermTime(name, year);
+  setTextById('termDesc', data.desc);
+  setTextById('termHealth', data.health);
+  setTextById('termDiet', data.diet);
+  setTextById('termRest', data.rest);
+  setTextById('termSport', data.sport);
+  setTextById('termMood', data.mood);
   document.querySelectorAll('.term-tab').forEach(x => x.classList.toggle('active', x.dataset.term === name));
   addSolarTermView(name);
   renderTermPicker();
