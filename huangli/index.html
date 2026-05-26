@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#f4efe4">
+<meta name="description" content="今日黄历宜忌查询，吉神凶煞，财神方位，时辰吉凶">
+<meta name="keywords" content="今日黄历,黄历宜忌,财神方位,吉时查询,冲煞,彭祖百忌">
+<title>今日黄历｜宜忌吉时财神方位 - 玄枢</title>
+<style>
+* { box-sizing: border-box; }
+:root {
+  --paper: #fbf6ec; --ink: #1f2929; --muted: #786f63; --red: #c42f2d;
+  --gold: #a36d35; --line: rgba(120,93,58,.18); --card-bg: #fffdf8;
+}
+html, body { margin:0; min-height:100%; color:var(--ink); background:var(--paper); font-family:"Noto Serif SC","Songti SC","STSong",serif; }
+body {
+  display:flex; justify-content:center;
+  background:linear-gradient(180deg,#fffaf3 0%,#f8efe4 55%,#f6eadc 100%);
+}
+a { color:inherit; text-decoration:none; }
+.phone { width:min(100vw,430px); min-height:100vh; padding:0 12px 102px; position:relative; }
+
+/* header */
+.tools-hero {
+  min-height:64px; margin:0 -12px 12px; padding:16px 24px 10px; position:relative;
+  overflow:hidden; border-radius:0 0 20px 20px;
+}
+.tools-hero::before {
+  content:""; position:absolute; inset:0;
+  background-image:linear-gradient(90deg,rgba(255,251,244,.28) 0%,rgba(255,251,244,.12) 34%,rgba(255,251,244,.02) 70%,rgba(255,251,244,0) 100%),linear-gradient(180deg,rgba(255,251,244,.05),rgba(255,251,244,0) 58%),url("/v2-preview/assets/hero-reeds.webp");
+  background-size:cover; background-position:center;
+}
+.tools-hero h1, .tools-hero p { position:relative; z-index:1; }
+.tools-hero h1 { margin:0 0 6px; font-size:28px; letter-spacing:2px; font-weight:700; }
+.tools-hero p { margin:0; font-size:14px; letter-spacing:3px; color:#303536; }
+.brand-seal { display:inline-block; writing-mode:vertical-rl; margin-left:6px; padding:3px 2px;
+  color:#fff; background:var(--red); border-radius:5px; font-size:11px; letter-spacing:1px; vertical-align:middle; }
+.sub-row { display:flex; justify-content:space-between; align-items:center; margin-top:6px; position:relative; z-index:1; }
+.nav-arrows { display:flex; gap:4px; }
+.nav-btn-sm { width:32px; height:32px; display:grid; place-items:center; border:1px solid var(--line);
+  border-radius:50%; background:rgba(255,255,255,.6); color:var(--muted); font-size:16px; cursor:pointer; }
+.back-link { font-size:13px; color:var(--muted); border:1px solid var(--line); border-radius:14px; padding:3px 12px; }
+
+/* date hero */
+.date-hero { text-align:center; padding:16px 0 10px; }
+.date-hero .big-date { font-size:20px; color:var(--ink); margin-bottom:4px; }
+.date-hero .big-lunar { font-size:36px; font-weight:bold; color:var(--red); }
+.date-hero .ganzhi-row { font-size:14px; color:var(--muted); margin-top:6px; }
+
+/* cards */
+.card { background:var(--card-bg); border-radius:16px; padding:16px; margin-bottom:10px;
+  border:1px solid var(--line); box-shadow:0 2px 8px rgba(61,49,31,.05); }
+.section-title { font-size:15px; font-weight:bold; color:var(--red); margin-bottom:10px;
+  padding-bottom:6px; border-bottom:1px solid var(--line); letter-spacing:1px; }
+
+/* yiji */
+.yiji-line { display:flex; gap:10px; line-height:1.9; font-size:15px; }
+.yiji-line .badge { display:inline-block; width:28px; height:28px; border-radius:50%; text-align:center;
+  line-height:28px; font-size:14px; font-weight:bold; flex-shrink:0; }
+.badge.yi { background:#e8f5e9; color:#2e7d32; }
+.badge.ji { background:#fce4ec; color:#c62828; }
+.shensha-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:4px; }
+.shen-tag { padding:3px 10px; border-radius:12px; font-size:13px; }
+.shen-g { background:#f0f8e8; color:#558b2f; border:1px solid #c5e1a5; }
+.shen-b { background:#fff0f0; color:#c0392b; border:1px solid #ef9a9a; }
+
+/* info grid */
+.info-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px 16px; font-size:14px; line-height:1.8; }
+.info-grid .info-label { color:var(--muted); }
+.info-grid .info-value { color:var(--ink); }
+
+/* hour grid */
+.hour-grid { display:grid; grid-template-columns:48px repeat(12,1fr); gap:1px;
+  font-size:12px; text-align:center; background:var(--line); border-radius:8px; overflow:hidden; }
+.hour-grid span { background:#fff; padding:6px 2px; }
+.hour-grid .hour-label { grid-row:span 3; display:grid; place-items:center;
+  background:#f5f0e8; font-size:11px; color:var(--muted); line-height:1.3; }
+.hour-grid .hour-good { color:#2e7d32; font-weight:bold; }
+.hour-grid .hour-bad { color:var(--muted); }
+
+/* seo */
+.seo-section { margin-top:14px; padding:14px; background:rgba(255,250,243,.68);
+  border-radius:14px; font-size:13px; color:var(--muted); line-height:1.8; }
+.seo-section b { color:#8c4d22; }
+
+/* footer */
+.site-footer { margin:14px 0; padding:10px; text-align:center; color:#7c756b; font-size:11px; line-height:1.65; }
+.site-footer a { color:#7c756b; }
+
+/* bottom nav */
+.bottom-nav {
+  position:fixed; z-index:10; left:50%; bottom:0; transform:translateX(-50%);
+  width:min(100vw,430px); height:82px; display:grid; grid-template-columns:repeat(4,1fr);
+  background:rgba(255,250,243,.9); border-top:1px solid rgba(120,93,58,.16);
+  backdrop-filter:blur(12px); padding-bottom:10px;
+}
+.nav-btn { display:grid; place-items:center; align-content:center; gap:4px; color:#9b7b58; font-size:14px; opacity:.58; }
+.nav-btn.active { color:var(--red); font-weight:700; opacity:1; }
+.nav-ico { width:30px; height:30px; display:grid; place-items:center; color:currentColor; }
+.nav-ico svg { width:30px; height:30px; stroke:currentColor; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.nav-ico .soft-fill { fill:currentColor; stroke:none; opacity:.12; }
+.nav-ico .deep-fill { fill:currentColor; stroke:none; opacity:.24; }
+.nav-ico .sun-fill { fill:currentColor; stroke:none; opacity:.78; }
+</style>
+</head>
+<body>
+<main class="phone">
+  <section class="tools-hero">
+    <h1>今日黄历<span class="brand-seal">玄枢</span></h1>
+    <div class="sub-row">
+      <a class="back-link" href="/tools/">← 工具大全</a>
+      <div class="nav-arrows">
+        <button class="nav-btn-sm" onclick="shiftDay(-1)">‹</button>
+        <button class="nav-btn-sm" onclick="shiftDay(1)">›</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="date-hero">
+    <div class="big-date" id="dateText">2026年5月26日</div>
+    <div class="big-lunar" id="lunarText">四月廿一</div>
+    <div class="ganzhi-row" id="ganzhiText">乙巳年 癸巳月 庚子日 周二</div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">宜忌</div>
+    <div class="yiji-line"><span class="badge yi">宜</span><span id="yiText">祭祀 祈福 出行</span></div>
+    <div class="yiji-line"><span class="badge ji">忌</span><span id="jiText">动土 安葬</span></div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">吉神 · 凶煞</div>
+    <div class="shensha-row" id="jiShenTags"></div>
+    <div class="shensha-row" id="xiongShaTags" style="margin-top:6px"></div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">黄历信息</div>
+    <div class="info-grid">
+      <span class="info-label">五行</span><span class="info-value" id="naYin">—</span>
+      <span class="info-label">冲煞</span><span class="info-value" id="chongSha">—</span>
+      <span class="info-label">值神</span><span class="info-value" id="zhiShen">—</span>
+      <span class="info-label">胎神</span><span class="info-value" id="taiShen">—</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">彭祖百忌</div>
+    <div id="pengZu"></div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">时辰吉凶</div>
+    <div class="hour-grid" id="hourGrid"></div>
+  </div>
+
+  <div class="seo-section">
+    <b>今日黄历</b>提供每日宜忌、吉神凶煞、财神方位、时辰吉凶查询，供择日出行参考。数据源自传统黄历。<br>
+    <b>相关工具：</b>
+    <a href="/hehun/">八字合婚</a> ·
+    <a href="/zeri/">良辰吉日</a> ·
+    <a href="/bazi/">八字排盘</a> ·
+    <a href="/liuyao/">六爻起卦</a>
+  </div>
+
+  <footer class="site-footer">
+    <div>本站内容仅供娱乐与民俗文化参考，请理性看待。</div>
+  </footer>
+</main>
+
+<nav class="bottom-nav" aria-label="底部导航">
+  <a class="nav-btn" href="/"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="soft-fill" x="4.8" y="6.2" width="22.4" height="21.2" rx="4.2"/><rect x="5.8" y="7.6" width="20.4" height="18.9" rx="3.6"/><path d="M11 4.6v5.1M21 4.6v5.1M9.2 13.1h13.6"/><circle class="deep-fill" cx="11.2" cy="17.2" r="1.55"/><circle class="deep-fill" cx="16" cy="17.2" r="1.55"/><circle class="deep-fill" cx="20.8" cy="17.2" r="1.55"/><circle class="deep-fill" cx="11.2" cy="22" r="1.55"/><circle class="deep-fill" cx="16" cy="22" r="1.55"/><circle class="deep-fill" cx="20.8" cy="22" r="1.55"/></svg></span><span>日历</span></a>
+  <a class="nav-btn" href="/?page=discover"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><circle class="soft-fill" cx="16" cy="16" r="11.2"/><circle cx="16" cy="16" r="11.2"/><path d="M7.8 20.7c2.5-2.4 4.8-5.4 7.1-5.4 2.1 0 3.1 3.2 4.7 3.2 1.2 0 2.2-1.5 4.5-4.1"/><path d="M8.2 22.1c4.2-1.4 9.1-1.6 15.7-.4"/><circle class="sun-fill" cx="22.7" cy="10.1" r="3.2"/><path d="M7.2 17.4c1.9-.8 3.4-.8 4.7 0M19 22.4c1.9-.9 3.5-.8 5 .2"/></svg></span><span>观万象</span></a>
+  <a class="nav-btn active" href="/tools/"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="soft-fill" x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M10.7 10V8.3c0-1.1.9-2 2-2h6.6c1.1 0 2 .9 2 2V10"/><rect x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M5.8 16h20.4"/><rect x="13.2" y="14.1" width="5.6" height="5.1" rx="1.1"/><path d="M7.8 23.2c3.3-1.2 5.2-1.1 7.3.2M18.4 24.2c2.3-1.8 4.2-2.2 6.7-1.2"/></svg></span><span>工具</span></a>
+  <a class="nav-btn" href="/?page=mine"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><circle class="soft-fill" cx="16" cy="16" r="11.3"/><path d="M27.2 16c0 2.4-.7 4.6-2 6.4"/><path d="M4.9 16A11.1 11.1 0 0 1 24.6 9"/><circle cx="16" cy="13.1" r="3.5"/><path d="M9.4 23c1.7-3.5 4.1-5.1 6.6-5.1s4.9 1.6 6.6 5.1"/><path d="M19.4 24.8c2.2-2 4.1-2.2 6.7-.7 1 .6 1.9.7 2.9.2"/><path d="M21.1 26.5c1.6-1 3-1 4.6-.1"/></svg></span><span>我的</span></a>
+</nav>
+
+<script src="/vendor/lunar.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?638065057f904d8f3ed86eaa15c87734";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s)})();
+
+var LM = ['正','二','三','四','五','六','七','八','九','十','冬','腊'];
+var LD = ['','初一','初二','初三','初四','初五','初六','初七','初八','初九','初十','十一','十二','十三','十四','十五','十六','十七','十八','十九','二十','廿一','廿二','廿三','廿四','廿五','廿六','廿七','廿八','廿九','三十'];
+var WN = ['日','一','二','三','四','五','六'];
+
+var HEAVENLY_STEMS = ['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'];
+var EARTHLY_BRANCHES = ['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'];
+var FIRST_HOUR_STEM = { '甲':'甲','己':'甲','乙':'丙','庚':'丙','丙':'戊','辛':'戊','丁':'庚','壬':'庚','戊':'壬','癸':'壬' };
+var DAY_BRANCH_GOOD_HOURS = {
+  '子':['子','丑','卯','午','申','酉'], '丑':['寅','卯','巳','申','戌','亥'],
+  '寅':['子','丑','辰','巳','未','戌'], '卯':['子','寅','卯','午','未','酉'],
+  '辰':['寅','辰','巳','申','酉','亥'], '巳':['丑','辰','午','未','戌','亥'],
+  '午':['子','丑','卯','午','申','酉'], '未':['寅','卯','巳','申','戌','亥'],
+  '申':['子','丑','辰','巳','未','戌'], '酉':['子','寅','卯','午','未','酉'],
+  '戌':['寅','辰','巳','申','酉','亥'], '亥':['丑','辰','午','未','戌','亥']
+};
+
+var currentDate = new Date();
+
+function fmt2(n){return n<10?'0'+n:''+n}
+function safeArr(a){return a&&a.length?a:[]}
+function yijiText(list,fb){return (list&&list.length?list:[fb]).slice(0,12).join('　')}
+
+function getInfo(y,m,d){
+  try {
+    var solar=Solar.fromYmd(y,m,d);
+    var lunar=solar.getLunar();
+    var lm=lunar.getMonth();
+    return {
+      date:new Date(y,m-1,d), solar:solar, lunar:lunar,
+      lMonth:lm, lMonthName:(lm<0?'闰':'')+LM[Math.abs(lm)-1], lDay:lunar.getDay(), lDayName:LD[lunar.getDay()]||'',
+      yGz:lunar.getYearInGanZhi?lunar.getYearInGanZhi():'',
+      mGz:lunar.getMonthInGanZhi?lunar.getMonthInGanZhi():'',
+      dGz:lunar.getDayInGanZhi?lunar.getDayInGanZhi():'',
+      yi:safeArr(lunar.getDayYi?lunar.getDayYi():[]),
+      ji:safeArr(lunar.getDayJi?lunar.getDayJi():[]),
+      jiShen:safeArr(lunar.getDayJiShen?lunar.getDayJiShen():[]),
+      xiongSha:safeArr(lunar.getDayXiongSha?lunar.getDayXiongSha():[]),
+      chongSx:lunar.getDayChongShengXiao?lunar.getDayChongShengXiao():'',
+      chongGan:lunar.getDayChongGan?lunar.getDayChongGan():'',
+      chong:lunar.getDayChong?lunar.getDayChong():'',
+      sha:lunar.getDaySha?lunar.getDaySha():'',
+      zhiXing:lunar.getZhiXing?lunar.getZhiXing():'',
+      naYin:lunar.getDayNaYin?lunar.getDayNaYin():'',
+      taiShen:lunar.getDayPositionTai?lunar.getDayPositionTai():'',
+      pengZuG:lunar.getPengZuGan?lunar.getPengZuGan():'',
+      pengZuZ:lunar.getPengZuZhi?lunar.getPengZuZhi():''
+    };
+  } catch(e){
+    return null;
+  }
+}
+
+function render(){
+  var d=currentDate;
+  var info=getInfo(d.getFullYear(),d.getMonth()+1,d.getDate());
+  if(!info)return;
+
+  var el=function(id,text){var e=document.getElementById(id);if(e)e.textContent=text};
+
+  el('dateText',d.getFullYear()+'年'+(d.getMonth()+1)+'月'+d.getDate()+'日');
+  el('lunarText',info.lDay===1?info.lMonthName+'月':info.lDayName);
+  document.getElementById('ganzhiText').textContent=info.yGz+'年　'+info.mGz+'月　'+info.dGz+'日　周'+WN[d.getDay()];
+
+  el('yiText',yijiText(info.yi,'平常事'));
+  el('jiText',yijiText(info.ji,'无'));
+
+  // 吉神
+  var gs=info.jiShen.length?info.jiShen:['—'];
+  document.getElementById('jiShenTags').innerHTML=gs.map(function(s){return '<span class="shen-tag shen-g">'+s+'</span>'}).join('');
+
+  // 凶煞
+  var xs=info.xiongSha.length?info.xiongSha:['—'];
+  document.getElementById('xiongShaTags').innerHTML=xs.map(function(s){return '<span class="shen-tag shen-b">'+s+'</span>'}).join('');
+
+  el('naYin',info.naYin||'—');
+  el('chongSha',(info.chongSx?'冲'+info.chongSx:'—')+(info.sha?' 煞'+info.sha:''));
+  el('zhiShen',info.zhiXing||'—');
+  el('taiShen',info.taiShen||'—');
+  el('pengZu',(info.pengZuG||'—')+'　'+ (info.pengZuZ||'—'));
+
+  // 时辰
+  renderHourGrid(info);
+}
+
+function renderHourGrid(info){
+  var grid=document.getElementById('hourGrid');
+  if(!grid)return;
+  var dg=(info.dGz||'甲子').charAt(0);
+  var dz=(info.dGz||'甲子').charAt(1);
+  var first= FIRST_HOUR_STEM[dg]||'甲';
+  var si=HEAVENLY_STEMS.indexOf(first);
+  var gh=DAY_BRANCH_GOOD_HOURS[dz]||DAY_BRANCH_GOOD_HOURS['子'];
+  var stems=EARTHLY_BRANCHES.map(function(_,i){return HEAVENLY_STEMS[(si+i)%10]});
+  grid.innerHTML=
+    '<div class="hour-label">时辰<br>宜忌</div>'+
+    stems.map(function(s){return '<span>'+s+'</span>'}).join('')+
+    EARTHLY_BRANCHES.map(function(b){return '<span>'+b+'</span>'}).join('')+
+    EARTHLY_BRANCHES.map(function(b){
+      var ok=gh.includes(b);
+      return '<span class="'+(ok?'hour-good':'hour-bad')+'">'+(ok?'吉':'凶')+'</span>';
+    }).join('');
+}
+
+function shiftDay(delta){
+  currentDate.setDate(currentDate.getDate()+delta);
+  render();
+}
+
+render();
+
+// 百度统计
+var _hmt=_hmt||[];
+(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?638065057f904d8f3ed86eaa15c87734";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s)})();
+</script>
+</body>
+</html>

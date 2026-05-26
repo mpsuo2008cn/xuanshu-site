@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="msvalidate.01" content="7262D07C78F5CB782C803882F5195FD4" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#f4efe4">
+<meta name="description" content="玄枢八字合婚，天医福德绝命配婚，夫妻宫日支分析，八字五行合婚" />
+<meta name="keywords" content="八字合婚,天医,福德,绝命,夫妻宫,日柱,纳音合婚">
+<title>玄枢八字合婚｜天医福德绝命配婚</title>
+<link rel="stylesheet" href="style.css">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?638065057f904d8f3ed86eaa15c87734";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+function trackEvent(eventName, eventLabel) {
+  if (!eventName) return;
+  window._hmt = window._hmt || [];
+  window._hmt.push(['_trackEvent', 'xuanshu', eventName, eventLabel || '']);
+}
+window.trackEvent = trackEvent;
+</script>
+</head>
+<body>
+<div id="app" class="show">
+  <header class="header">
+    <div class="header-content">
+      <div class="brand-row">
+        <h1 class="title">玄枢<span class="taiji-mark">☯</span><span class="seal">合婚</span></h1>
+        <a class="back-link" href="/tools/">工具大全</a>
+      </div>
+      <p class="subtitle">天医福德 · 八字合参 · 绝命合冲</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- 男方信息 -->
+    <div class="card control-card">
+      <div class="card-section-title">♂ 男方信息</div>
+      <div class="form-group compact">
+        <label class="label">姓名备注</label>
+        <input type="text" id="mName" class="input" placeholder="可不填">
+      </div>
+      <div class="form-group compact">
+        <label class="label">历法</label>
+        <div class="segmented" id="mCalendarGroup">
+          <button class="seg active" data-calendar="solar" type="button">公历</button>
+          <button class="seg" data-calendar="lunar" type="button">农历</button>
+        </div>
+      </div>
+      <div class="form-group compact">
+        <label class="label">出生时间</label>
+        <div class="time-grid">
+          <select id="mYear" class="time-select"></select>
+          <select id="mMonth" class="time-select"></select>
+          <select id="mDay" class="time-select"></select>
+          <select id="mHour" class="time-select"></select>
+          <select id="mMinute" class="time-select"></select>
+        </div>
+      </div>
+      <div id="mDateInfo" class="date-info"></div>
+    </div>
+
+    <!-- 女方信息 -->
+    <div class="card control-card">
+      <div class="card-section-title">♀ 女方信息</div>
+      <div class="form-group compact">
+        <label class="label">姓名备注</label>
+        <input type="text" id="fName" class="input" placeholder="可不填">
+      </div>
+      <div class="form-group compact">
+        <label class="label">历法</label>
+        <div class="segmented" id="fCalendarGroup">
+          <button class="seg active" data-calendar="solar" type="button">公历</button>
+          <button class="seg" data-calendar="lunar" type="button">农历</button>
+        </div>
+      </div>
+      <div class="form-group compact">
+        <label class="label">出生时间</label>
+        <div class="time-grid">
+          <select id="fYear" class="time-select"></select>
+          <select id="fMonth" class="time-select"></select>
+          <select id="fDay" class="time-select"></select>
+          <select id="fHour" class="time-select"></select>
+          <select id="fMinute" class="time-select"></select>
+        </div>
+      </div>
+      <div id="fDateInfo" class="date-info"></div>
+    </div>
+
+    <button id="calcBtn" class="btn btn-primary">开始合婚</button>
+
+    <!-- 结果区 -->
+    <div id="resultArea" class="result-hidden">
+      <div class="card layer1-card" id="layer1Card"></div>
+      <div class="card detail-card" id="layer2Card"></div>
+      <div class="card final-card" id="layer3Card"></div>
+    </div>
+
+    <footer class="site-footer">
+      <div>本站内容仅供娱乐与民俗文化参考，请理性看待。</div>
+    </footer>
+  </main>
+
+  <nav class="bottom-nav" aria-label="底部导航">
+    <a class="nav-btn" href="/"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="soft-fill" x="4.8" y="6.2" width="22.4" height="21.2" rx="4.2"/><rect x="5.8" y="7.6" width="20.4" height="18.9" rx="3.6"/><path d="M11 4.6v5.1M21 4.6v5.1M9.2 13.1h13.6"/><circle class="deep-fill" cx="11.2" cy="17.2" r="1.55"/><circle class="deep-fill" cx="16" cy="17.2" r="1.55"/><circle class="deep-fill" cx="20.8" cy="17.2" r="1.55"/><circle class="deep-fill" cx="11.2" cy="22" r="1.55"/><circle class="deep-fill" cx="16" cy="22" r="1.55"/><circle class="deep-fill" cx="20.8" cy="22" r="1.55"/></svg></span><span>日历</span></a>
+    <a class="nav-btn" href="/?page=discover"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><circle class="soft-fill" cx="16" cy="16" r="11.2"/><circle cx="16" cy="16" r="11.2"/><path d="M7.8 20.7c2.5-2.4 4.8-5.4 7.1-5.4 2.1 0 3.1 3.2 4.7 3.2 1.2 0 2.2-1.5 4.5-4.1"/><path d="M8.2 22.1c4.2-1.4 9.1-1.6 15.7-.4"/><circle class="sun-fill" cx="22.7" cy="10.1" r="3.2"/><path d="M7.2 17.4c1.9-.8 3.4-.8 4.7 0M19 22.4c1.9-.9 3.5-.8 5 .2"/></svg></span><span>观万象</span></a>
+    <a class="nav-btn active" href="/tools/"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="soft-fill" x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M10.7 10V8.3c0-1.1.9-2 2-2h6.6c1.1 0 2 .9 2 2V10"/><rect x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M5.8 16h20.4"/><rect x="13.2" y="14.1" width="5.6" height="5.1" rx="1.1"/><path d="M7.8 23.2c3.3-1.2 5.2-1.1 7.3.2M18.4 24.2c2.3-1.8 4.2-2.2 6.7-1.2"/></svg></span><span>工具</span></a>
+    <a class="nav-btn" href="/?page=mine"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><circle class="soft-fill" cx="16" cy="16" r="11.3"/><path d="M27.2 16c0 2.4-.7 4.6-2 6.4"/><path d="M4.9 16A11.1 11.1 0 0 1 24.6 9"/><circle cx="16" cy="13.1" r="3.5"/><path d="M9.4 23c1.7-3.5 4.1-5.1 6.6-5.1s4.9 1.6 6.6 5.1"/><path d="M19.4 24.8c2.2-2 4.1-2.2 6.7-.7 1 .6 1.9.7 2.9.2"/><path d="M21.1 26.5c1.6-1 3-1 4.6-.1"/></svg></span><span>我的</span></a>
+  </nav>
+</div>
+
+<script src="/vendor/lunar.js"></script>
+<script src="data.js"></script>
+<script src="engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

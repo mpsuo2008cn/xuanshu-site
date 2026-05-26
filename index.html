@@ -8,7 +8,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="玄枢">
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="../manifest.json">
 <meta name="description" content="玄枢万年历，观天时，知四序。">
 <title>玄枢万年历</title>
 <style>
@@ -36,8 +36,10 @@
   --tool-card-4: url("/v2-preview/assets/card-04-plum-bridge-ai.webp");
   --tool-card-5: url("/v2-preview/assets/card-05-reed-boat-ai.webp");
   --tool-card-6: url("/v2-preview/assets/card-06-pine-rock-ai.webp");
+  --tool-card-7: url("/v2-preview/assets/card-07-orchid-stone-ai.webp");
+  --tool-card-8: url("/v2-preview/assets/card-08-moon-osmanthus-ai.webp");
 }
-html, body { margin: 0; min-height: 100%; color: var(--ink); background: var(--paper); font-family: "Noto Serif SC", "Songti SC", "STSong", serif; }
+html, body { margin: 0; min-height: 100%; color: var(--ink); background: var(--paper); font-family: "Noto Serif SC", "Songti SC", "STSong", serif; max-width: 100%; overflow-x: hidden; }
 body { display: flex; justify-content: center; background:
   radial-gradient(circle at 15% 0%, rgba(210, 171, 118, .22), transparent 30%),
   linear-gradient(180deg, #fffaf3 0%, #f8efe4 55%, #f6eadc 100%);
@@ -49,7 +51,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
   inset: 0;
   display: grid;
   place-items: center;
-  background: #fbf6ec url("/bg-splash.webp") center / cover no-repeat;
+  background: #fbf6ec url("../bg-splash.webp") center / cover no-repeat;
   transition: opacity 1s ease, visibility 1s ease;
 }
 .splash.hide { opacity: 0; visibility: hidden; }
@@ -112,7 +114,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 .wifi { width: 15px; height: 12px; border: 3px solid #111; border-left-color: transparent; border-right-color: transparent; border-bottom: 0; border-radius: 12px 12px 0 0; }
 .battery { width: 24px; height: 12px; border: 2px solid #111; border-radius: 3px; position: relative; }
 .battery::after { content:""; position:absolute; right:-5px; top:3px; width:3px; height:5px; background:#111; border-radius:0 2px 2px 0; }
-.page { position: relative; z-index: 1; display: none; }
+.page { position: relative; z-index: 1; display: none; width: 100%; max-width: 100%; overflow-x: hidden; animation: fade .22s ease; }
 .page.active { display: block; }
 #page-detail {
   min-height: calc(100vh - 8px);
@@ -201,7 +203,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 }
 .sun { position:absolute; right: 42px; top: 22px; width: 22px; height: 22px; border-radius:50%; background: radial-gradient(circle, #e95d48, #f3c4a0 62%, transparent 68%); opacity:.82; }
 .crane { position:absolute; left: 12px; top: 18px; font-size: 28px; color:#54625e; transform: rotate(-8deg); }
-.round-paint { position:absolute; right: 8px; top: 10px; width: 62px; height: 62px; border-radius:50%; border: 4px solid rgba(181,136,83,.28); background: rgba(255,255,255,.55) url("/bg-main.webp") center / 190px auto no-repeat; }
+.round-paint { position:absolute; right: 8px; top: 10px; width: 62px; height: 62px; border-radius:50%; border: 4px solid rgba(181,136,83,.28); background: rgba(255,255,255,.55) url("../bg-main.webp") center / 190px auto no-repeat; }
 .card { background: rgba(255, 251, 244, .86); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); backdrop-filter: blur(8px); }
 .calendar-card { padding: 18px 12px 16px; }
 .month-head { display:flex; justify-content: space-between; align-items:center; padding: 0 6px 16px; }
@@ -590,6 +592,8 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 .tool-card:nth-child(4) { --tool-bg: var(--tool-card-4); }
 .tool-card:nth-child(5) { --tool-bg: var(--tool-card-5); }
 .tool-card:nth-child(6) { --tool-bg: var(--tool-card-6); }
+.tool-card:nth-child(7) { --tool-bg: var(--tool-card-7); }
+.tool-card:nth-child(8) { --tool-bg: var(--tool-card-8); }
 .tool-icon, .tool-card h3, .tool-card p { position:relative; z-index:2; }
 .tool-icon { width:50px; height:50px; border-radius:50%; display:grid; place-items:center; background:rgba(242,223,199,.82); border:1px solid rgba(137,87,43,.18); color:#8c5d2f; font-size:28px; margin-bottom:10px; backdrop-filter:blur(5px); }
 .tool-card h3 { margin:0 0 8px; font-size:25px; text-shadow:0 1px 0 rgba(255,255,255,.7); }
@@ -842,7 +846,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
   height: 112px;
   flex: 0 0 138px;
   border-radius: 20px;
-  background: rgba(255,255,255,.42) url("/logo.webp") center 43% / 226px auto no-repeat;
+  background: rgba(255,255,255,.42) url("../logo.webp") center 43% / 226px auto no-repeat;
   border: 1px solid rgba(219,203,184,.58);
   display:inline-block;
   vertical-align:middle;
@@ -898,7 +902,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 .switch::after { content:""; position:absolute; width:22px; height:22px; left:3px; top:3px; border-radius:50%; background:#fffaf3; box-shadow:0 2px 5px rgba(0,0,0,.16); transition:.2s; }
 .switch.on { background:var(--green); }
 .switch.on::after { transform:translateX(22px); }
-.about-logo { width:104px; height:104px; margin:8px auto 14px; border-radius:26px; background:rgba(255,255,255,.68) url("/logo.webp") center / 132px auto no-repeat; border:1px solid var(--line); box-shadow:var(--shadow); }
+.about-logo { width:104px; height:104px; margin:8px auto 14px; border-radius:26px; background:rgba(255,255,255,.68) url("../logo.webp") center / 132px auto no-repeat; border:1px solid var(--line); box-shadow:var(--shadow); }
 .about-text { font-size:16px; line-height:1.85; color:#4f5654; }
 .about-section { margin-top:16px; padding-top:14px; border-top:1px solid var(--line); }
 .about-section h3 { margin:0 0 8px; color:#9b5f2b; font-size:18px; }
@@ -1157,7 +1161,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 <body>
 <div class="splash" id="splash">
   <div class="splash-inner">
-    <img class="splash-logo" src="/logo.webp" alt="玄枢" width="132" height="132">
+    <img class="splash-logo" src="../logo.webp" alt="玄枢" width="132" height="132">
     <div class="splash-tagline"><span>观</span><span>天</span><span class="tagline-gap">时</span><span>知</span><span>四</span><span>序</span></div>
   </div>
 </div>
@@ -1353,12 +1357,14 @@ button { font: inherit; color: inherit; border: 0; background: none; }
   <section class="page" id="page-tools">
     <div class="tools-hero"><h1>万年历<span class="brand-seal">玄枢</span></h1><p>观天时　知四序</p><div class="hero-art tools-hero-art" style="right:0;top:22px"><div class="mountains"></div><div class="sun"></div></div></div>
     <div class="tool-grid">
-      <button class="card tool-card" data-href="/liuyao/"><div class="tool-icon">☷</div><h3>六爻起卦</h3><p>铜钱起卦<br>排卦解象</p></button>
-      <button class="card tool-card" data-href="/bazi/"><div class="tool-icon">八</div><h3>八字排盘</h3><p>四柱命盘<br>大运流年</p></button>
-      <button class="card tool-card" data-open="zeri"><div class="tool-icon">择</div><h3>良辰吉日</h3><p>挑选良辰<br>趋吉避凶</p></button>
+      <button class="card tool-card" data-href="../hehun/"><div class="tool-icon">囍</div><h3>八字合婚</h3><p>情侣配对<br>姻缘解析</p></button>
+      <button class="card tool-card" data-open="zeri"><div class="tool-icon">择</div><h3>良辰吉日</h3><p>结婚搬家<br>提车开业</p></button>
+      <button class="card tool-card" data-href="../bazi/"><div class="tool-icon">八</div><h3>八字排盘</h3><p>四柱命盘<br>大运流年</p></button>
+      <button class="card tool-card" data-href="../liuyao/"><div class="tool-icon">☷</div><h3>六爻起卦</h3><p>感情事业<br>起卦解惑</p></button>
       <button class="card tool-card" data-tab="solar"><div class="tool-icon">养</div><h3>节气养生</h3><p>二十四节气<br>养生提醒</p></button>
       <button class="card tool-card" data-open="dream"><div class="tool-icon">梦</div><h3>周公解梦</h3><p>梦中有象<br>醒后可解</p></button>
-      <button class="card tool-card" data-open="scrolls"><div class="tool-icon">卷</div><h3>玄枢小卷</h3><p>天时小卷<br>万象可观</p></button>
+      <button class="card tool-card" data-open="scrolls"><div class="tool-icon">卷</div><h3>玄枢小卷</h3><p>玄学知识<br>每日更新</p></button>
+      <button class="card tool-card" data-href="../ai-love/"><div class="tool-icon">📅</div><h3>今日黄历</h3><p>宜忌吉时<br>财神方位</p></button>
     </div>
   </section>
 
@@ -1596,7 +1602,7 @@ button { font: inherit; color: inherit; border: 0; background: none; }
 <nav class="bottom-nav">
   <button class="nav-btn active" data-tab="calendar"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="soft-fill" x="4.8" y="6.2" width="22.4" height="21.2" rx="4.2"/><rect x="5.8" y="7.6" width="20.4" height="18.9" rx="3.6"/><path d="M11 4.6v5.1M21 4.6v5.1M9.2 13.1h13.6"/><circle class="deep-fill" cx="11.2" cy="17.2" r="1.55"/><circle class="deep-fill" cx="16" cy="17.2" r="1.55"/><circle class="deep-fill" cx="20.8" cy="17.2" r="1.55"/><circle class="deep-fill" cx="11.2" cy="22" r="1.55"/><circle class="deep-fill" cx="16" cy="22" r="1.55"/><circle class="deep-fill" cx="20.8" cy="22" r="1.55"/></svg></span><span>日历</span></button>
   <button class="nav-btn" data-tab="discover"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><circle class="soft-fill" cx="16" cy="16" r="11.2"/><circle cx="16" cy="16" r="11.2"/><path d="M7.8 20.7c2.5-2.4 4.8-5.4 7.1-5.4 2.1 0 3.1 3.2 4.7 3.2 1.2 0 2.2-1.5 4.5-4.1"/><path d="M8.2 22.1c4.2-1.4 9.1-1.6 15.7-.4"/><circle class="sun-fill" cx="22.7" cy="10.1" r="3.2"/><path d="M7.2 17.4c1.9-.8 3.4-.8 4.7 0M19 22.4c1.9-.9 3.5-.8 5 .2"/></svg></span><span>观万象</span></button>
-  <a class="nav-btn" href="/tools/"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="soft-fill" x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M10.7 10V8.3c0-1.1.9-2 2-2h6.6c1.1 0 2 .9 2 2V10"/><rect x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M5.8 16h20.4"/><rect x="13.2" y="14.1" width="5.6" height="5.1" rx="1.1"/><path d="M7.8 23.2c3.3-1.2 5.2-1.1 7.3.2M18.4 24.2c2.3-1.8 4.2-2.2 6.7-1.2"/></svg></span><span>工具</span></a>
+  <button class="nav-btn" data-tab="tools"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="soft-fill" x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M10.7 10V8.3c0-1.1.9-2 2-2h6.6c1.1 0 2 .9 2 2V10"/><rect x="5.3" y="10" width="21.4" height="15.2" rx="3.2"/><path d="M5.8 16h20.4"/><rect x="13.2" y="14.1" width="5.6" height="5.1" rx="1.1"/><path d="M7.8 23.2c3.3-1.2 5.2-1.1 7.3.2M18.4 24.2c2.3-1.8 4.2-2.2 6.7-1.2"/></svg></span><span>工具</span></button>
   <button class="nav-btn" data-tab="mine"><span class="nav-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><circle class="soft-fill" cx="16" cy="16" r="11.3"/><path d="M27.2 16c0 2.4-.7 4.6-2 6.4"/><path d="M4.9 16A11.1 11.1 0 0 1 24.6 9"/><circle cx="16" cy="13.1" r="3.5"/><path d="M9.4 23c1.7-3.5 4.1-5.1 6.6-5.1s4.9 1.6 6.6 5.1"/><path d="M19.4 24.8c2.2-2 4.1-2.2 6.7-.7 1 .6 1.9.7 2.9.2"/><path d="M21.1 26.5c1.6-1 3-1 4.6-.1"/></svg></span><span>我的</span></button>
 </nav>
 <div class="home-indicator"></div>
@@ -1939,23 +1945,13 @@ const detailDays = [
   }
 ];
 let detailIndex = 1;
-function shouldShowSplash() {
-  const isHomePath = location.pathname === '/' || location.pathname === '/index.html';
-  const hasPageTarget = new URLSearchParams(location.search).has('page');
-  return isHomePath && !hasPageTarget;
-}
-const splashDelay = shouldShowSplash() ? 3000 : 0;
 setTimeout(() => {
   const splash = document.getElementById('splash');
   if (splash) {
-    if (splashDelay) {
-      splash.classList.add('hide');
-      setTimeout(() => splash.remove(), 1100);
-    } else {
-      splash.remove();
-    }
+    splash.classList.add('hide');
+    setTimeout(() => splash.remove(), 1100);
   }
-}, splashDelay);
+}, 3000);
 function buildCalendarDays(year, month) {
   const first = new Date(year, month - 1, 1);
   const start = new Date(year, month - 1, 1 - first.getDay());
@@ -2198,18 +2194,11 @@ function closeDesktopGuide() {
 }
 addOpenDay();
 const tabs = document.querySelectorAll('.nav-btn');
-function setElementClass(el, name, enabled) {
-  if (!el) return;
-  const classes = String(el.getAttribute('class') || '').split(/\s+/).filter(Boolean);
-  const next = classes.filter(item => item !== name);
-  if (enabled) next.push(name);
-  el.setAttribute('class', Array.from(new Set(next)).join(' '));
-}
 function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => setElementClass(p, 'active', false));
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const page = document.getElementById('page-' + id);
   if (!page) return;
-  setElementClass(page, 'active', true);
+  page.classList.add('active');
   if (id !== 'scroll-detail') setSeo(defaultTitle, defaultDescription);
   if (id === 'detail') renderDetail();
   if (id === 'discover') { renderStarInfo(); renderDailyQuote(); }
@@ -2220,24 +2209,16 @@ function showPage(id) {
   if (id === 'dream') addFootprint('dream');
   if (id === 'zeri') addFootprint('zeri');
   if (id === 'mine') renderMinePage();
-  tabs.forEach(b => setElementClass(b, 'active', b.dataset.tab === id || (id === 'solar' && b.dataset.tab === 'tools') || (id === 'zeri' && b.dataset.tab === 'tools') || (id === 'dream' && b.dataset.tab === 'tools') || (id === 'scrolls' && b.dataset.tab === 'tools') || (id === 'scroll-detail' && b.dataset.tab === 'tools') || (id === 'detail' && b.dataset.tab === 'detail')));
+  tabs.forEach(b => b.classList.toggle('active', b.dataset.tab === id || (id === 'solar' && b.dataset.tab === 'tools') || (id === 'zeri' && b.dataset.tab === 'tools') || (id === 'dream' && b.dataset.tab === 'tools') || (id === 'scrolls' && b.dataset.tab === 'tools') || (id === 'scroll-detail' && b.dataset.tab === 'tools') || (id === 'detail' && b.dataset.tab === 'detail')));
   scrollTo({ top: 0, behavior: 'auto' });
 }
-window.__xuanshuHydratePage = function (id) {
-  if (id === 'detail') renderDetail();
-  if (id === 'discover') { renderStarInfo(); renderDailyQuote(); }
-  if (id === 'zeri') renderZeriPage();
-  if (id === 'solar') syncCurrentSolarTerm();
-  if (id === 'scrolls') renderScrollList();
-  if (id === 'star-note') renderStarInfo();
-  if (id === 'mine') renderMinePage();
-};
 document.addEventListener('click', e => {
   const hrefBtn = e.target.closest('[data-href]');
   if (hrefBtn) {
     const href = hrefBtn.dataset.href || '';
     if (href.includes('liuyao')) { trackEvent('xuanshu_liuyao_click', '六爻起卦'); incMineStat('liuyao'); addFootprint('liuyao'); }
     if (href.includes('bazi')) { trackEvent('xuanshu_bazi_click', '八字排盘'); incMineStat('bazi'); addFootprint('bazi'); }
+    if (href.includes('hehun')) { trackEvent('xuanshu_hehun_click', '八字合婚'); addFootprint('hehun'); }
     location.href = href;
     return;
   }
@@ -2792,7 +2773,7 @@ document.getElementById('installTipModal')?.addEventListener('click', e => {
   if (e.target.id === 'installTipModal') closeInstallTip(true);
 });
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+  window.addEventListener('load', () => navigator.serviceWorker.register('../sw.js').catch(() => {}));
 }
 maybeShowInstallTip();
 
@@ -2806,62 +2787,8 @@ renderOracleCount();
 renderDetail();
 renderSchedules();
 renderMinePage();
-function getInitialPageFromLocation() {
-  const queryPage = new URLSearchParams(location.search).get('page');
-  if (queryPage) return queryPage;
-  const pathPageMap = {
-    '/zeri/': 'zeri',
-    '/zeri/index.html': 'zeri',
-    '/jieqi/': 'solar',
-    '/jieqi/index.html': 'solar',
-    '/dream/': 'dream',
-    '/dream/index.html': 'dream',
-    '/scrolls/': 'scrolls',
-    '/scrolls/index.html': 'scrolls'
-  };
-  return pathPageMap[location.pathname] || '';
-}
-const initialPage = getInitialPageFromLocation();
+const initialPage = new URLSearchParams(location.search).get('page');
 if (initialPage && document.getElementById('page-' + initialPage)) showPage(initialPage);
-</script>
-<script>
-(function () {
-  function setClass(el, name, enabled) {
-    if (!el) return;
-    var current = (el.getAttribute('class') || '').split(/\s+/).filter(Boolean).filter(function (item) { return item !== name; });
-    if (enabled) current.push(name);
-    el.setAttribute('class', Array.from(new Set(current)).join(' '));
-  }
-  function activateFromQuery() {
-    var pathPageMap = {
-      '/zeri/': 'zeri',
-      '/zeri/index.html': 'zeri',
-      '/jieqi/': 'solar',
-      '/jieqi/index.html': 'solar',
-      '/dream/': 'dream',
-      '/dream/index.html': 'dream',
-      '/scrolls/': 'scrolls',
-      '/scrolls/index.html': 'scrolls'
-    };
-    var requested = new URLSearchParams(location.search).get('page') || pathPageMap[location.pathname] || '';
-    if (!requested) return;
-    var page = document.getElementById('page-' + requested);
-    if (!page) return;
-    document.documentElement.setAttribute('data-initial-page', requested);
-    document.querySelectorAll('.page').forEach(function (item) { setClass(item, 'active', false); });
-    setClass(page, 'active', true);
-    document.querySelectorAll('.nav-btn').forEach(function (btn) {
-      var tab = btn.getAttribute('data-tab');
-      var isToolsChild = ['zeri', 'solar', 'dream', 'scrolls', 'scroll-detail'].indexOf(requested) !== -1 && tab === 'tools';
-      setClass(btn, 'active', tab === requested || isToolsChild);
-    });
-    if (typeof window.__xuanshuHydratePage === 'function') window.__xuanshuHydratePage(requested);
-    window.scrollTo({ top: 0, behavior: 'auto' });
-  }
-  activateFromQuery();
-  requestAnimationFrame(activateFromQuery);
-  setTimeout(activateFromQuery, 160);
-})();
 </script>
 </body>
 </html>
